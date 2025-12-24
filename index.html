@@ -147,6 +147,7 @@ if (lang.startsWith("en")) {
     <p><strong>Token szerződés címe:</strong><br>
     0x3005ef86386858a31d76f4cef03d435Ad86A8E88</p>
 </section>
+
 <script>
 if(lang.startsWith('en')) {
     document.querySelector('#howtobuy h2').textContent = 'How to Buy Bloody Rubynts (BR)';
@@ -159,6 +160,45 @@ if(lang.startsWith('en')) {
     `;
 }
 </script>
+<script>
+if(lang.startsWith('en')) {
+    document.querySelector('#roadmap h2').textContent = 'Roadmap';
+
+    const roadmap = document.querySelector('#roadmap').innerHTML;
+    document.querySelector('#roadmap').innerHTML = `
+        <h2>Roadmap</h2>
+
+        <h3>Q1 – Foundation</h3>
+        <ul>
+            <li>Token deployment on Polygon</li>
+            <li>Liquidity pool creation (QuickSwap)</li>
+            <li>Website and documentation</li>
+        </ul>
+
+        <h3>Q2 – Community & Visibility</h3>
+        <ul>
+            <li>Launch social channels</li>
+            <li>CoinGecko & CoinMarketCap submissions</li>
+            <li>Community feedback collection</li>
+        </ul>
+
+        <h3>Q3 – Stabilization & Expansion</h3>
+        <ul>
+            <li>Liquidity optimization</li>
+            <li>Partnership exploration</li>
+            <li>Website improvements</li>
+        </ul>
+
+        <h3>Q4 – Long-term Growth</h3>
+        <ul>
+            <li>Ecosystem expansion</li>
+            <li>New features and use-cases</li>
+            <li>Sustainable operations</li>
+        </ul>
+    `;
+}
+</script>
+
 <section id="roadmap">
     <h2>Roadmap</h2>
 
