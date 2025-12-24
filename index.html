@@ -116,22 +116,82 @@ footer {
 </footer>
 
 <script>
-const lang = navigator.language || navigator.userLanguage;
+const lang = (navigator.language || navigator.userLanguage || 'hu').toLowerCase();
 
-if (lang.startsWith("en")) {
-    document.getElementById("nav-project").textContent = "Project";
-    document.getElementById("nav-token").textContent = "Token Info";
-    document.getElementById("nav-docs").textContent = "Documentation";
-    document.getElementById("nav-contact").textContent = "Contact";
+if (lang.startsWith('en')) {
+  // NAV + címek
+  document.getElementById('site-title').textContent = 'Bloody Rubynts (BR)';
+  document.getElementById('nav-project').textContent = 'Project';
+  document.getElementById('nav-token').textContent = 'Token Info';
+  document.getElementById('nav-docs').textContent = 'Documentation';
+  document.getElementById('nav-contact').textContent = 'Contact';
 
-    document.getElementById("project-title").textContent = "Project";
-    document.getElementById("project-desc").textContent =
-        "Bloody Rubynts (BR) is an ERC-20 token on the Polygon network, aiming to support decentralized economic systems and community value creation.";
-    document.getElementById("token-title").textContent = "Token Information";
-    document.getElementById("docs-title").textContent = "Documentation";
-    document.getElementById("contact-title").textContent = "Contact";
+  // Projekt
+  document.getElementById('project-title').textContent = 'Project';
+  document.getElementById('project-desc').textContent =
+    'Bloody Rubynts (BR) is an ERC-20 token on the Polygon network, aiming to support decentralized economic systems and community value creation.';
+
+  // Token
+  document.getElementById('token-title').textContent = 'Token Information';
+  document.getElementById('docs-title').textContent = 'Documentation';
+  document.getElementById('docs').querySelector('.pdf-link').textContent = 'Download PDF';
+  document.getElementById('contact-title').textContent = 'Contact';
+
+  // HOW TO BUY (ha létezik a szekció)
+  const how = document.querySelector('#howtobuy');
+  if (how) {
+    how.querySelector('h2').textContent = 'How to Buy Bloody Rubynts (BR)';
+    how.querySelector('ol').innerHTML = `
+      <li>Install a crypto wallet (e.g. MetaMask).</li>
+      <li>Set the Polygon network in your wallet.</li>
+      <li>Get POL tokens (from an exchange or another wallet).</li>
+      <li>Visit QuickSwap.</li>
+      <li>Swap POL for Bloody Rubynts (BR).</li>
+    `;
+    const p = how.querySelector('p');
+    if (p) {
+      p.innerHTML = '<strong>Token Contract Address:</strong><br>0x3005ef86386858a31d76f4cef03d435Ad86A8E88';
+    }
+  }
+
+  // ROADMAP (ha létezik a szekció)
+  const rm = document.querySelector('#roadmap');
+  if (rm) {
+    rm.innerHTML = `
+      <h2>Roadmap</h2>
+
+      <h3>Q1 – Foundation</h3>
+      <ul>
+        <li>Token deployment on Polygon</li>
+        <li>Liquidity pool creation (QuickSwap)</li>
+        <li>Website and documentation</li>
+      </ul>
+
+      <h3>Q2 – Community & Visibility</h3>
+      <ul>
+        <li>Launch social channels</li>
+        <li>CoinGecko & CoinMarketCap submissions</li>
+        <li>Community feedback collection</li>
+      </ul>
+
+      <h3>Q3 – Stabilization & Expansion</h3>
+      <ul>
+        <li>Liquidity optimization</li>
+        <li>Partnership exploration</li>
+        <li>Website improvements</li>
+      </ul>
+
+      <h3>Q4 – Long-term Growth</h3>
+      <ul>
+        <li>Ecosystem expansion</li>
+        <li>New features and use-cases</li>
+        <li>Sustainable operations</li>
+      </ul>
+    `;
+  }
 }
 </script>
+
 
 </body>
 </html>
