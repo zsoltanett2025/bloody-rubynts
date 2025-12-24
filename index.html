@@ -135,3 +135,27 @@ if (lang.startsWith("en")) {
 
 </body>
 </html>
+<section id="howtobuy">
+    <h2>Hogyan vásárolj Bloody Rubynts (BR) tokent?</h2>
+    <ol>
+        <li>Telepíts egy kriptotárcát (pl. MetaMask).</li>
+        <li>Állítsd be a Polygon hálózatot a tárcádban.</li>
+        <li>Szerezz POL tokent (tőzsdéről vagy más tárcából).</li>
+        <li>Látogass el a QuickSwap oldalára.</li>
+        <li>Válts POL-t Bloody Rubynts (BR) tokenre.</li>
+    </ol>
+    <p><strong>Token szerződés címe:</strong><br>
+    0x3005ef86386858a31d76f4cef03d435Ad86A8E88</p>
+</section>
+<script>
+if(lang.startsWith('en')) {
+    document.querySelector('#howtobuy h2').textContent = 'How to Buy Bloody Rubynts (BR)';
+    document.querySelector('#howtobuy ol').innerHTML = `
+        <li>Install a crypto wallet (e.g. MetaMask).</li>
+        <li>Set Polygon network in your wallet.</li>
+        <li>Get POL tokens from an exchange or another wallet.</li>
+        <li>Visit QuickSwap.</li>
+        <li>Swap POL for Bloody Rubynts (BR).</li>
+    `;
+}
+</script>
