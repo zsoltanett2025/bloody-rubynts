@@ -65,8 +65,53 @@ footer {
 }
 <style>
 /* ROADMAP */
-#roadmap {
-    margin-top: 60px;
+#roadmap { margin-top: 60px; }
+.roadmap-grid{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap:18px;
+}
+@media (max-width: 720px){
+  .roadmap-grid{ grid-template-columns: 1fr; }
+}
+.rm-card{
+  background:#141414;
+  border:1px solid #3a0000;
+  border-radius:14px;
+  padding:18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+.rm-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:10px;
+}
+.rm-quarter{
+  font-size:18px;
+  font-weight:800;
+  color:#ff3b3b;
+  margin:0;
+}
+.rm-status{
+  font-size:12px;
+  font-weight:800;
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid #660000;
+  background:#2b0000;
+  color:#f0f0f0;
+  white-space:nowrap;
+}
+.rm-list{
+  margin:0;
+  padding-left:18px;
+  line-height:1.6;
+}
+.rm-list li{ margin:6px 0; }
+</style>
+
 }
 
 .roadmap-grid {
@@ -178,7 +223,59 @@ footer {
 .step-links a:hover{ text-decoration:underline; }
 </style>
 
+<section id="roadmap">
+  <h2 id="roadmap-title">Roadmap</h2>
 
+  <div class="roadmap-grid">
+    <div class="rm-card">
+      <div class="rm-head">
+        <p class="rm-quarter" id="rm-q1-title">Q1 (Alapok)</p>
+        <span class="rm-status" id="rm-q1-status">Készül</span>
+      </div>
+      <ul class="rm-list" id="rm-q1-list">
+        <li>Token szerződés telepítés + verifikáció Polygonon</li>
+        <li>Alap weboldal + dokumentáció publikálás</li>
+        <li>Kezdeti likviditás (QuickSwap / Uniswap)</li>
+      </ul>
+    </div>
+
+    <div class="rm-card">
+      <div class="rm-head">
+        <p class="rm-quarter" id="rm-q2-title">Q2 (Láthatóság)</p>
+        <span class="rm-status" id="rm-q2-status">Tervezett</span>
+      </div>
+      <ul class="rm-list" id="rm-q2-list">
+        <li>CoinGecko / CoinMarketCap beadások követése</li>
+        <li>Közösségi csatornák bővítése (X / Reddit / TikTok)</li>
+        <li>Transzparens tokenomics + “How to Buy” finomítás</li>
+      </ul>
+    </div>
+
+    <div class="rm-card">
+      <div class="rm-head">
+        <p class="rm-quarter" id="rm-q3-title">Q3 (Közösség)</p>
+        <span class="rm-status" id="rm-q3-status">Tervezett</span>
+      </div>
+      <ul class="rm-list" id="rm-q3-list">
+        <li>Közösségi kampányok + edukációs tartalmak</li>
+        <li>Partnerségek / együttműködések feltérképezése</li>
+        <li>Biztonsági ellenőrzések és folyamatok erősítése</li>
+      </ul>
+    </div>
+
+    <div class="rm-card">
+      <div class="rm-head">
+        <p class="rm-quarter" id="rm-q4-title">Q4 (Növekedés)</p>
+        <span class="rm-status" id="rm-q4-status">Tervezett</span>
+      </div>
+      <ul class="rm-list" id="rm-q4-list">
+        <li>Likviditás és forgalom bővítése</li>
+        <li>Ökoszisztéma-fejlesztési lehetőségek (dApp / utility)</li>
+        <li>Felkészülés további listázásokra és integrációkra</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
 </head>
 
@@ -413,6 +510,44 @@ document.getElementById('roadmap-list').innerHTML = `
   <li><b>Q3:</b> Integrations and simple tools (e.g., dashboard), partnership exploration.</li>
   <li><b>Q4:</b> Scaling and long-term strategy (mainnet plan and risk management).</li>
 `;
+<script>
+if (lang.startsWith('en')) {
+  document.getElementById('roadmap-title').textContent = 'Roadmap';
+
+  document.getElementById('rm-q1-title').textContent = 'Q1 (Foundation)';
+  document.getElementById('rm-q1-status').textContent = 'In progress';
+  document.getElementById('rm-q1-list').innerHTML = `
+    <li>Deploy + verify token contract on Polygon</li>
+    <li>Publish basic website + documentation</li>
+    <li>Initial liquidity (QuickSwap / Uniswap)</li>
+  `;
+
+  document.getElementById('rm-q2-title').textContent = 'Q2 (Visibility)';
+  document.getElementById('rm-q2-status').textContent = 'Planned';
+  document.getElementById('rm-q2-list').innerHTML = `
+    <li>Track CoinGecko / CoinMarketCap submissions</li>
+    <li>Expand social channels (X / Reddit / TikTok)</li>
+    <li>Refine tokenomics transparency + “How to Buy”</li>
+  `;
+
+  document.getElementById('rm-q3-title').textContent = 'Q3 (Community)';
+  document.getElementById('rm-q3-status').textContent = 'Planned';
+  document.getElementById('rm-q3-list').innerHTML = `
+    <li>Community campaigns + educational content</li>
+    <li>Explore partnerships / collaborations</li>
+    <li>Strengthen security checks and processes</li>
+  `;
+
+  document.getElementById('rm-q4-title').textContent = 'Q4 (Growth)';
+  document.getElementById('rm-q4-status').textContent = 'Planned';
+  document.getElementById('rm-q4-list').innerHTML = `
+    <li>Grow liquidity and trading volume</li>
+    <li>Ecosystem expansion options (dApp / utility)</li>
+    <li>Prepare for additional listings and integrations</li>
+  `;
+}
+</script>
+    
 
 document.getElementById('links-title').textContent = 'Links';
                            }
