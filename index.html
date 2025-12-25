@@ -63,7 +63,40 @@ footer {
     text-align: center;
     font-size: 14px;
 }
+<style>
+/* ROADMAP */
+#roadmap {
+    margin-top: 60px;
+}
+
+.roadmap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.roadmap-card {
+    background-color: #2b0000;
+    border: 1px solid #660000;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.roadmap-card h3 {
+    color: #ff4444;
+    margin-bottom: 10px;
+}
+
+.roadmap-card ul {
+    padding-left: 18px;
+}
+
+.roadmap-card li {
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
 </style>
+
 </head>
 
 <body>
@@ -114,6 +147,54 @@ footer {
 </section>
 
 <section id="roadmap">
+    <h2 id="roadmap-title">Roadmap</h2>
+
+    <div class="roadmap-grid">
+
+        <div class="roadmap-card">
+            <h3>Q1 – Alapok & Indulás</h3>
+            <ul>
+                <li>ERC-20 token deploy Polygonon</li>
+                <li>Smart contract verifikáció</li>
+                <li>Likviditás biztosítása (DEX)</li>
+                <li>Weboldal elindítása</li>
+                <li>CoinGecko / CoinMarketCap beadás</li>
+            </ul>
+        </div>
+
+        <div class="roadmap-card">
+            <h3>Q2 – Közösség & Átláthatóság</h3>
+            <ul>
+                <li>Dokumentáció és oktató anyagok</li>
+                <li>Nyilvános holder és forgalomfigyelés</li>
+                <li>Közösségi csatornák fejlesztése</li>
+                <li>Stabil likviditás fenntartása</li>
+            </ul>
+        </div>
+
+        <div class="roadmap-card">
+            <h3>Q3 – Hasznosság & Fejlődés</h3>
+            <ul>
+                <li>Token hasznosság bővítése</li>
+                <li>Közösségi kezdeményezések</li>
+                <li>Együttműködések</li>
+                <li>Weboldal funkciók bővítése</li>
+            </ul>
+        </div>
+
+        <div class="roadmap-card">
+            <h3>Q4 – Fenntartható Növekedés</h3>
+            <ul>
+                <li>Hosszú távú közösségi modell</li>
+                <li>Átlátható token irányelvek</li>
+                <li>További listázási lehetőségek</li>
+                <li>Projekt jövőkép frissítése</li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
   <h2 id="roadmap-title">Roadmap</h2>
   <ul id="roadmap-list">
     <li><b>Q1:</b> Alap infrastruktúra (web, explorer, közösségi csatornák), stabil likviditás.</li>
@@ -297,7 +378,45 @@ if(lang.startsWith('en')) {
         <li>Get POL tokens from an exchange or another wallet.</li>
         <li>Visit QuickSwap.</li>
         <li>Swap POL for Bloody Rubynts (BR).</li>
+<script>
+if (lang.startsWith('en')) {
+    document.getElementById('roadmap-title').textContent = 'Roadmap';
+
+    document.querySelectorAll('.roadmap-card')[0].querySelector('h3').textContent = 'Q1 – Foundation & Launch';
+    document.querySelectorAll('.roadmap-card')[0].querySelector('ul').innerHTML = `
+        <li>ERC-20 token deployment on Polygon</li>
+        <li>Smart contract verification</li>
+        <li>Initial DEX liquidity</li>
+        <li>Website launch</li>
+        <li>CoinGecko & CoinMarketCap submission</li>
     `;
+
+    document.querySelectorAll('.roadmap-card')[1].querySelector('h3').textContent = 'Q2 – Community & Transparency';
+    document.querySelectorAll('.roadmap-card')[1].querySelector('ul').innerHTML = `
+        <li>Documentation & educational content</li>
+        <li>Public holder and transaction tracking</li>
+        <li>Community channel development</li>
+        <li>Liquidity stability</li>
+    `;
+
+    document.querySelectorAll('.roadmap-card')[2].querySelector('h3').textContent = 'Q3 – Utility & Development';
+    document.querySelectorAll('.roadmap-card')[2].querySelector('ul').innerHTML = `
+        <li>Expanded token utility</li>
+        <li>Community initiatives</li>
+        <li>Collaborations</li>
+        <li>Website feature upgrades</li>
+    `;
+
+    document.querySelectorAll('.roadmap-card')[3].querySelector('h3').textContent = 'Q4 – Sustainable Growth';
+    document.querySelectorAll('.roadmap-card')[3].querySelector('ul').innerHTML = `
+        <li>Long-term community model</li>
+        <li>Transparent token guidelines</li>
+        <li>Additional listing opportunities</li>
+        <li>Updated project vision</li>
+    `;
+}
+</script>
+
 }
 </script>
 <script>
