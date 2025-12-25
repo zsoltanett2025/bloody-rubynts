@@ -70,13 +70,16 @@ footer {
 
 <header>
   <img src="bloody_rubynts_logo.png" alt="Bloody Rubynts Logo">
-    <h1 id="site-title">Bloody Rubynts (BR)</h1>
+  <h1 id="site-title">Bloody Rubynts (BR)</h1>
 
     <nav>
         <a href="#project" id="nav-project">Projekt</a>
         <a href="#token" id="nav-token">Token Info</a>
         <a href="#docs" id="nav-docs">Dokumentáció</a>
         <a href="#contact" id="nav-contact">Kapcsolat</a>
+        <a href="#security" id="nav-security">Biztonság</a>
+        <a href="#faq" id="nav-faq">GYIK</a>
+
     </nav>
 </header>
 
@@ -122,6 +125,20 @@ footer {
 
 <section id="links">
   <h2 id="links-title">Linkek</h2>
+    <section id="security">
+  <h2 id="sec-title">Biztonság és átláthatóság</h2>
+
+  <p id="sec-text">
+    A Bloody Rubynts (BR) egy Polygon hálózaton futó ERC-20 token. A szerződés forráskódja ellenőrzött a Polygonscan-en.
+  </p>
+
+  <ul>
+    <li><b>Contract:</b> <code>0x3005ef86386858a31d76f4cef03d435Ad86A8E88</code></li>
+    <li><b>Explorer:</b> <a href="https://polygonscan.com/token/0x3005ef86386858a31d76f4cef03d435Ad86A8E88" target="_blank" rel="noopener">Polygonscan token page</a></li>
+    <li><b>Holders:</b> <a href="https://polygonscan.com/token/0x3005ef86386858a31d76f4cef03d435Ad86A8E88#balances" target="_blank" rel="noopener">Top holders / balances</a></li>
+    <li><b>Transfers:</b> <a href="https://polygonscan.com/token/0x3005ef86386858a31d76f4cef03d435Ad86A8E88#tokentxns" target="_blank" rel="noopener">Token transfers</a></li>
+  </ul>
+</section>
   <ul>
     <li><b>Website:</b> <a href="https://zsoltanett2025.github.io/bloody-rubynts/" target="_blank" rel="noopener">GitHub Pages</a></li>
     <li><b>Explorer (Token):</b> <a href="https://polygonscan.com/token/0x3005ef86386858a31d76f4cef03d435Ad86A8E88" target="_blank" rel="noopener">Polygonscan</a></li>
@@ -156,7 +173,11 @@ footer {
 <script>
 const lang = (navigator.language || navigator.userLanguage || 'hu').toLowerCase();
 
-if (lang.startsWith('en')) {document.getElementById('nav-how').textContent = 'How to Buy';
+if (lang.startsWith('en')) {document.getElementById('nav-security').textContent = 'Security';
+document.getElementById('sec-title').textContent = 'Security & Transparency';
+document.getElementById('sec-text').textContent =
+  'Bloody Rubynts (BR) is an ERC-20 token on Polygon. The contract source code is verified on Polygonscan.';}
+document.getElementById('nav-how').textContent = 'How to Buy';
 document.getElementById('nav-roadmap').textContent = 'Roadmap';
 document.getElementById('nav-links').textContent = 'Links';
 
@@ -280,7 +301,24 @@ if(lang.startsWith('en')) {
 }
 </script>
 <script>
-if(lang.startsWith('en')) {
+if(lang.startsWith('en')) {document.getElementById('nav-faq').textContent = 'FAQ';
+document.getElementById('faq-title').textContent = 'FAQ';
+
+document.getElementById('faq-q1').textContent = 'Where can I see BR activity?';
+document.getElementById('faq-a1').textContent = 'You can see all BR transfers on Polygonscan under “Token Transfers”. DEX activity can also be tracked via the pool/DEX interface.';
+
+document.getElementById('faq-q2').textContent = 'Where can I see holders?';
+document.getElementById('faq-a2').textContent = 'On the Polygonscan token page under “Holders / Balances”.';
+
+document.getElementById('faq-q3').textContent = 'Why is there no price in some apps yet?';
+document.getElementById('faq-a3').textContent = 'Price discovery needs liquidity and indexing. After a pool is live, data providers may take time to pick it up.';
+
+document.getElementById('faq-q4').textContent = 'How do I buy?';
+document.getElementById('faq-a4').textContent = 'On QuickSwap/Uniswap (Polygon): swap POL/WPOL → BR. Always test with a small amount first.';
+
+document.getElementById('disclaimer').innerHTML =
+  '<b>Disclaimer:</b> This website is for informational purposes only and is not investment advice. Crypto assets involve risk.';}
+
     document.querySelector('#roadmap h2').textContent = 'Roadmap';
 
     const roadmap = document.querySelector('#roadmap').innerHTML;
