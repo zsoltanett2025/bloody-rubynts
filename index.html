@@ -1,805 +1,505 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bloody Rubynts (BR)</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bloody Rubynts (BR)</title>
 
-<style>
-body {
-    font-family: Arial, sans-serif;
-    background-color: #1a1a1a;
-    color: #f0f0f0;
-    margin: 0;
-    padding: 0;
-}
-header {
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    background-color: #2b0000;
-}
-header img {
-    height: 50px;
-    margin-right: 15px;
-}
-header h1 {
-    font-size: 24px;
-}
-nav {
-    margin-left: auto;
-}
-nav a {
-    color: #f0f0f0;
-    margin-left: 15px;
-    text-decoration: none;
-    font-weight: bold;
-}
-main {
-    padding: 20px; max-width: 980px; margin: 0 auto; }
+  <!-- Font Awesome for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-   @media (max-width: 600px) {
-  header { flex-wrap: wrap; gap: 10px; }
-  nav { width: 100%; margin-left: 0; display: flex; flex-wrap: wrap; gap: 10px; }
-  main { padding: 16px; }
-}
- 
-}
-section {
-    main { padding: 20px; max-width: 980px; margin: 0 auto; }
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1a1a1a;
+      color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
 
-}
-h2 {
-    color: #ff0000;
-}
-a.pdf-link {
-    color: #ff5555;
-    text-decoration: none;
-    font-weight: bold;
-}
-footer {
-    background-color: #2b0000;
-    padding: 20px;
-    text-align: center;
-    font-size: 14px;
-}
-<style>
-    
-/* ROADMAP */
-#roadmap { margin-top: 60px; }
-.roadmap-grid{
-  display:grid;
-  grid-template-columns: repeat(2, minmax(0,1fr));
-  gap:18px;
-}
-@media (max-width: 720px){
-  .roadmap-grid{ grid-template-columns: 1fr; }
-}
-.rm-card{
-  background:#141414;
-  border:1px solid #3a0000;
-  border-radius:14px;
-  padding:18px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-}
-.rm-head{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-  margin-bottom:10px;
-}
-.rm-quarter{
-  font-size:18px;
-  font-weight:800;
-  color:#ff3b3b;
-  margin:0;
-}
-.rm-status{
-  font-size:12px;
-  font-weight:800;
-  padding:6px 10px;
-  border-radius:999px;
-  border:1px solid #660000;
-  background:#2b0000;
-  color:#f0f0f0;
-  white-space:nowrap;
-}
-.rm-list{
-  margin:0;
-  padding-left:18px;
-  line-height:1.6;
-}
-.rm-list li{ margin:6px 0; }
-</style>
+    header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 20px;
+      background-color: #2b0000;
+      border-bottom: 1px solid #660000;
+      flex-wrap: wrap;
+    }
 
-}
+    header img {
+      height: 46px;
+      width: auto;
+    }
 
-.roadmap-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
+    header h1 {
+      font-size: 22px;
+      margin: 0;
+      line-height: 1.1;
+      white-space: nowrap;
+    }
 
-.roadmap-card {
-    background-color: #2b0000;
-    border: 1px solid #660000;
-    border-radius: 10px;
-    padding: 20px;
-}
+    nav {
+      margin-left: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      justify-content: flex-end;
+    }
 
-.roadmap-card h3 {
-    color: #ff4444;
-    margin-bottom: 10px;
-}
+    nav a {
+      color: #f0f0f0;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 6px 10px;
+      border-radius: 10px;
+      border: 1px solid transparent;
+    }
 
-.roadmap-card ul {
-    padding-left: 18px;
-}
+    nav a:hover {
+      border-color: #660000;
+      background: #1a0b0b;
+    }
 
-.roadmap-card li {
-    margin-bottom: 8px;
-    line-height: 1.4;
-}
-<style>
-/* SOCIAL LINKS */
-#socials {
-    margin-top: 60px;
-    text-align: center;
-}
+    /* SOCIAL ICONS IN HEADER */
+    .social-icons {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-left: 8px;
+    }
+    .social-icons a {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #1a0b0b;
+      border: 1px solid #660000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      text-decoration: none;
+      transition: transform 0.15s ease, background-color 0.15s ease;
+    }
+    .social-icons a:hover {
+      transform: scale(1.08);
+      background: #ff0000;
+      border-color: #ff0000;
+    }
 
-.social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
+    main {
+      padding: 22px;
+      max-width: 980px;
+      margin: 0 auto;
+    }
 
-.social-icons a {
-    width: 55px;
-    height: 55px;
-    background-color: #2b0000;
-    border: 1px solid #660000;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.2s ease, background-color 0.2s ease;
-}
+    section {
+      margin: 34px 0;
+      padding: 18px;
+      background: #141414;
+      border: 1px solid #3a0000;
+      border-radius: 14px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    }
 
-.social-icons a:hover {
-    transform: scale(1.1);
-    background-color: #660000;
-}
+    h2 {
+      color: #ff3b3b;
+      margin-top: 0;
+    }
 
-.social-icons img {
-    width: 28px;
-    height: 28px;
-}
-<style>
-/* HOW TO BUY */
-#howtobuy { margin-top: 60px; }
-.steps {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
-}
-@media (max-width: 720px){
-  .steps { grid-template-columns: 1fr; }
-}
-.step-card{
-  background:#141414;
-  border:1px solid #3a0000;
-  border-radius:14px;
-  padding:18px;
-  display:flex;
-  gap:14px;
-  align-items:flex-start;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-}
-.step-icon{
-  width:46px; height:46px;
-  border-radius:12px;
-  display:flex; align-items:center; justify-content:center;
-  background:#2b0000;
-  border:1px solid #660000;
-  flex:0 0 auto;
-}
-.step-icon img{ width:26px; height:26px; }
-.step-title{
-  margin:0 0 6px 0;
-  font-size:18px;
-  color:#ff3b3b;
-}
-.step-text{ margin:0; line-height:1.45; color:#f0f0f0; }
-.step-note{
-  margin-top:14px;
-  padding:12px 14px;
-  border-left:4px solid #ff3b3b;
-  background:#1a0b0b;
-  border-radius:10px;
-  color:#f0f0f0;
-}
-.step-links a{ color:#ff7777; text-decoration:none; font-weight:700; }
-.step-links a:hover{ text-decoration:underline; }
-</style>
+    a.pdf-link {
+      color: #ff7777;
+      text-decoration: none;
+      font-weight: 800;
+    }
+    a.pdf-link:hover { text-decoration: underline; }
 
-<section id="roadmap">
-  <h2 id="roadmap-title">Roadmap</h2>
+    footer {
+      background-color: #2b0000;
+      padding: 18px;
+      text-align: center;
+      font-size: 14px;
+      border-top: 1px solid #660000;
+    }
 
-  <div class="roadmap-grid">
-    <div class="rm-card">
-      <div class="rm-head">
-        <p class="rm-quarter" id="rm-q1-title">Q1 (Alapok)</p>
-        <span class="rm-status" id="rm-q1-status">Készül</span>
-      </div>
-      <ul class="rm-list" id="rm-q1-list">
-        <li>Token szerződés telepítés + verifikáció Polygonon</li>
-        <li>Alap weboldal + dokumentáció publikálás</li>
-        <li>Kezdeti likviditás (QuickSwap / Uniswap)</li>
-      </ul>
-    </div>
+    /* HOW TO BUY - cards */
+    #howtobuy { margin-top: 10px; }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+    @media (max-width: 720px){
+      .steps { grid-template-columns: 1fr; }
+    }
+    .step-card{
+      background:#101010;
+      border:1px solid #3a0000;
+      border-radius:14px;
+      padding:16px;
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+    }
+    .step-icon{
+      width:46px; height:46px;
+      border-radius:12px;
+      display:flex; align-items:center; justify-content:center;
+      background:#2b0000;
+      border:1px solid #660000;
+      flex:0 0 auto;
+      font-size: 20px;
+      color: #fff;
+    }
+    .step-title{
+      margin:0 0 6px 0;
+      font-size:18px;
+      color:#ff3b3b;
+    }
+    .step-text{ margin:0; line-height:1.45; color:#f0f0f0; }
+    .step-note{
+      margin-top:14px;
+      padding:12px 14px;
+      border-left:4px solid #ff3b3b;
+      background:#1a0b0b;
+      border-radius:10px;
+      color:#f0f0f0;
+    }
+    code {
+      background: #1a0b0b;
+      border: 1px solid #660000;
+      padding: 2px 6px;
+      border-radius: 8px;
+      color: #ffd2d2;
+    }
 
-    <div class="rm-card">
-      <div class="rm-head">
-        <p class="rm-quarter" id="rm-q2-title">Q2 (Láthatóság)</p>
-        <span class="rm-status" id="rm-q2-status">Tervezett</span>
-      </div>
-      <ul class="rm-list" id="rm-q2-list">
-        <li>CoinGecko / CoinMarketCap beadások követése</li>
-        <li>Közösségi csatornák bővítése (X / Reddit / TikTok)</li>
-        <li>Transzparens tokenomics + “How to Buy” finomítás</li>
-      </ul>
-    </div>
+    /* ROADMAP */
+    .roadmap-grid{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap:18px;
+    }
+    @media (max-width: 720px){
+      .roadmap-grid{ grid-template-columns: 1fr; }
+    }
+    .rm-card{
+      background:#101010;
+      border:1px solid #3a0000;
+      border-radius:14px;
+      padding:16px;
+    }
+    .rm-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:10px;
+    }
+    .rm-quarter{
+      font-size:18px;
+      font-weight:800;
+      color:#ff3b3b;
+      margin:0;
+    }
+    .rm-status{
+      font-size:12px;
+      font-weight:800;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid #660000;
+      background:#2b0000;
+      color:#f0f0f0;
+      white-space:nowrap;
+    }
+    .rm-list{
+      margin:0;
+      padding-left:18px;
+      line-height:1.6;
+    }
+    .rm-list li{ margin:6px 0; }
 
-    <div class="rm-card">
-      <div class="rm-head">
-        <p class="rm-quarter" id="rm-q3-title">Q3 (Közösség)</p>
-        <span class="rm-status" id="rm-q3-status">Tervezett</span>
-      </div>
-      <ul class="rm-list" id="rm-q3-list">
-        <li>Közösségi kampányok + edukációs tartalmak</li>
-        <li>Partnerségek / együttműködések feltérképezése</li>
-        <li>Biztonsági ellenőrzések és folyamatok erősítése</li>
-      </ul>
-    </div>
-
-    <div class="rm-card">
-      <div class="rm-head">
-        <p class="rm-quarter" id="rm-q4-title">Q4 (Növekedés)</p>
-        <span class="rm-status" id="rm-q4-status">Tervezett</span>
-      </div>
-      <ul class="rm-list" id="rm-q4-list">
-        <li>Likviditás és forgalom bővítése</li>
-        <li>Ökoszisztéma-fejlesztési lehetőségek (dApp / utility)</li>
-        <li>Felkészülés további listázásokra és integrációkra</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
+    /* mobile header nicer */
+    @media (max-width: 600px) {
+      header { gap: 10px; }
+      nav { width: 100%; justify-content: center; }
+      header h1 { width: 100%; text-align: center; }
+      .social-icons { width: 100%; justify-content: center; margin-left: 0; }
+      header img { margin: 0 auto; }
+      main { padding: 16px; }
+    }
+  </style>
 </head>
 
 <body>
-
-<header>
-  <img src="bloody_rubynts_logo.png" alt="Bloody Rubynts Logo">
-  <h1 id="site-title">Bloody Rubynts (BR)</h1>
+  <header>
+    <img src="bloody_rubynts_logo.png" alt="Bloody Rubynts Logo" />
+    <h1 id="site-title">Bloody Rubynts (BR)</h1>
 
     <nav>
-        <a href="#project" id="nav-project">Projekt</a>
-        <a href="#token" id="nav-token">Token Info</a>
-        <a href="#docs" id="nav-docs">Dokumentáció</a>
-        <a href="#contact" id="nav-contact">Kapcsolat</a>
-        <a href="#security" id="nav-security">Biztonság</a>
-        <a href="#faq" id="nav-faq">GYIK</a>
+      <a href="#project" id="nav-project">Projekt</a>
+      <a href="#token" id="nav-token">Token Info</a>
+      <a href="#howtobuy" id="nav-how">How to Buy</a>
+      <a href="#roadmap" id="nav-roadmap">Roadmap</a>
+      <a href="#docs" id="nav-docs">Dokumentáció</a>
+      <a href="#contact" id="nav-contact">Kapcsolat</a>
+      <a href="#security" id="nav-security">Biztonság</a>
 
-    </nav>
-</header>
-
-<main>
-
-<section id="project">
-    <h2 id="project-title">Projekt</h2>
-    <p id="project-desc">
-        A Bloody Rubynts (BR) egy ERC-20 token a Polygon hálózaton,
-        célja a decentralizált gazdasági rendszer támogatása és
-        közösségi értékteremtés.
-    </p>
-</section>
-
-<section id="token">
-    <h2 id="token-title">Token információk</h2>
-    <ul>
-        <li>Token név: Bloody Rubynts (BR)</li>
-        <li>Teljes mennyiség: 100,000,000,000 BR</li>
-        <li>Hálózat: Polygon</li>
-        <li>Decimals: 18</li>
-    </ul>
-</section>
-<section id="howtobuy">
-  <h2 id="how-title">Hogyan vásárolj (How to Buy)</h2>
-  <ol id="how-list">
-    <li>Nyisd meg a QuickSwap / Uniswap oldalt Polygon hálózaton.</li>
-    <li>Csatlakoztasd a tárcádat (MetaMask).</li>
-    <li>Válts POL/WPOL → BR (kis összeggel teszteld először).</li>
-    <li>Ellenőrizd a tranzakciót Polygonscan-en.</li>
-  </ol>
-<section id="howtobuy">
-  <h2 id="howtobuy-title">Hogyan vásárolj BR-t</h2>
-
-  <div class="steps">
-    <div class="step-card">
-      <div class="step-icon">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/metamask.svg" alt="MetaMask">
-      </div>
-      <div>
-        <h3 class="step-title" id="htb-1-title">1) Készíts MetaMask tárcát</h3>
-        <p class="step-text" id="htb-1-text">Telepítsd a MetaMask-ot, hozz létre tárcát, és írd fel biztonságosan a seed phrase-t (soha ne oszd meg).</p>
-      </div>
-    </div>
-
-    <div class="step-card">
-      <div class="step-icon">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/polygon.svg" alt="Polygon">
-      </div>
-      <div>
-        <h3 class="step-title" id="htb-2-title">2) Válts Polygon hálózatra</h3>
-        <p class="step-text" id="htb-2-text">A MetaMask-ban válaszd ki a Polygon hálózatot. Kis díjakhoz szükséged lesz POL-ra (gas).</p>
-      </div>
-    </div>
-
-    <div class="step-card">
-      <div class="step-icon">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/quickswap.svg" alt="QuickSwap">
-      </div>
-      <div>
-        <h3 class="step-title" id="htb-3-title">3) Nyisd meg a QuickSwap Pool / Swap felületet</h3>
-        <p class="step-text" id="htb-3-text">Csatlakoztasd a tárcád, keresd meg a BR tokent, és állítsd be a BR/WPOL párt.</p>
-        <p class="step-text step-links" id="htb-3-links">
-          Linkek: <a href="#socials">Közösségi linkek</a> / <a href="#token">Token info</a>
-        </p>
-      </div>
-    </div>
-
-    <div class="step-card">
-      <div class="step-icon">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/uniswap.svg" alt="Uniswap">
-      </div>
-      <div>
-        <h3 class="step-title" id="htb-4-title">4) Cserélj (Swap) POL/WPOL → BR</h3>
-        <p class="step-text" id="htb-4-text">Add meg az összeget, ellenőrizd a contract címet, hagyd jóvá (Approve), majd erősítsd meg a cserét (Confirm).</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="step-note">
-    <strong id="htb-note-title">Biztonsági tipp:</strong>
-    <span id="htb-note-text">Mindig ellenőrizd a token contract címet a PolygonScan-en, és csak hivatalos linkeket használj.</span>
-  </div>
-</section>
-
-
-<section id="roadmap">
-    <h2 id="roadmap-title">Roadmap</h2>
-
-    <div class="roadmap-grid">
-
-        <div class="roadmap-card">
-            <h3>Q1 – Alapok & Indulás</h3>
-            <ul>
-                <li>ERC-20 token deploy Polygonon</li>
-                <li>Smart contract verifikáció</li>
-                <li>Likviditás biztosítása (DEX)</li>
-                <li>Weboldal elindítása</li>
-                <li>CoinGecko / CoinMarketCap beadás</li>
-            </ul>
-        </div>
-
-        <div class="roadmap-card">
-            <h3>Q2 – Közösség & Átláthatóság</h3>
-            <ul>
-                <li>Dokumentáció és oktató anyagok</li>
-                <li>Nyilvános holder és forgalomfigyelés</li>
-                <li>Közösségi csatornák fejlesztése</li>
-                <li>Stabil likviditás fenntartása</li>
-            </ul>
-        </div>
-
-        <div class="roadmap-card">
-            <h3>Q3 – Hasznosság & Fejlődés</h3>
-            <ul>
-                <li>Token hasznosság bővítése</li>
-                <li>Közösségi kezdeményezések</li>
-                <li>Együttműködések</li>
-                <li>Weboldal funkciók bővítése</li>
-            </ul>
-        </div>
-
-        <div class="roadmap-card">
-            <h3>Q4 – Fenntartható Növekedés</h3>
-            <ul>
-                <li>Hosszú távú közösségi modell</li>
-                <li>Átlátható token irányelvek</li>
-                <li>További listázási lehetőségek</li>
-                <li>Projekt jövőkép frissítése</li>
-            </ul>
-        </div>
-
-    </div>
-</section>
-
-  <h2 id="roadmap-title">Roadmap</h2>
-  <ul id="roadmap-list">
-    <li><b>Q1:</b> Alap infrastruktúra (web, explorer, közösségi csatornák), stabil likviditás.</li>
-    <li><b>Q2:</b> Oktató anyagok, közösségi bővítés, átláthatósági riportok.</li>
-    <li><b>Q3:</b> Integrációk és egyszerű eszközök (pl. dashboard), partneri lehetőségek feltérképezése.</li>
-    <li><b>Q4:</b> Skálázás és hosszabb távú terv (mainnet stratégia és kockázatkezelés).</li>
-  </ul>
-</section>
-
-<section id="links">
-  <h2 id="links-title">Linkek</h2>
-    <section id="security">
-  <h2 id="sec-title">Biztonság és átláthatóság</h2>
-
-  <p id="sec-text">
-    A Bloody Rubynts (BR) egy Polygon hálózaton futó ERC-20 token. A szerződés forráskódja ellenőrzött a Polygonscan-en.
-  </p>
-
-  <ul>
-    <li><b>Contract:</b> <code>0x3005ef86386858a31d76f4cef03d435Ad86A8E88</code></li>
-    <li><b>Explorer:</b> <a href="https://polygonscan.com/token/0x3005ef86386858a31d76f4cef03d435Ad86A8E88" target="_blank" rel="noopener">Polygonscan token page</a></li>
-    <li><b>Holders:</b> <a href="https://polygonscan.com/token/0x3005ef86386858a31d76f4cef03d435Ad86A8E88#balances" target="_blank" rel="noopener">Top holders / balances</a></li>
-    <li><b>Transfers:</b> <a href="https://polygonscan.com/token/0x3005ef86386858a31d76f4cef03d435Ad86A8E88#tokentxns" target="_blank" rel="noopener">Token transfers</a></li>
-  </ul>
-</section>
-  <ul>
-    <li><b>Website:</b> <a href="https://zsoltanett2025.github.io/bloody-rubynts/" target="_blank" rel="noopener">GitHub Pages</a></li>
-    <li><b>Explorer (Token):</b> <a href="https://polygonscan.com/token/0x3005ef86386858a31d76f4cef03d435Ad86A8E88" target="_blank" rel="noopener">Polygonscan</a></li>
-    <li><b>Contract address:</b> <code>0x3005ef86386858a31d76f4cef03d435Ad86A8E88</code></li>
-    <li><b>GitHub:</b> <a href="https://github.com/zsoltanett2025/bloody-rubynts" target="_blank" rel="noopener">Repository</a></li>
-    <li><b>TikTok:</b> <a href="https://www.tiktok.com/@bloodyr666" target="_blank" rel="noopener">@bloodyr666</a></li>
-  </ul>
-</section>
-
-<section id="docs">
-    <h2 id="docs-title">Dokumentáció</h2>
-    <a href="Bloody_Rubynts_Documentation.pdf" class="pdf-link" download>
-        Letöltés PDF formátumban
-    </a>
-</section>
-
-<section id="contact">
-    <h2 id="contact-title">Kapcsolat</h2>
-    <p>Email:
-        <a href="mailto:contact@bloodyrubynts.com">
-            contact@bloodyrubynts.com
+      <!-- Social icons -->
+      <div class="social-icons" aria-label="Social Links">
+        <a href="https://x.com/BloodyRubynt" target="_blank" rel="noopener" aria-label="X">
+          <i class="fa-brands fa-x-twitter"></i>
         </a>
-    </p>
-</section>
+        <a href="https://www.reddit.com/r/BloodyRubynt/" target="_blank" rel="noopener" aria-label="Reddit">
+          <i class="fa-brands fa-reddit-alien"></i>
+        </a>
+        <a href="https://tiktok.com/@bloodyr666" target="_blank" rel="noopener" aria-label="TikTok">
+          <i class="fa-brands fa-tiktok"></i>
+        </a>
+        <a href="https://t.me/BloodyRubynts" target="_blank" rel="noopener" aria-label="Telegram">
+          <i class="fa-brands fa-telegram"></i>
+        </a>
+      </div>
+    </nav>
+  </header>
 
-</main>
+  <main>
+    <section id="project">
+      <h2 id="project-title">Projekt</h2>
+      <p id="project-desc">
+        A Bloody Rubynts (BR) egy ERC-20 token a Polygon hálózaton, célja a decentralizált gazdasági rendszer támogatása
+        és a közösségi értékteremtés.
+      </p>
+    </section>
 
-<footer>
+    <section id="token">
+      <h2 id="token-title">Token információk</h2>
+      <ul id="token-list">
+        <li><b>Token név:</b> Bloody Rubynts (BR)</li>
+        <li><b>Teljes mennyiség:</b> 100,000,000,000 BR</li>
+        <li><b>Hálózat:</b> Polygon</li>
+        <li><b>Decimals:</b> 18</li>
+        <li><b>Contract:</b> <code>0x3005ef86386858a31d76f4cef03d435Ad86A8E88</code></li>
+      </ul>
+    </section>
+
+    <section id="howtobuy">
+      <h2 id="howtobuy-title">Hogyan vásárolj BR-t</h2>
+
+      <div class="steps">
+        <div class="step-card">
+          <div class="step-icon"><i class="fa-solid fa-wallet"></i></div>
+          <div>
+            <h3 class="step-title" id="htb-1-title">1) Tárca (MetaMask)</h3>
+            <p class="step-text" id="htb-1-text">
+              Telepítsd a MetaMask-ot, hozz létre tárcát, és a seed phrase-t soha ne oszd meg.
+            </p>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-icon"><i class="fa-brands fa-connectdevelop"></i></div>
+          <div>
+            <h3 class="step-title" id="htb-2-title">2) Polygon hálózat</h3>
+            <p class="step-text" id="htb-2-text">
+              Válts Polygon hálózatra. A tranzakciók díjához szükséged lesz POL-ra.
+            </p>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-icon"><i class="fa-solid fa-right-left"></i></div>
+          <div>
+            <h3 class="step-title" id="htb-3-title">3) QuickSwap / Uniswap</h3>
+            <p class="step-text" id="htb-3-text">
+              Nyisd meg a DEX-et Polygonon, csatlakoztasd a tárcád, és válaszd a BR tokent.
+            </p>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-icon"><i class="fa-solid fa-check"></i></div>
+          <div>
+            <h3 class="step-title" id="htb-4-title">4) Swap POL/WPOL → BR</h3>
+            <p class="step-text" id="htb-4-text">
+              Kis összeggel tesztelj először. Tranzakció ellenőrzése Polygonscan-en.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-note">
+        <b id="htb-note-title">Biztonsági tipp:</b>
+        <span id="htb-note-text">Mindig ellenőrizd a contract címet Polygonscan-en, és csak hivatalos linkeket használj.</span>
+      </div>
+    </section>
+
+    <section id="roadmap">
+      <h2 id="roadmap-title">Roadmap</h2>
+
+      <div class="roadmap-grid">
+        <div class="rm-card">
+          <div class="rm-head">
+            <p class="rm-quarter" id="rm-q1-title">Q1 (Alapok)</p>
+            <span class="rm-status" id="rm-q1-status">Készül</span>
+          </div>
+          <ul class="rm-list" id="rm-q1-list">
+            <li>Token telepítés + verifikáció Polygonon</li>
+            <li>Alap weboldal + dokumentáció publikálás</li>
+            <li>Kezdeti likviditás (QuickSwap / Uniswap)</li>
+          </ul>
+        </div>
+
+        <div class="rm-card">
+          <div class="rm-head">
+            <p class="rm-quarter" id="rm-q2-title">Q2 (Láthatóság)</p>
+            <span class="rm-status" id="rm-q2-status">Tervezett</span>
+          </div>
+          <ul class="rm-list" id="rm-q2-list">
+            <li>CoinGecko / CoinMarketCap beadások követése</li>
+            <li>Közösségi csatornák bővítése (X / Reddit / TikTok)</li>
+            <li>How to Buy + átláthatóság finomítás</li>
+          </ul>
+        </div>
+
+        <div class="rm-card">
+          <div class="rm-head">
+            <p class="rm-quarter" id="rm-q3-title">Q3 (Közösség)</p>
+            <span class="rm-status" id="rm-q3-status">Tervezett</span>
+          </div>
+          <ul class="rm-list" id="rm-q3-list">
+            <li>Oktató és közösségi tartalmak</li>
+            <li>Partnerségek feltérképezése</li>
+            <li>Biztonsági folyamatok erősítése</li>
+          </ul>
+        </div>
+
+        <div class="rm-card">
+          <div class="rm-head">
+            <p class="rm-quarter" id="rm-q4-title">Q4 (Növekedés)</p>
+            <span class="rm-status" id="rm-q4-status">Tervezett</span>
+          </div>
+          <ul class="rm-list" id="rm-q4-list">
+            <li>Likviditás és forgalom bővítése</li>
+            <li>Ökoszisztéma lehetőségek (utility / dApp)</li>
+            <li>Felkészülés további listázásokra</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="security">
+      <h2 id="sec-title">Biztonság és átláthatóság</h2>
+      <p id="sec-text">
+        A Bloody Rubynts (BR) egy Polygon hálózaton futó ERC-20 token. A szerződés forráskódja ellenőrzött a Polygonscan-en.
+      </p>
+      <ul>
+        <li><b>Explorer (Token):</b>
+          <a href="https://polygonscan.com/token/0x3005ef86386858a31d76f4cef03d435Ad86A8E88" target="_blank" rel="noopener">
+            Polygonscan token page
+          </a>
+        </li>
+        <li><b>Holders:</b>
+          <a href="https://polygonscan.com/token/0x3005ef86386858a31d76f4cef03d435Ad86A8E88#balances" target="_blank" rel="noopener">
+            Top holders / balances
+          </a>
+        </li>
+        <li><b>Transfers:</b>
+          <a href="https://polygonscan.com/token/0x3005ef86386858a31d76f4cef03d435Ad86A8E88#tokentxns" target="_blank" rel="noopener">
+            Token transfers
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section id="docs">
+      <h2 id="docs-title">Dokumentáció</h2>
+      <a href="Bloody_Rubynts_Documentation.pdf" class="pdf-link" download id="docs-link">Letöltés PDF formátumban</a>
+    </section>
+
+    <section id="contact">
+      <h2 id="contact-title">Kapcsolat</h2>
+      <p>Email: <a href="mailto:contact@bloodyrubynts.com">contact@bloodyrubynts.com</a></p>
+    </section>
+  </main>
+
+  <footer>
     &copy; 2025 Bloody Rubynts. Minden jog fenntartva.
-</footer>
+  </footer>
 
-<script>
-const lang = (navigator.language || navigator.userLanguage || 'hu').toLowerCase();
+  <script>
+    const lang = (navigator.language || navigator.userLanguage || 'hu').toLowerCase();
 
-if (lang.startsWith('en')) {document.getElementById('nav-security').textContent = 'Security';
-document.getElementById('sec-title').textContent = 'Security & Transparency';
-document.getElementById('sec-text').textContent =
-  'Bloody Rubynts (BR) is an ERC-20 token on Polygon. The contract source code is verified on Polygonscan.';}
-document.getElementById('nav-how').textContent = 'How to Buy';
-document.getElementById('nav-roadmap').textContent = 'Roadmap';
-document.getElementById('nav-links').textContent = 'Links';
+    if (lang.startsWith('en')) {
+      document.getElementById('nav-project').textContent = 'Project';
+      document.getElementById('nav-token').textContent = 'Token Info';
+      document.getElementById('nav-how').textContent = 'How to Buy';
+      document.getElementById('nav-roadmap').textContent = 'Roadmap';
+      document.getElementById('nav-docs').textContent = 'Documentation';
+      document.getElementById('nav-contact').textContent = 'Contact';
+      document.getElementById('nav-security').textContent = 'Security';
 
-document.getElementById('how-title').textContent = 'How to Buy';
-document.getElementById('how-list').innerHTML = `
-  <li>Open QuickSwap / Uniswap on the Polygon network.</li>
-  <li>Connect your wallet (MetaMask).</li>
-  <li>Swap POL/WPOL → BR (test with a small amount first).</li>
-  <li>Verify the transaction on Polygonscan.</li>
-`;
+      document.getElementById('project-title').textContent = 'Project';
+      document.getElementById('project-desc').textContent =
+        'Bloody Rubynts (BR) is an ERC-20 token on the Polygon network focused on community-driven value creation, transparency, and accessibility.';
 
-document.getElementById('roadmap-title').textContent = 'Roadmap';
-document.getElementById('roadmap-list').innerHTML = `
-  <li><b>Q1:</b> Core infrastructure (website, explorer, social channels), stable liquidity.</li>
-  <li><b>Q2:</b> Educational content, community growth, transparency reports.</li>
-  <li><b>Q3:</b> Integrations and simple tools (e.g., dashboard), partnership exploration.</li>
-  <li><b>Q4:</b> Scaling and long-term strategy (mainnet plan and risk management).</li>
-`;
-<script>
-if (lang.startsWith('en')) {
-  document.getElementById('roadmap-title').textContent = 'Roadmap';
+      document.getElementById('token-title').textContent = 'Token Information';
 
-  document.getElementById('rm-q1-title').textContent = 'Q1 (Foundation)';
-  document.getElementById('rm-q1-status').textContent = 'In progress';
-  document.getElementById('rm-q1-list').innerHTML = `
-    <li>Deploy + verify token contract on Polygon</li>
-    <li>Publish basic website + documentation</li>
-    <li>Initial liquidity (QuickSwap / Uniswap)</li>
-  `;
+      document.getElementById('howtobuy-title').textContent = 'How to Buy BR';
+      document.getElementById('htb-1-title').textContent = '1) Wallet (MetaMask)';
+      document.getElementById('htb-1-text').textContent = 'Install MetaMask, create a wallet, and never share your seed phrase.';
+      document.getElementById('htb-2-title').textContent = '2) Switch to Polygon';
+      document.getElementById('htb-2-text').textContent = 'Use Polygon network. You need POL for transaction fees (gas).';
+      document.getElementById('htb-3-title').textContent = '3) QuickSwap / Uniswap';
+      document.getElementById('htb-3-text').textContent = 'Open the DEX on Polygon, connect your wallet, and select BR.';
+      document.getElementById('htb-4-title').textContent = '4) Swap POL/WPOL → BR';
+      document.getElementById('htb-4-text').textContent = 'Test with a small amount first and verify the transaction on Polygonscan.';
+      document.getElementById('htb-note-title').textContent = 'Security tip:';
+      document.getElementById('htb-note-text').textContent = 'Always verify the contract address on Polygonscan and use official links only.';
 
-  document.getElementById('rm-q2-title').textContent = 'Q2 (Visibility)';
-  document.getElementById('rm-q2-status').textContent = 'Planned';
-  document.getElementById('rm-q2-list').innerHTML = `
-    <li>Track CoinGecko / CoinMarketCap submissions</li>
-    <li>Expand social channels (X / Reddit / TikTok)</li>
-    <li>Refine tokenomics transparency + “How to Buy”</li>
-  `;
+      document.getElementById('roadmap-title').textContent = 'Roadmap';
 
-  document.getElementById('rm-q3-title').textContent = 'Q3 (Community)';
-  document.getElementById('rm-q3-status').textContent = 'Planned';
-  document.getElementById('rm-q3-list').innerHTML = `
-    <li>Community campaigns + educational content</li>
-    <li>Explore partnerships / collaborations</li>
-    <li>Strengthen security checks and processes</li>
-  `;
+      document.getElementById('rm-q1-title').textContent = 'Q1 (Foundation)';
+      document.getElementById('rm-q1-status').textContent = 'In progress';
+      document.getElementById('rm-q1-list').innerHTML = `
+        <li>Deploy + verify token contract on Polygon</li>
+        <li>Publish basic website + documentation</li>
+        <li>Initial liquidity (QuickSwap / Uniswap)</li>
+      `;
 
-  document.getElementById('rm-q4-title').textContent = 'Q4 (Growth)';
-  document.getElementById('rm-q4-status').textContent = 'Planned';
-  document.getElementById('rm-q4-list').innerHTML = `
-    <li>Grow liquidity and trading volume</li>
-    <li>Ecosystem expansion options (dApp / utility)</li>
-    <li>Prepare for additional listings and integrations</li>
-  `;
-}
-</script>
-    
+      document.getElementById('rm-q2-title').textContent = 'Q2 (Visibility)';
+      document.getElementById('rm-q2-status').textContent = 'Planned';
+      document.getElementById('rm-q2-list').innerHTML = `
+        <li>Track CoinGecko / CoinMarketCap submissions</li>
+        <li>Expand social channels (X / Reddit / TikTok)</li>
+        <li>Refine “How to Buy” and transparency</li>
+      `;
 
-document.getElementById('links-title').textContent = 'Links';
-                           }
-  // NAV + címek
-  document.getElementById('site-title').textContent = 'Bloody Rubynts (BR)';
-  document.getElementById('nav-project').textContent = 'Project';
-  document.getElementById('nav-token').textContent = 'Token Info';
-  document.getElementById('nav-docs').textContent = 'Documentation';
-  document.getElementById('nav-contact').textContent = 'Contact';
+      document.getElementById('rm-q3-title').textContent = 'Q3 (Community)';
+      document.getElementById('rm-q3-status').textContent = 'Planned';
+      document.getElementById('rm-q3-list').innerHTML = `
+        <li>Educational and community content</li>
+        <li>Explore partnerships and collaborations</li>
+        <li>Strengthen security processes</li>
+      `;
 
-  // Projekt
-  document.getElementById('project-title').textContent = 'Project';
-  document.getElementById('project-desc').textContent =
-    'Bloody Rubynts (BR) is an ERC-20 token on the Polygon network, aiming to support decentralized economic systems and community value creation.';
+      document.getElementById('rm-q4-title').textContent = 'Q4 (Growth)';
+      document.getElementById('rm-q4-status').textContent = 'Planned';
+      document.getElementById('rm-q4-list').innerHTML = `
+        <li>Grow liquidity and trading volume</li>
+        <li>Ecosystem options (utility / dApp)</li>
+        <li>Prepare for further listings and integrations</li>
+      `;
 
-  // Token
-  document.getElementById('token-title').textContent = 'Token Information';
-  document.getElementById('docs-title').textContent = 'Documentation';
-  document.getElementById('docs').querySelector('.pdf-link').textContent = 'Download PDF';
-  document.getElementById('contact-title').textContent = 'Contact';
+      document.getElementById('sec-title').textContent = 'Security & Transparency';
+      document.getElementById('sec-text').textContent =
+        'Bloody Rubynts (BR) is an ERC-20 token on Polygon. The contract source code is verified on Polygonscan.';
 
-  // HOW TO BUY (ha létezik a szekció)
-  const how = document.querySelector('#howtobuy');
-  if (how) {
-    how.querySelector('h2').textContent = 'How to Buy Bloody Rubynts (BR)';
-    how.querySelector('ol').innerHTML = `
-      <li>Install a crypto wallet (e.g. MetaMask).</li>
-      <li>Set the Polygon network in your wallet.</li>
-      <li>Get POL tokens (from an exchange or another wallet).</li>
-      <li>Visit QuickSwap.</li>
-      <li>Swap POL for Bloody Rubynts (BR).</li>
-    `;
-    const p = how.querySelector('p');
-    if (p) {
-      p.innerHTML = '<strong>Token Contract Address:</strong><br>0x3005ef86386858a31d76f4cef03d435Ad86A8E88';
+      document.getElementById('docs-title').textContent = 'Documentation';
+      document.getElementById('docs-link').textContent = 'Download PDF';
+
+      document.getElementById('contact-title').textContent = 'Contact';
     }
-  }
-
-  // ROADMAP (ha létezik a szekció)
-  const rm = document.querySelector('#roadmap');
-  if (rm) {
-    rm.innerHTML = `
-      <h2>Roadmap</h2>
-
-      <h3>Q1 – Foundation</h3>
-      <ul>
-        <li>Token deployment on Polygon</li>
-        <li>Liquidity pool creation (QuickSwap)</li>
-        <li>Website and documentation</li>
-      </ul>
-
-      <h3>Q2 – Community & Visibility</h3>
-      <ul>
-        <li>Launch social channels</li>
-        <li>CoinGecko & CoinMarketCap submissions</li>
-        <li>Community feedback collection</li>
-      </ul>
-
-      <h3>Q3 – Stabilization & Expansion</h3>
-      <ul>
-        <li>Liquidity optimization</li>
-        <li>Partnership exploration</li>
-        <li>Website improvements</li>
-      </ul>
-
-      <h3>Q4 – Long-term Growth</h3>
-      <ul>
-        <li>Ecosystem expansion</li>
-        <li>New features and use-cases</li>
-        <li>Sustainable operations</li>
-      </ul>
-    `;
-  }
-}
-</script>
-
-
+  </script>
 </body>
 </html>
-<section id="howtobuy">
-    <h2>Hogyan vásárolj Bloody Rubynts (BR) tokent?</h2>
-    <ol>
-        <li>Telepíts egy kriptotárcát (pl. MetaMask).</li>
-        <li>Állítsd be a Polygon hálózatot a tárcádban.</li>
-        <li>Szerezz POL tokent (tőzsdéről vagy más tárcából).</li>
-        <li>Látogass el a QuickSwap oldalára.</li>
-        <li>Válts POL-t Bloody Rubynts (BR) tokenre.</li>
-    </ol>
-    <p><strong>Token szerződés címe:</strong><br>
-    0x3005ef86386858a31d76f4cef03d435Ad86A8E88</p>
-</section>
-
-<script>
-if(lang.startsWith('en')) {
-    document.querySelector('#howtobuy h2').textContent = 'How to Buy Bloody Rubynts (BR)';
-    document.querySelector('#howtobuy ol').innerHTML = `
-        <li>Install a crypto wallet (e.g. MetaMask).</li>
-        <li>Set Polygon network in your wallet.</li>
-        <li>Get POL tokens from an exchange or another wallet.</li>
-        <li>Visit QuickSwap.</li>
-        <li>Swap POL for Bloody Rubynts (BR).</li>
-<script>
-if (lang.startsWith('en')) {
-    document.getElementById('roadmap-title').textContent = 'Roadmap';
-
-    document.querySelectorAll('.roadmap-card')[0].querySelector('h3').textContent = 'Q1 – Foundation & Launch';
-    document.querySelectorAll('.roadmap-card')[0].querySelector('ul').innerHTML = `
-        <li>ERC-20 token deployment on Polygon</li>
-        <li>Smart contract verification</li>
-        <li>Initial DEX liquidity</li>
-        <li>Website launch</li>
-        <li>CoinGecko & CoinMarketCap submission</li>
-    `;
-
-    document.querySelectorAll('.roadmap-card')[1].querySelector('h3').textContent = 'Q2 – Community & Transparency';
-    document.querySelectorAll('.roadmap-card')[1].querySelector('ul').innerHTML = `
-        <li>Documentation & educational content</li>
-        <li>Public holder and transaction tracking</li>
-        <li>Community channel development</li>
-        <li>Liquidity stability</li>
-    `;
-
-    document.querySelectorAll('.roadmap-card')[2].querySelector('h3').textContent = 'Q3 – Utility & Development';
-    document.querySelectorAll('.roadmap-card')[2].querySelector('ul').innerHTML = `
-        <li>Expanded token utility</li>
-        <li>Community initiatives</li>
-        <li>Collaborations</li>
-        <li>Website feature upgrades</li>
-    `;
-
-    document.querySelectorAll('.roadmap-card')[3].querySelector('h3').textContent = 'Q4 – Sustainable Growth';
-    document.querySelectorAll('.roadmap-card')[3].querySelector('ul').innerHTML = `
-        <li>Long-term community model</li>
-        <li>Transparent token guidelines</li>
-        <li>Additional listing opportunities</li>
-        <li>Updated project vision</li>
-    `;
-}
-</script>
-
-}
-</script>
-<script>
-if(lang.startsWith('en')) {document.getElementById('nav-faq').textContent = 'FAQ';
-document.getElementById('faq-title').textContent = 'FAQ';
-
-document.getElementById('faq-q1').textContent = 'Where can I see BR activity?';
-document.getElementById('faq-a1').textContent = 'You can see all BR transfers on Polygonscan under “Token Transfers”. DEX activity can also be tracked via the pool/DEX interface.';
-
-document.getElementById('faq-q2').textContent = 'Where can I see holders?';
-document.getElementById('faq-a2').textContent = 'On the Polygonscan token page under “Holders / Balances”.';
-
-document.getElementById('faq-q3').textContent = 'Why is there no price in some apps yet?';
-document.getElementById('faq-a3').textContent = 'Price discovery needs liquidity and indexing. After a pool is live, data providers may take time to pick it up.';
-
-document.getElementById('faq-q4').textContent = 'How do I buy?';
-document.getElementById('faq-a4').textContent = 'On QuickSwap/Uniswap (Polygon): swap POL/WPOL → BR. Always test with a small amount first.';
-
-document.getElementById('disclaimer').innerHTML =
-  '<b>Disclaimer:</b> This website is for informational purposes only and is not investment advice. Crypto assets involve risk.';}
-
-    document.querySelector('#roadmap h2').textContent = 'Roadmap';
-
-    const roadmap = document.querySelector('#roadmap').innerHTML;
-    document.querySelector('#roadmap').innerHTML = `
-        <h2>Roadmap</h2>
-
-        <h3>Q1 – Foundation</h3>
-        <ul>
-            <li>Token deployment on Polygon</li>
-            <li>Liquidity pool creation (QuickSwap)</li>
-            <li>Website and documentation</li>
-        </ul>
-
-        <h3>Q2 – Community & Visibility</h3>
-        <ul>
-            <li>Launch social channels</li>
-            <li>CoinGecko & CoinMarketCap submissions</li>
-            <li>Community feedback collection</li>
-        </ul>
-
-        <h3>Q3 – Stabilization & Expansion</h3>
-        <ul>
-            <li>Liquidity optimization</li>
-            <li>Partnership exploration</li>
-            <li>Website improvements</li>
-        </ul>
-
-        <h3>Q4 – Long-term Growth</h3>
-        <ul>
-            <li>Ecosystem expansion</li>
-            <li>New features and use-cases</li>
-            <li>Sustainable operations</li>
-        </ul>
-    `;
-}
-</script>
-
-<section id="roadmap">
-    <h2>Roadmap</h2>
-
-    <h3>Q1 – Alapok lefektetése</h3>
-    <ul>
-        <li>Token deploy Polygon hálózaton</li>
-        <li>Liquidity pool létrehozása (QuickSwap)</li>
-        <li>Weboldal és dokumentáció</li>
-    </ul>
-
-    <h3>Q2 – Közösség és láthatóság</h3>
-    <ul>
-        <li>Social csatornák elindítása</li>
-        <li>CoinGecko és CoinMarketCap beadás</li>
-        <li>Közösségi visszajelzések gyűjtése</li>
-    </ul>
-
-    <h3>Q3 – Stabilizálás és bővítés</h3>
-    <ul>
-        <li>Likviditás finomhangolása</li>
-        <li>Partnerségek keresése</li>
-        <li>Weboldal fejlesztése</li>
-    </ul>
-
-    <h3>Q4 – Hosszú távú növekedés</h3>
-    <ul>
-        <li>Ökoszisztéma bővítése</li>
-        <li>Új funkciók és use-case-ek</li>
-        <li>Fenntartható működés</li>
-    </ul>
-<section id="socials">
-    <h2 id="socials-title">Közösség</h2>
-
-    <div class="social-icons">
-        <!-- X (Twitter) -->
-        <a href="https://x.com/BloodyRubynt" target="_blank" aria-label="X">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="X">
-        </a>
-
-        <!-- Reddit -->
-        <a href="https://www.reddit.com/r/BloodyRubynt/" target="_blank" aria-label="Reddit">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/reddit.svg" alt="Reddit">
-        </a>
-
-        <!-- TikTok -->
-        <a href="https://www.tiktok.com/@bloodyr666" target="_blank" aria-label="TikTok">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="TikTok">
-        </a>
-
-        <!-- Telegram (később is működik, ha most még nincs) -->
-        <a href="https://t.me/BloodyRubynts" target="_blank" aria-label="Telegram">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/telegram.svg" alt="Telegram">
-        </a>
-    </div>
-</section>
-
