@@ -36,7 +36,14 @@ nav a {
     font-weight: bold;
 }
 main {
-    padding: 40px;
+    padding: 20px; max-width: 980px; margin: 0 auto; }
+
+   @media (max-width: 600px) {
+  header { flex-wrap: wrap; gap: 10px; }
+  nav { width: 100%; margin-left: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+  main { padding: 16px; }
+}
+ 
 }
 section {
     margin-bottom: 40px;
@@ -92,6 +99,36 @@ footer {
         <li>Decimals: 18</li>
     </ul>
 </section>
+<section id="howtobuy">
+  <h2 id="how-title">Hogyan vásárolj (How to Buy)</h2>
+  <ol id="how-list">
+    <li>Nyisd meg a QuickSwap / Uniswap oldalt Polygon hálózaton.</li>
+    <li>Csatlakoztasd a tárcádat (MetaMask).</li>
+    <li>Válts POL/WPOL → BR (kis összeggel teszteld először).</li>
+    <li>Ellenőrizd a tranzakciót Polygonscan-en.</li>
+  </ol>
+</section>
+
+<section id="roadmap">
+  <h2 id="roadmap-title">Roadmap</h2>
+  <ul id="roadmap-list">
+    <li><b>Q1:</b> Alap infrastruktúra (web, explorer, közösségi csatornák), stabil likviditás.</li>
+    <li><b>Q2:</b> Oktató anyagok, közösségi bővítés, átláthatósági riportok.</li>
+    <li><b>Q3:</b> Integrációk és egyszerű eszközök (pl. dashboard), partneri lehetőségek feltérképezése.</li>
+    <li><b>Q4:</b> Skálázás és hosszabb távú terv (mainnet stratégia és kockázatkezelés).</li>
+  </ul>
+</section>
+
+<section id="links">
+  <h2 id="links-title">Linkek</h2>
+  <ul>
+    <li><b>Website:</b> <a href="https://zsoltanett2025.github.io/bloody-rubynts/" target="_blank" rel="noopener">GitHub Pages</a></li>
+    <li><b>Explorer (Token):</b> <a href="https://polygonscan.com/token/0x3005ef86386858a31d76f4cef03d435Ad86A8E88" target="_blank" rel="noopener">Polygonscan</a></li>
+    <li><b>Contract address:</b> <code>0x3005ef86386858a31d76f4cef03d435Ad86A8E88</code></li>
+    <li><b>GitHub:</b> <a href="https://github.com/zsoltanett2025/bloody-rubynts" target="_blank" rel="noopener">Repository</a></li>
+    <li><b>TikTok:</b> <a href="https://www.tiktok.com/@bloodyr666" target="_blank" rel="noopener">@bloodyr666</a></li>
+  </ul>
+</section>
 
 <section id="docs">
     <h2 id="docs-title">Dokumentáció</h2>
@@ -118,7 +155,28 @@ footer {
 <script>
 const lang = (navigator.language || navigator.userLanguage || 'hu').toLowerCase();
 
-if (lang.startsWith('en')) {
+if (lang.startsWith('en')) {document.getElementById('nav-how').textContent = 'How to Buy';
+document.getElementById('nav-roadmap').textContent = 'Roadmap';
+document.getElementById('nav-links').textContent = 'Links';
+
+document.getElementById('how-title').textContent = 'How to Buy';
+document.getElementById('how-list').innerHTML = `
+  <li>Open QuickSwap / Uniswap on the Polygon network.</li>
+  <li>Connect your wallet (MetaMask).</li>
+  <li>Swap POL/WPOL → BR (test with a small amount first).</li>
+  <li>Verify the transaction on Polygonscan.</li>
+`;
+
+document.getElementById('roadmap-title').textContent = 'Roadmap';
+document.getElementById('roadmap-list').innerHTML = `
+  <li><b>Q1:</b> Core infrastructure (website, explorer, social channels), stable liquidity.</li>
+  <li><b>Q2:</b> Educational content, community growth, transparency reports.</li>
+  <li><b>Q3:</b> Integrations and simple tools (e.g., dashboard), partnership exploration.</li>
+  <li><b>Q4:</b> Scaling and long-term strategy (mainnet plan and risk management).</li>
+`;
+
+document.getElementById('links-title').textContent = 'Links';
+                           }
   // NAV + címek
   document.getElementById('site-title').textContent = 'Bloody Rubynts (BR)';
   document.getElementById('nav-project').textContent = 'Project';
