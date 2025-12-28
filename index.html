@@ -246,6 +246,7 @@
       <a href="#contact" id="nav-contact">Kapcsolat</a>
       <a href="#security" id="nav-security">Biztonság</a>
       <a href="#early-reward" id="nav-reward">Bónusz</a>
+      <a href="#progress" id="nav-progress">Haladás</a>
 
       <!-- Social icons -->
       <div class="social-icons" aria-label="Social Links">
@@ -383,6 +384,67 @@
       Download full reward details (PDF)
     </a>
   </p>
+</section>
+
+   <section id="progress">
+  <h2 id="progress-title">Haladás / Work in Progress</h2>
+
+  <p id="progress-intro">
+    Itt naprakészen vezetjük a Bloody Rubynts (BR) projekt mérföldköveit és a fontos hivatkozásokat.
+  </p>
+
+  <div class="roadmap-grid">
+    <div class="rm-card">
+      <div class="rm-head">
+        <p class="rm-quarter" id="prog-now-title">Jelenlegi állapot</p>
+        <span class="rm-status" id="prog-now-status">Aktív</span>
+      </div>
+      <ul class="rm-list" id="prog-now-list">
+        <li>Weboldal él: <a href="https://bloodyruby.com" target="_blank" rel="noopener">bloodyruby.com</a></li>
+        <li>Token szerződés verifikálva PolygonScan-en</li>
+        <li>Likviditás elérhető (QuickSwap), on-chain forgalom látható</li>
+        <li>Dokumentumok: Dokumentáció / Bonus / Whitepaper (PDF)</li>
+      </ul>
+    </div>
+
+    <div class="rm-card">
+      <div class="rm-head">
+        <p class="rm-quarter" id="prog-links-title">Hivatalos linkek</p>
+        <span class="rm-status" id="prog-links-status">Publikus</span>
+      </div>
+      <ul class="rm-list" id="prog-links-list">
+        <li>Explorer: <a href="https://polygonscan.com/token/0x3005ef86386858a31d76f4cef03d435Ad86A8E88" target="_blank" rel="noopener">PolygonScan token oldal</a></li>
+        <li>Holders: <a href="https://polygonscan.com/token/0x3005ef86386858a31d76f4cef03d435Ad86A8E88#balances" target="_blank" rel="noopener">Top holders</a></li>
+        <li>Transfers: <a href="https://polygonscan.com/token/0x3005ef86386858a31d76f4cef03d435Ad86A8E88#tokentxns" target="_blank" rel="noopener">Token tranzakciók</a></li>
+        <li>X: <a href="https://x.com/BloodyRubynt" target="_blank" rel="noopener">@BloodyRubynt</a></li>
+        <li>Reddit: <a href="https://www.reddit.com/r/BloodyRubynt/" target="_blank" rel="noopener">r/BloodyRubynt</a></li>
+        <li>TikTok: <a href="https://www.tiktok.com/@bloodyr666" target="_blank" rel="noopener">@bloodyr666</a></li>
+      </ul>
+    </div>
+
+    <div class="rm-card">
+      <div class="rm-head">
+        <p class="rm-quarter" id="prog-submissions-title">Listázások státusza</p>
+        <span class="rm-status" id="prog-submissions-status">Folyamatban</span>
+      </div>
+      <ul class="rm-list" id="prog-submissions-list">
+        <li>CoinGecko: beadva, elbírálás alatt</li>
+        <li>CoinMarketCap: ticket megnyitva, egyeztetés folyamatban</li>
+      </ul>
+    </div>
+
+    <div class="rm-card">
+      <div class="rm-head">
+        <p class="rm-quarter" id="prog-next-title">Következő lépések</p>
+        <span class="rm-status" id="prog-next-status">Következik</span>
+      </div>
+      <ul class="rm-list" id="prog-next-list">
+        <li>Progress oldal bővítése dátumokkal + heti frissítéssel</li>
+        <li>How to Buy finomítás (tömörebb, képernyőbarát)</li>
+        <li>Később: Telegram csatorna + link a weben</li>
+      </ul>
+    </div>
+  </div>
 </section>
 
     <section id="roadmap">
@@ -554,9 +616,58 @@
   </footer>
 
   <script>
-    const lang = (navigator.language || navigator.userLanguage || 'hu').toLowerCase();
+const lang = (navigator.language || navigator.userLanguage || 'hu').toLowerCase();
 
-    if (lang.startsWith('en')) {
+if (lang.startsWith('en')) {
+  const navProgress = document.getElementById('nav-progress');
+  if (navProgress) navProgress.textContent = 'Progress';
+
+  const pt = document.getElementById('progress-title');
+  if (pt) pt.textContent = 'Progress / Work in Progress';
+
+  const pi = document.getElementById('progress-intro');
+  if (pi) pi.textContent = 'We track Bloody Rubynts (BR) milestones and official links here.';
+
+  const nowT = document.getElementById('prog-now-title');
+  const nowS = document.getElementById('prog-now-status');
+  const nowL = document.getElementById('prog-now-list');
+  if (nowT) nowT.textContent = 'Current status';
+  if (nowS) nowS.textContent = 'Active';
+  if (nowL) nowL.innerHTML = `
+    <li>Website live: <a href="https://bloodyruby.com" target="_blank" rel="noopener">bloodyruby.com</a></li>
+    <li>Token contract verified on PolygonScan</li>
+    <li>Liquidity available (QuickSwap), on-chain activity visible</li>
+    <li>Documents: Documentation / Bonus / Whitepaper (PDF)</li>
+  `;
+
+  const linksT = document.getElementById('prog-links-title');
+  const linksS = document.getElementById('prog-links-status');
+  if (linksT) linksT.textContent = 'Official links';
+  if (linksS) linksS.textContent = 'Public';
+
+  const subT = document.getElementById('prog-submissions-title');
+  const subS = document.getElementById('prog-submissions-status');
+  const subL = document.getElementById('prog-submissions-list');
+  if (subT) subT.textContent = 'Listings status';
+  if (subS) subS.textContent = 'In progress';
+  if (subL) subL.innerHTML = `
+    <li>CoinGecko: submitted, under review</li>
+    <li>CoinMarketCap: ticket opened, in discussion</li>
+  `;
+
+  const nextT = document.getElementById('prog-next-title');
+  const nextS = document.getElementById('prog-next-status');
+  const nextL = document.getElementById('prog-next-list');
+  if (nextT) nextT.textContent = 'Next steps';
+  if (nextS) nextS.textContent = 'Upcoming';
+  if (nextL) nextL.innerHTML = `
+    <li>Expand the Progress page with dates + weekly updates</li>
+    <li>Refine “How to Buy” (more compact and mobile-friendly)</li>
+    <li>Later: Telegram channel + link on the website</li>
+  `;
+}
+</script>
+
       document.getElementById('nav-project').textContent = 'Project';
       document.getElementById('nav-token').textContent = 'Token Info';
       document.getElementById('nav-how').textContent = 'How to Buy';
