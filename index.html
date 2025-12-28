@@ -615,131 +615,121 @@
     &copy; 2025 Bloody Rubynts. Minden jog fenntartva.
   </footer>
 
-  <script>
-const lang = (navigator.language || navigator.userLanguage || 'hu').toLowerCase();
+ <script>
+  const lang = (navigator.language || navigator.userLanguage || 'hu').toLowerCase();
 
-if (lang.startsWith('en')) {
-  const navProgress = document.getElementById('nav-progress');
-  if (navProgress) navProgress.textContent = 'Progress';
+  if (lang.startsWith('en')) {
+    // NAV
+    const set = (id, text) => { const el = document.getElementById(id); if (el) el.textContent = text; };
 
-  const pt = document.getElementById('progress-title');
-  if (pt) pt.textContent = 'Progress / Work in Progress';
+    set('nav-project', 'Project');
+    set('nav-token', 'Token Info');
+    set('nav-how', 'How to Buy');
+    set('nav-roadmap', 'Roadmap');
+    set('nav-docs', 'Documentation');
+    set('nav-contact', 'Contact');
+    set('nav-security', 'Security');
+    set('nav-reward', 'Reward');
+    set('nav-progress', 'Progress');
 
-  const pi = document.getElementById('progress-intro');
-  if (pi) pi.textContent = 'We track Bloody Rubynts (BR) milestones and official links here.';
+    // PROJECT
+    set('project-title', 'Project');
+    const pd = document.getElementById('project-desc');
+    if (pd) pd.textContent =
+      'Bloody Rubynts (BR) is an ERC-20 token on the Polygon network focused on community-driven value creation, transparency, and accessibility.';
 
-  const nowT = document.getElementById('prog-now-title');
-  const nowS = document.getElementById('prog-now-status');
-  const nowL = document.getElementById('prog-now-list');
-  if (nowT) nowT.textContent = 'Current status';
-  if (nowS) nowS.textContent = 'Active';
-  if (nowL) nowL.innerHTML = `
-    <li>Website live: <a href="https://bloodyruby.com" target="_blank" rel="noopener">bloodyruby.com</a></li>
-    <li>Token contract verified on PolygonScan</li>
-    <li>Liquidity available (QuickSwap), on-chain activity visible</li>
-    <li>Documents: Documentation / Bonus / Whitepaper (PDF)</li>
-  `;
+    // TOKEN
+    set('token-title', 'Token Information');
 
-  const linksT = document.getElementById('prog-links-title');
-  const linksS = document.getElementById('prog-links-status');
-  if (linksT) linksT.textContent = 'Official links';
-  if (linksS) linksS.textContent = 'Public';
+    // HOW TO BUY
+    set('howtobuy-title', 'How to Buy BR');
+    set('htb-1-title', '1) Wallet (MetaMask)');
+    set('htb-1-text', 'Install MetaMask, create a wallet, and never share your seed phrase.');
+    set('htb-2-title', '2) Switch to Polygon');
+    set('htb-2-text', 'Use Polygon network. You need POL for transaction fees (gas).');
+    set('htb-3-title', '3) QuickSwap / Uniswap');
+    set('htb-3-text', 'Open the DEX on Polygon, connect your wallet, and select BR.');
+    set('htb-4-title', '4) Swap POL/WPOL → BR');
+    set('htb-4-text', 'Test with a small amount first and verify the transaction on Polygonscan.');
+    set('htb-note-title', 'Security tip:');
+    set('htb-note-text', 'Always verify the contract address on Polygonscan and use official links only.');
 
-  const subT = document.getElementById('prog-submissions-title');
-  const subS = document.getElementById('prog-submissions-status');
-  const subL = document.getElementById('prog-submissions-list');
-  if (subT) subT.textContent = 'Listings status';
-  if (subS) subS.textContent = 'In progress';
-  if (subL) subL.innerHTML = `
-    <li>CoinGecko: submitted, under review</li>
-    <li>CoinMarketCap: ticket opened, in discussion</li>
-  `;
+    // ROADMAP
+    set('roadmap-title', 'Roadmap');
 
-  const nextT = document.getElementById('prog-next-title');
-  const nextS = document.getElementById('prog-next-status');
-  const nextL = document.getElementById('prog-next-list');
-  if (nextT) nextT.textContent = 'Next steps';
-  if (nextS) nextS.textContent = 'Upcoming';
-  if (nextL) nextL.innerHTML = `
-    <li>Expand the Progress page with dates + weekly updates</li>
-    <li>Refine “How to Buy” (more compact and mobile-friendly)</li>
-    <li>Later: Telegram channel + link on the website</li>
-  `;
-}
+    set('rm-q1-title', 'Q1 (Foundation)');
+    set('rm-q1-status', 'In progress');
+    const q1 = document.getElementById('rm-q1-list');
+    if (q1) q1.innerHTML = `
+      <li>Deploy + verify token contract on Polygon</li>
+      <li>Publish basic website + documentation</li>
+      <li>Initial liquidity (QuickSwap / Uniswap)</li>
+    `;
+
+    set('rm-q2-title', 'Q2 (Visibility)');
+    set('rm-q2-status', 'Planned');
+    const q2 = document.getElementById('rm-q2-list');
+    if (q2) q2.innerHTML = `
+      <li>Track CoinGecko / CoinMarketCap submissions</li>
+      <li>Expand social channels (X / Reddit / TikTok)</li>
+      <li>Refine “How to Buy” and transparency</li>
+    `;
+
+    set('rm-q3-title', 'Q3 (Community)');
+    set('rm-q3-status', 'Planned');
+    const q3 = document.getElementById('rm-q3-list');
+    if (q3) q3.innerHTML = `
+      <li>Educational and community content</li>
+      <li>Explore partnerships and collaborations</li>
+      <li>Strengthen security processes</li>
+    `;
+
+    set('rm-q4-title', 'Q4 (Growth)');
+    set('rm-q4-status', 'Planned');
+    const q4 = document.getElementById('rm-q4-list');
+    if (q4) q4.innerHTML = `
+      <li>Grow liquidity and trading volume</li>
+      <li>Ecosystem options (utility / dApp)</li>
+      <li>Prepare for further listings and integrations</li>
+    `;
+
+    // SECURITY
+    set('sec-title', 'Security & Transparency');
+    const st = document.getElementById('sec-text');
+    if (st) st.textContent =
+      'Bloody Rubynts (BR) is an ERC-20 token on Polygon. The contract source code is verified on Polygonscan.';
+
+    // PROGRESS
+    set('progress-title', 'Progress / Work in Progress');
+    const pi = document.getElementById('progress-intro');
+    if (pi) pi.textContent = 'We track Bloody Rubynts (BR) milestones and official links here.';
+
+    set('prog-now-title', 'Current status');
+    set('prog-now-status', 'Active');
+    const nowL = document.getElementById('prog-now-list');
+    if (nowL) nowL.innerHTML = `
+      <li>Website live: <a href="https://bloodyruby.com" target="_blank" rel="noopener">bloodyruby.com</a></li>
+      <li>Token contract verified on PolygonScan</li>
+      <li>Liquidity available (QuickSwap), on-chain activity visible</li>
+      <li>Documents: Documentation / Reward / Whitepaper (PDF)</li>
+    `;
+
+    set('prog-links-title', 'Official links');
+    set('prog-links-status', 'Public');
+
+    set('prog-submissions-title', 'Listings status');
+    set('prog-submissions-status', 'In progress');
+
+    set('prog-next-title', 'Next steps');
+    set('prog-next-status', 'Upcoming');
+
+    // DOCS title
+    set('docs-title', 'Documentation');
+
+    // CONTACT
+    set('contact-title', 'Contact');
+  }
 </script>
-const lang = (navigator.language || navigator.userLanguage || 'hu').toLowerCase();
-
-    if (lang.startsWith('en')) {
-      document.getElementById('nav-project').textContent = 'Project';
-      document.getElementById('nav-token').textContent = 'Token Info';
-      document.getElementById('nav-how').textContent = 'How to Buy';
-      document.getElementById('nav-roadmap').textContent = 'Roadmap';
-      document.getElementById('nav-docs').textContent = 'Documentation';
-      document.getElementById('nav-contact').textContent = 'Contact';
-      document.getElementById('nav-security').textContent = 'Security';
-      document.getElementById('nav-reward').textContent = 'Reward';
-
-      document.getElementById('project-title').textContent = 'Project';
-      document.getElementById('project-desc').textContent =
-        'Bloody Rubynts (BR) is an ERC-20 token on the Polygon network focused on community-driven value creation, transparency, and accessibility.';
-
-      document.getElementById('token-title').textContent = 'Token Information';
-
-      document.getElementById('howtobuy-title').textContent = 'How to Buy BR';
-      document.getElementById('htb-1-title').textContent = '1) Wallet (MetaMask)';
-      document.getElementById('htb-1-text').textContent = 'Install MetaMask, create a wallet, and never share your seed phrase.';
-      document.getElementById('htb-2-title').textContent = '2) Switch to Polygon';
-      document.getElementById('htb-2-text').textContent = 'Use Polygon network. You need POL for transaction fees (gas).';
-      document.getElementById('htb-3-title').textContent = '3) QuickSwap / Uniswap';
-      document.getElementById('htb-3-text').textContent = 'Open the DEX on Polygon, connect your wallet, and select BR.';
-      document.getElementById('htb-4-title').textContent = '4) Swap POL/WPOL → BR';
-      document.getElementById('htb-4-text').textContent = 'Test with a small amount first and verify the transaction on Polygonscan.';
-      document.getElementById('htb-note-title').textContent = 'Security tip:';
-      document.getElementById('htb-note-text').textContent = 'Always verify the contract address on Polygonscan and use official links only.';
-
-      document.getElementById('roadmap-title').textContent = 'Roadmap';
-
-      document.getElementById('rm-q1-title').textContent = 'Q1 (Foundation)';
-      document.getElementById('rm-q1-status').textContent = 'In progress';
-      document.getElementById('rm-q1-list').innerHTML = `
-        <li>Deploy + verify token contract on Polygon</li>
-        <li>Publish basic website + documentation</li>
-        <li>Initial liquidity (QuickSwap / Uniswap)</li>
-      `;
-
-      document.getElementById('rm-q2-title').textContent = 'Q2 (Visibility)';
-      document.getElementById('rm-q2-status').textContent = 'Planned';
-      document.getElementById('rm-q2-list').innerHTML = `
-        <li>Track CoinGecko / CoinMarketCap submissions</li>
-        <li>Expand social channels (X / Reddit / TikTok)</li>
-        <li>Refine “How to Buy” and transparency</li>
-      `;
-
-      document.getElementById('rm-q3-title').textContent = 'Q3 (Community)';
-      document.getElementById('rm-q3-status').textContent = 'Planned';
-      document.getElementById('rm-q3-list').innerHTML = `
-        <li>Educational and community content</li>
-        <li>Explore partnerships and collaborations</li>
-        <li>Strengthen security processes</li>
-      `;
-
-      document.getElementById('rm-q4-title').textContent = 'Q4 (Growth)';
-      document.getElementById('rm-q4-status').textContent = 'Planned';
-      document.getElementById('rm-q4-list').innerHTML = `
-        <li>Grow liquidity and trading volume</li>
-        <li>Ecosystem options (utility / dApp)</li>
-        <li>Prepare for further listings and integrations</li>
-      `;
-
-      document.getElementById('sec-title').textContent = 'Security & Transparency';
-      document.getElementById('sec-text').textContent =
-        'Bloody Rubynts (BR) is an ERC-20 token on Polygon. The contract source code is verified on Polygonscan.';
-
-      document.getElementById('docs-title').textContent = 'Documentation';
-      document.getElementById('docs-link').textContent = 'Download PDF';
-
-      document.getElementById('contact-title').textContent = 'Contact';
-    }
-  </script>
+ 
 </body>
 </html>
