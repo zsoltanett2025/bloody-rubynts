@@ -667,7 +667,9 @@ if (lang.startsWith('en')) {
   `;
 }
 </script>
+const lang = (navigator.language || navigator.userLanguage || 'hu').toLowerCase();
 
+    if (lang.startsWith('en')) {
       document.getElementById('nav-project').textContent = 'Project';
       document.getElementById('nav-token').textContent = 'Token Info';
       document.getElementById('nav-how').textContent = 'How to Buy';
