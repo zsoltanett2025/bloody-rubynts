@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PWA Manifest Test</title>
+  <link rel="manifest" href="https://bloodyruby.com/manifest.json">
+</head>
+<body>
+  <h1>PWA Manifest Icon Test</h1>
+  <p>Ha az ikonok betöltődnek, látnod kell őket alább:</p>
+  <div id="icons"></div>
+
+  <script>
+    // Betölti a manifest-et és megjeleníti az ikonokat
+    fetch('https://bloodyruby.com/manifest.json')
+      .then(res => res.json())
+      .then(manifest => {
+        const container = document.getElementById('icons');
+        if (manifest.icons && manifest.icons.length > 0) {
+          manifest.icons.forEach(icon => {
+            const img = document.createElement('img');
+            img.src = 'https://bloodyruby.com' + icon.src; // teljes útvonal
+            img.width = 100; // preview méret
+            img.alt = icon.sizes + ' icon';
+            container.appendChild(img);
+          });
+        } else {
+          container.innerText = 'No icons found in manifest!';
+        }
+      })
+      .catch(err => {
+        console.error(err);
+        document.getElementById('icons').innerText = 'Error loading manifest.';
+      });
+  </script>
+</body>
+</html>
