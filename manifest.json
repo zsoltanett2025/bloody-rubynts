@@ -13,19 +13,20 @@
   "orientation": "any",
   "icons": [
     {
-      "src": "/icons/icon-192-maskable.png",
+      "src": "https://zsoltanett2025.github.io/bloody-rubynts/icons/icon-192-maskable.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "/icons/icon-512-maskable.png",
+      "src": "https://zsoltanett2025.github.io/bloody-rubynts/icons/icon-512-maskable.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
     }
   ]
 }
+
 
 
 
