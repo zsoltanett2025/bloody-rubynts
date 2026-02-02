@@ -1,19 +1,19 @@
-{
-  "background_color": "#000000",
-  "dir": "ltr",
-  "display": "standalone",
-  "name": "Bloody Rubynts",
-  "short_name": "BRX",
-  "id": "com.bloodyrubynts.app",
-  "start_url": "/",
-  "scope": "/",
-  "theme_color": "#8B0000",
-  "description": "Official Bloody Rubynts hub – updates, on-chain data and community info.",
-  "lang": "en",
-  "orientation": "any",
-  "icons": [
   {
-    "src": "https://zsoltanett2025.github.io/bloody-rubynts/icons/icon-192-maskable.png",
+    "background_color": "#000000",
+    "dir": "ltr",
+    "display": "standalone",
+    "name": "Bloody Rubynts",
+    "short_name": "BRX",
+    "id": "com.bloodyrubynts.app",
+    "start_url": "/",
+    "scope": "/",
+    "theme_color": "#8B0000",
+    "description": "Official Bloody Rubynts hub – updates, on-chain data and community info.",
+    "lang": "en",
+    "orientation": "any",
+    "icons": [
+  {
+    "src": "https://zsoltanett2025.github.io/bloody-rubynts/icons/icon-192-maskable.png",                                                            
     "sizes": "192x192",
     "type": "image/png",
     "purpose": "any maskable"
@@ -24,8 +24,8 @@
     "type": "image/png",
     "purpose": "any maskable"
   }
-]                     
-
+ ]                     
+}
 
 
 
