@@ -1106,7 +1106,38 @@
 
   </details>
 </article>
- 
+
+    <article class="update">
+  <details>
+    <summary>Weekly Summary #9 – Wallet + Withdraw System Added (Manual Payout) + Admin Panel</summary>
+
+    <p>
+      This week we shipped a major new foundation: the <strong>Wallet</strong> and a
+      <strong>manual BR withdrawal system</strong> with a clear payout process.
+      The goal was to keep it <strong>simple, trackable, and safe</strong> while we continue testing the live trial build.
+      Every withdrawal creates a request ID and can be emailed to support for a clean audit trail.
+    </p>
+
+    <p><strong>What’s new this week:</strong></p>
+    <ul>
+      <li><strong>Wallet modal implemented</strong> (connect/disconnect, dev-mode linking, Polygon chain check).</li>
+      <li><strong>Manual withdrawal requests added</strong> with a <strong>minimum payout of 100 BR</strong>.</li>
+      <li><strong>Payout message included</strong>: “Payout within 24–48 hours.” (visible in the wallet UI).</li>
+      <li><strong>Request ID + Email flow</strong> (copy request + mailto to <code>rubyntspayments@gmail.com</code>).</li>
+      <li><strong>Admin panel added</strong> (internal use) to review withdrawal requests.</li>
+      <li><strong>Admin dashboard stats</strong>: pending requests, <strong>total pending BR</strong>, total paid BR, all-time requested.</li>
+      <li><strong>Export tools</strong>: JSON export + CSV export for record keeping.</li>
+      <li><strong>Admin mode is local-only</strong> via <code>localStorage</code> flag (<code>br_admin</code>), so it’s not visible to normal players.</li>
+    </ul>
+
+    <p><strong>Notes / Next steps:</strong></p>
+    <ul>
+      <li>Run a few real-world withdrawal tests end-to-end and validate the tracking flow.</li>
+      <li>Decide whether to close the trial build after ~8 days and evaluate results (analytics + community feedback).</li>
+      <li>Continue polishing UX on mobile and ensure all modals behave consistently across screens.</li>
+    </ul>
+  </details>
+</article>
   </section>
 
 <section id="youtube">
