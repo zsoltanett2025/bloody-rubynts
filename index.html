@@ -157,7 +157,8 @@
       padding:16px;
       display:flex;
       gap:14px;
-     align-items:flex-start;
+      align-items:flex-start;
+      box-shadow: 0 0 25px rgba(255,0,0,0.12);
 }
     .step-icon{
       width:46px; height:46px;
@@ -341,57 +342,77 @@
 
     /* RUBY ANIMATION */
 
-.ruby-rain{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  pointer-events:none;
-  overflow:hidden;
-  z-index:1;
+
+    .ruby-rain{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
 }
 
 .ruby{
-  position:absolute;
-  width:42px;
-  animation:fall linear infinite;
-  opacity:0.9;
+  position: absolute;
+  width: 36px;
+  opacity: 0.92;
+  animation-name: fall, shimmer;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
 }
 
-.ruby:nth-child(1){ left:10%; animation-duration:8s; }
-.ruby:nth-child(2){ left:35%; animation-duration:11s; }
-.ruby:nth-child(3){ left:65%; animation-duration:9s; }
-.ruby:nth-child(4){ left:85%; animation-duration:12s; }
+.ruby-a{ left: 8%;  animation-duration: 8s, 2.4s; }
+.ruby-b{ left: 28%; animation-duration: 11s, 2.8s; }
+.ruby-c{ left: 63%; animation-duration: 9s, 2.2s; }
+.ruby-d{ left: 86%; animation-duration: 12s, 3s; }
+
+.br-token{
+  width: 58px;
+  opacity: 0.95;
+  filter: drop-shadow(0 0 10px rgba(255,0,0,0.35));
+}
+
+.token-a{ left: 46%; animation-duration: 14s, 3.2s; }
+.token-b{ left: 74%; animation-duration: 16s, 3.6s; }
 
 @keyframes fall{
   0%{
-    transform:translateY(-120px) rotate(0deg);
-    opacity:0;
+    transform: translateY(-120px) rotate(0deg);
+    opacity: 0;
   }
   10%{
-    opacity:1;
+    opacity: 1;
   }
   100%{
-    transform:translateY(110vh) rotate(360deg);
-    opacity:0;
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
   }
 }
-    .br-token{
-  width:65px;
-  animation-duration:14s;
-  filter: drop-shadow(0 0 10px rgba(255,0,0,0.35));
+
+@keyframes shimmer{
+  0%{
+    filter: brightness(1) drop-shadow(0 0 6px rgba(255,0,0,0.18));
+  }
+  50%{
+    filter: brightness(1.22) drop-shadow(0 0 14px rgba(255,0,0,0.34));
+  }
+  100%{
+    filter: brightness(1) drop-shadow(0 0 6px rgba(255,0,0,0.18));
+  }
 }
   </style>
 </head>
 
 <body>
 <div class="ruby-rain">
-  <img src="assets/images/ruby1.png" class="ruby">
-  <img src="assets/images/ruby2.png" class="ruby">
-  <img src="assets/images/ruby3.png" class="ruby">
-  <img src="assets/images/ruby4.png" class="ruby">
-  <img src="assets/images/bg_token.png" class="ruby br-token">
+  <img src="assets/images/ruby1.png" class="ruby ruby-a">
+  <img src="assets/images/ruby2.png" class="ruby ruby-b">
+  <img src="assets/images/ruby3.png" class="ruby ruby-c">
+  <img src="assets/images/ruby4.png" class="ruby ruby-d">
+  <img src="assets/images/bg_token.png" class="ruby br-token token-a">
+  <img src="assets/images/bg_token.png" class="ruby br-token token-b">
 </div>
 <header>
 
