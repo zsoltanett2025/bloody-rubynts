@@ -2,15 +2,14 @@
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KEME1H89R4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KEME1H89R4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KEME1H89R4');
+  </script>
 
-  
-  gtag('config', 'G-KEME1H89R4');
-</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bloody Rubynts (BR)</title>
@@ -20,18 +19,18 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
   <style>
-  body {
-  font-family: Arial, sans-serif;
-  background:
-    linear-gradient(rgba(0,0,0,0.74), rgba(0,0,0,0.82)),
-    url("assets/images/br_background.jpg");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  color: #f0f0f0;
-  margin: 0;
-  padding: 0;
-}
+    body {
+      font-family: Arial, sans-serif;
+      background:
+        linear-gradient(rgba(0,0,0,0.74), rgba(0,0,0,0.82)),
+        url("assets/images/br_background.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
 
     header {
       display: flex;
@@ -47,7 +46,7 @@
       height: 46px;
       width: auto;
       animation: rubyGlow 3s infinite ease-in-out;
-}
+    }
 
     header h1 {
       font-size: 22px;
@@ -78,17 +77,19 @@
       border-color: #660000;
       background: #1a0b0b;
     }
-@keyframes rubyGlow {
-  0% {
-    filter: drop-shadow(0 0 4px rgba(255, 0, 0, 0.35));
-  }
-  50% {
-    filter: drop-shadow(0 0 14px rgba(255, 0, 0, 0.85));
-  }
-  100% {
-    filter: drop-shadow(0 0 4px rgba(255, 0, 0, 0.35));
-  }
-}
+
+    @keyframes rubyGlow {
+      0% {
+        filter: drop-shadow(0 0 4px rgba(255, 0, 0, 0.35));
+      }
+      50% {
+        filter: drop-shadow(0 0 14px rgba(255, 0, 0, 0.85));
+      }
+      100% {
+        filter: drop-shadow(0 0 4px rgba(255, 0, 0, 0.35));
+      }
+    }
+
     /* SOCIAL ICONS IN HEADER */
     .social-icons {
       display: flex;
@@ -96,6 +97,7 @@
       align-items: center;
       margin-left: 8px;
     }
+
     .social-icons a {
       width: 34px;
       height: 34px;
@@ -109,6 +111,7 @@
       text-decoration: none;
       transition: transform 0.15s ease, background-color 0.15s ease;
     }
+
     .social-icons a:hover {
       transform: scale(1.08);
       background: #ff0000;
@@ -129,6 +132,10 @@
       border: 1px solid #3a0000;
       border-radius: 14px;
       box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+      position: relative;
+      z-index: 2;
+      opacity: 1;
+      transform: translateY(0);
     }
 
     h2 {
@@ -141,7 +148,10 @@
       text-decoration: none;
       font-weight: 800;
     }
-    a.pdf-link:hover { text-decoration: underline; }
+
+    a.pdf-link:hover {
+      text-decoration: underline;
+    }
 
     footer {
       background-color: #2b0000;
@@ -152,56 +162,69 @@
     }
 
     /* HOW TO BUY - cards */
-    #howtobuy { margin-top: 10px; }
+    #howtobuy {
+      margin-top: 10px;
+    }
+
     .steps {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 18px;
     }
+
     @media (max-width: 720px){
-      .steps { grid-template-columns: 1fr; }
+      .steps {
+        grid-template-columns: 1fr;
+      }
     }
-    .step-card{
+
+    .step-card {
       background: rgba(10,10,10,0.78);
       backdrop-filter: blur(4px);
-      border:1px solid #a30000;
-      border-radius:14px;
-      padding:16px;
-      display:flex;
-      gap:14px;
-      align-items:flex-start;
+      border: 1px solid #a30000;
+      border-radius: 14px;
+      padding: 16px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
       box-shadow: 0 0 25px rgba(255,0,0,0.12);
-}
-     section {
-      position: relative;
-      z-index: 2;
-      opacity: 1;
-      transform: translateY(0);
-}
-    .step-icon{
-      width:46px; height:46px;
-      border-radius:12px;
-      display:flex; align-items:center; justify-content:center;
-      background:#2b0000;
-      border:1px solid #660000;
-      flex:0 0 auto;
+    }
+
+    .step-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #2b0000;
+      border: 1px solid #660000;
+      flex: 0 0 auto;
       font-size: 20px;
       color: #fff;
     }
-    .step-title{
-      margin:0 0 6px 0;
-      font-size:18px;
-      color:#ff3b3b;
+
+    .step-title {
+      margin: 0 0 6px 0;
+      font-size: 18px;
+      color: #ff3b3b;
     }
-    .step-text{ margin:0; line-height:1.45; color:#f0f0f0; }
-    .step-note{
-      margin-top:14px;
-      padding:12px 14px;
-      border-left:4px solid #ff3b3b;
-      background:#1a0b0b;
-      border-radius:10px;
-      color:#f0f0f0;
+
+    .step-text {
+      margin: 0;
+      line-height: 1.45;
+      color: #f0f0f0;
     }
+
+    .step-note {
+      margin-top: 14px;
+      padding: 12px 14px;
+      border-left: 4px solid #ff3b3b;
+      background: #1a0b0b;
+      border-radius: 10px;
+      color: #f0f0f0;
+    }
+
     code {
       background: #1a0b0b;
       border: 1px solid #660000;
@@ -211,246 +234,278 @@
     }
 
     /* ROADMAP */
-    .roadmap-grid{
-      display:grid;
+    .roadmap-grid {
+      display: grid;
       grid-template-columns: repeat(2, minmax(0,1fr));
-      gap:18px;
+      gap: 18px;
     }
+
     @media (max-width: 720px){
-      .roadmap-grid{ grid-template-columns: 1fr; }
+      .roadmap-grid {
+        grid-template-columns: 1fr;
+      }
     }
-    .rm-card{
-      background:#101010;
-      border:1px solid #3a0000;
-      border-radius:14px;
-      padding:16px;
+
+    .rm-card {
+      background: #101010;
+      border: 1px solid #3a0000;
+      border-radius: 14px;
+      padding: 16px;
     }
-    .rm-head{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      margin-bottom:10px;
+
+    .rm-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
     }
-    .rm-quarter{
-      font-size:18px;
-      font-weight:800;
-      color:#ff3b3b;
-      margin:0;
+
+    .rm-quarter {
+      font-size: 18px;
+      font-weight: 800;
+      color: #ff3b3b;
+      margin: 0;
     }
-    .rm-status{
-      font-size:12px;
-      font-weight:800;
-      padding:6px 10px;
-      border-radius:999px;
-      border:1px solid #660000;
-      background:#2b0000;
-      color:#f0f0f0;
-      white-space:nowrap;
+
+    .rm-status {
+      font-size: 12px;
+      font-weight: 800;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid #660000;
+      background: #2b0000;
+      color: #f0f0f0;
+      white-space: nowrap;
     }
-    .rm-list{
-      margin:0;
-      padding-left:18px;
-      line-height:1.6;
+
+    .rm-list {
+      margin: 0;
+      padding-left: 18px;
+      line-height: 1.6;
     }
-    .rm-list li{ margin:6px 0; }
+
+    .rm-list li {
+      margin: 6px 0;
+    }
 
     /* mobile header nicer */
     @media (max-width: 600px) {
-      header { gap: 10px; }
-      nav { width: 100%; justify-content: center; }
-      header h1 { width: 100%; text-align: center; }
-      .social-icons { width: 100%; justify-content: center; margin-left: 0; }
-      header img { margin: 0 auto; }
-      main { padding: 16px; }
+      header {
+        gap: 10px;
+      }
+
+      nav {
+        width: 100%;
+        justify-content: center;
+      }
+
+      header h1 {
+        width: 100%;
+        text-align: center;
+      }
+
+      .social-icons {
+        width: 100%;
+        justify-content: center;
+        margin-left: 0;
+      }
+
+      header img {
+        margin: 0 auto;
+      }
+
+      main {
+        padding: 16px;
+      }
     }
+
     /* Updates – quiet, non-promotional */
-#updates {
-  padding: 48px 0;
-}
+    #updates {
+      padding: 48px 0;
+    }
 
-#updates h2 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 12px;
-}
+    #updates h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
 
-#updates .update-meta {
-  font-size: 0.85rem;
-  opacity: 0.75;
-  margin-bottom: 10px;
-}
+    #updates .update-meta {
+      font-size: 0.85rem;
+      opacity: 0.75;
+      margin-bottom: 10px;
+    }
 
-#updates ul {
-  margin-left: 18px;
-  margin-bottom: 12px;
-}
+    #updates ul {
+      margin-left: 18px;
+      margin-bottom: 12px;
+    }
 
-#updates li {
-  margin: 6px 0;
-}
+    #updates li {
+      margin: 6px 0;
+    }
 
-#updates .update-note {
-  font-size: 0.95rem;
-  opacity: 0.9;
-}
-#youtube {
-  padding: 48px 0;
-}
+    #updates .update-note {
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
 
-#youtube h2 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 12px;
-}
+    #youtube {
+      padding: 48px 0;
+    }
 
-#youtube p {
-  max-width: 720px;
-  font-size: 0.95rem;
-  opacity: 0.9;
-  margin-bottom: 16px;
-}
+    #youtube h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
 
-.video-wrapper {
-  position: relative;
-  width: 100%;
-  max-width: 720px;
-  padding-bottom: 56.25%;
-  height: 0;
-}
+    #youtube p {
+      max-width: 720px;
+      font-size: 0.95rem;
+      opacity: 0.9;
+      margin-bottom: 16px;
+    }
 
-.video-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-/* One-Pager – quiet, optional */
-.updates-onepager {
-  margin-top: 12px;
-  padding-top: 8px;
-}
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 720px;
+      padding-bottom: 56.25%;
+      height: 0;
+    }
 
-.updates-onepager > summary {
-  cursor: pointer;
-  font-weight: 600;
-  opacity: 0.9;
-}
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
 
-.onepager-body {
-  margin-top: 10px;
-  line-height: 1.6;
-}
+    /* One-Pager – quiet, optional */
+    .updates-onepager {
+      margin-top: 12px;
+      padding-top: 8px;
+    }
 
-.onepager-body h3 {
-  margin: 8px 0 10px;
-  font-size: 1.05rem;
-}
+    .updates-onepager > summary {
+      cursor: pointer;
+      font-weight: 600;
+      opacity: 0.9;
+    }
 
-.onepager-body ul {
-  margin: 6px 0 10px 18px;
-}
+    .onepager-body {
+      margin-top: 10px;
+      line-height: 1.6;
+    }
 
-.onepager-note {
-  margin-top: 10px;
-  font-size: 0.9rem;
-  opacity: 0.85;
-}
+    .onepager-body h3 {
+      margin: 8px 0 10px;
+      font-size: 1.05rem;
+    }
 
-    /* RUBY ANIMATION */
+    .onepager-body ul {
+      margin: 6px 0 10px 18px;
+    }
 
+    .onepager-note {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      opacity: 0.85;
+    }
 
-    .ruby-rain{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 0;
-}
+    /* Ruby animation */
+    .ruby-rain {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
 
-.ruby{
-  position: absolute;
-  width: 36px;
-  opacity: 0.92;
-  animation-name: fall, shimmer;
-  animation-timing-function: linear, ease-in-out;
-  animation-iteration-count: infinite, infinite;
-}
+    .ruby {
+      position: absolute;
+      width: 36px;
+      opacity: 0.92;
+      animation-name: fall, shimmer;
+      animation-timing-function: linear, ease-in-out;
+      animation-iteration-count: infinite, infinite;
+    }
 
-.ruby-a{ left: 8%;  animation-duration: 8s, 2.4s; }
-.ruby-b{ left: 28%; animation-duration: 11s, 2.8s; }
-.ruby-c{ left: 63%; animation-duration: 9s, 2.2s; }
-.ruby-d{ left: 86%; animation-duration: 12s, 3s; }
+    .ruby-a { left: 8%;  animation-duration: 8s, 2.4s; }
+    .ruby-b { left: 28%; animation-duration: 11s, 2.8s; }
+    .ruby-c { left: 63%; animation-duration: 9s, 2.2s; }
+    .ruby-d { left: 86%; animation-duration: 12s, 3s; }
 
-.br-token{
-  width: 58px;
-  opacity: 0.95;
-  filter: drop-shadow(0 0 10px rgba(255,0,0,0.35));
-}
+    .br-token {
+      width: 58px;
+      opacity: 0.95;
+      filter: drop-shadow(0 0 10px rgba(255,0,0,0.35));
+    }
 
-.token-a{ left: 46%; animation-duration: 14s; }
-.token-b{ left: 74%; animation-duration: 16s; }
+    .token-a { left: 46%; animation-duration: 14s; }
+    .token-b { left: 74%; animation-duration: 16s; }
 
-@keyframes fall{
-  0%{
-    transform: translateY(-120px) rotate(0deg);
-    opacity: 0;
-  }
-  10%{
-    opacity: 1;
-  }
-  100%{
-    transform: translateY(110vh) rotate(360deg);
-    opacity: 0;
-  }
-}
+    @keyframes fall {
+      0% {
+        transform: translateY(-120px) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
 
-@keyframes shimmer{
-  0%{
-    filter: brightness(1) drop-shadow(0 0 6px rgba(255,0,0,0.18));
-  }
-  50%{
-    filter: brightness(1.22) drop-shadow(0 0 14px rgba(255,0,0,0.34));
-  }
-  100%{
-    filter: brightness(1) drop-shadow(0 0 6px rgba(255,0,0,0.18));
-  }
-}
+    @keyframes shimmer {
+      0% {
+        filter: brightness(1) drop-shadow(0 0 6px rgba(255,0,0,0.18));
+      }
+      50% {
+        filter: brightness(1.22) drop-shadow(0 0 14px rgba(255,0,0,0.34));
+      }
+      100% {
+        filter: brightness(1) drop-shadow(0 0 6px rgba(255,0,0,0.18));
+      }
+    }
   </style>
 </head>
 
 <body>
-<div class="ruby-rain">
-  <img src="assets/images/ruby1.png" class="ruby ruby-a">
-  <img src="assets/images/ruby2.png" class="ruby ruby-b">
-  <img src="assets/images/ruby3.png" class="ruby ruby-c">
-  <img src="assets/images/ruby4.png" class="ruby ruby-d">
-  <img src="assets/images/bg_token.png" class="ruby br-token token-a">
-  <img src="assets/images/bg_token.png" class="ruby br-token token-b">
-</div>
-<header>
+  <div class="ruby-rain">
+    <img src="assets/images/ruby1.png" class="ruby ruby-a" alt="">
+    <img src="assets/images/ruby2.png" class="ruby ruby-b" alt="">
+    <img src="assets/images/ruby3.png" class="ruby ruby-c" alt="">
+    <img src="assets/images/ruby4.png" class="ruby ruby-d" alt="">
+    <img src="assets/images/bg_token.png" class="ruby br-token token-a" alt="">
+    <img src="assets/images/bg_token.png" class="ruby br-token token-b" alt="">
+  </div>
 
+  <header>
     <img src="bloody_rubynts_logo.png" alt="Bloody Rubynts Logo" />
     <h1 id="site-title">Bloody Rubynts (BR)</h1>
 
     <nav>
-      <a href="#project" id="nav-project">Projekt</a>
+      <a href="#project" id="nav-project">Project</a>
       <a href="#token" id="nav-token">Token Info</a>
       <a href="#howtobuy" id="nav-how">How to Buy</a>
       <a href="#roadmap" id="nav-roadmap">Roadmap</a>
-      <a href="#docs" id="nav-docs">Dokumentáció</a>
+      <a href="#docs" id="nav-docs">Documentation</a>
       <a href="#whitepaper">Whitepaper</a>
-      <a href="#contact" id="nav-contact">Kapcsolat</a>
-      <a href="#security" id="nav-security">Biztonság</a>
-      <a href="#early-reward" id="nav-reward">Bónusz</a>
-      <a href="#progress" id="nav-progress">Haladás</a>
+      <a href="#contact" id="nav-contact">Contact</a>
+      <a href="#security" id="nav-security">Security</a>
+      <a href="#early-reward" id="nav-reward">Bonus</a>
+      <a href="#progress" id="nav-progress">Progress</a>
       <a href="#updates">Updates</a>
 
-      <!-- Social icons -->
       <div class="social-icons" aria-label="Social Links">
         <a href="https://x.com/BloodyRubynt" target="_blank" rel="noopener" aria-label="X">
           <i class="fa-brands fa-x-twitter"></i>
@@ -465,42 +520,58 @@
           <i class="fa-brands fa-telegram"></i>
         </a>
         <a href="https://bsky.app/profile/bloodyrubynts.bsky.social" target="_blank" rel="noopener" aria-label="Bluesky">
-         <i class="fa-solid fa-cloud"></i>
-  </a>
+          <i class="fa-solid fa-cloud"></i>
+        </a>
       </div>
     </nav>
   </header>
 
   <main>
     <section id="project">
-      <h2 id="project-title">Projekt</h2>
-      <p id="project-desc">
-        A Bloody Rubynts (BR) egy ERC-20 token a Polygon hálózaton, célja a decentralizált gazdasági rendszer támogatása
-        és a közösségi értékteremtés.
+      <h2 id="project-title">Project</h2>
+
+      <p><strong>Built slowly. Built honestly. Built to last.</strong></p>
+
+      <p>
+        Bloody Rubynts was not created to follow trends or promise quick success.
+        It was born from real life experience and built on the belief that true value forms slowly — through work, persistence, and honesty.
+      </p>
+
+      <p>
+        The project focuses on long-term thinking, transparency, and meaningful action.
+        Rather than making promises, Bloody Rubynts documents its steps and grows gradually.
+      </p>
+
+      <p>
+        The token is not the final goal, but a tool that may support a broader vision involving community, creativity, music, and real-world impact.
+      </p>
+
+      <p>
+        Bloody Rubynts is also connected to the ongoing development of the RubyntsVault / Jewel Vault game ecosystem.
       </p>
     </section>
 
     <section id="token">
-      <h2 id="token-title">Token információk</h2>
+      <h2 id="token-title">Token Information</h2>
       <ul id="token-list">
-        <li><b>Token név:</b> Bloody Rubynts (BR)</li>
-        <li><b>Teljes mennyiség:</b> 100,000,000,000 BR</li>
-        <li><b>Hálózat:</b> Polygon</li>
+        <li><b>Token name:</b> Bloody Rubynts (BR)</li>
+        <li><b>Total supply:</b> 100,000,000,000 BR</li>
+        <li><b>Network:</b> Polygon</li>
         <li><b>Decimals:</b> 18</li>
         <li><b>Contract:</b> <code>0x3005ef86386858a31d76f4cef03d435Ad86A8E88</code></li>
       </ul>
     </section>
 
     <section id="howtobuy">
-      <h2 id="howtobuy-title">Hogyan vásárolj BR-t</h2>
+      <h2 id="howtobuy-title">How to Buy BR</h2>
 
       <div class="steps">
         <div class="step-card">
           <div class="step-icon"><i class="fa-solid fa-wallet"></i></div>
           <div>
-            <h3 class="step-title" id="htb-1-title">1) Tárca (MetaMask)</h3>
-            <p class="step-text" id="htb-1-text">
-              Telepítsd a MetaMask-ot, hozz létre tárcát, és a seed phrase-t soha ne oszd meg.
+            <h3 class="step-title">1) Wallet (MetaMask)</h3>
+            <p class="step-text">
+              Install MetaMask, create a wallet, and never share your seed phrase.
             </p>
           </div>
         </div>
@@ -508,9 +579,9 @@
         <div class="step-card">
           <div class="step-icon"><i class="fa-brands fa-connectdevelop"></i></div>
           <div>
-            <h3 class="step-title" id="htb-2-title">2) Polygon hálózat</h3>
-            <p class="step-text" id="htb-2-text">
-              Válts Polygon hálózatra. A tranzakciók díjához szükséged lesz POL-ra.
+            <h3 class="step-title">2) Switch to Polygon</h3>
+            <p class="step-text">
+              Use the Polygon network. You need POL for transaction fees.
             </p>
           </div>
         </div>
@@ -518,9 +589,9 @@
         <div class="step-card">
           <div class="step-icon"><i class="fa-solid fa-right-left"></i></div>
           <div>
-            <h3 class="step-title" id="htb-3-title">3) QuickSwap / Uniswap</h3>
-            <p class="step-text" id="htb-3-text">
-              Nyisd meg a DEX-et Polygonon, csatlakoztasd a tárcád, és válaszd a BR tokent.
+            <h3 class="step-title">3) QuickSwap / Uniswap</h3>
+            <p class="step-text">
+              Open the DEX on Polygon, connect your wallet, and select BR.
             </p>
           </div>
         </div>
@@ -528,80 +599,82 @@
         <div class="step-card">
           <div class="step-icon"><i class="fa-solid fa-check"></i></div>
           <div>
-            <h3 class="step-title" id="htb-4-title">4) Swap POL/WPOL → BR</h3>
-            <p class="step-text" id="htb-4-text">
-              Kis összeggel tesztelj először. Tranzakció ellenőrzése Polygonscan-en.
+            <h3 class="step-title">4) Swap POL/WPOL → BR</h3>
+            <p class="step-text">
+              Test with a small amount first and verify the transaction on Polygonscan.
             </p>
           </div>
         </div>
       </div>
 
       <div class="step-note">
-        <b id="htb-note-title">Biztonsági tipp:</b>
-        <span id="htb-note-text">Mindig ellenőrizd a contract címet Polygonscan-en, és csak hivatalos linkeket használj.</span>
+        <b>Security tip:</b>
+        <span>Always verify the contract address on Polygonscan and use official links only.</span>
       </div>
     </section>
 
-   <section id="progress">
-  <h2 id="progress-title">Haladás / Work in Progress</h2>
+    <section id="progress">
+      <h2 id="progress-title">Progress / Work in Progress</h2>
 
-  <p id="progress-intro">
-    Itt naprakészen vezetjük a Bloody Rubynts (BR) projekt mérföldköveit és a fontos hivatkozásokat.
-  </p>
+      <p id="progress-intro">
+        This section tracks Bloody Rubynts (BR) milestones, current status, and official project links.
+      </p>
 
-  <div class="roadmap-grid">
-    <div class="rm-card">
-      <div class="rm-head">
-        <p class="rm-quarter" id="prog-now-title">Jelenlegi állapot</p>
-        <span class="rm-status" id="prog-now-status">Aktív</span>
+      <div class="roadmap-grid">
+        <div class="rm-card">
+          <div class="rm-head">
+            <p class="rm-quarter">Current Status</p>
+            <span class="rm-status">Active</span>
+          </div>
+          <ul class="rm-list">
+            <li>Website live: <a href="https://bloodyruby.com" target="_blank" rel="noopener">bloodyruby.com</a></li>
+            <li>Token contract verified on PolygonScan</li>
+            <li>Liquidity available on QuickSwap, with visible on-chain activity</li>
+            <li>Documentation, Whitepaper, and project materials published as PDFs</li>
+            <li>Jewel Vault / RubyntsVault game development continues in parallel</li>
+          </ul>
+        </div>
+
+        <div class="rm-card">
+          <div class="rm-head">
+            <p class="rm-quarter">Official Links</p>
+            <span class="rm-status">Public</span>
+          </div>
+          <ul class="rm-list">
+            <li>Explorer: <a href="https://polygonscan.com/token/0x3005ef86386858a31d76f4cef03d435Ad86A8E88" target="_blank" rel="noopener">PolygonScan token page</a></li>
+            <li>Holders: <a href="https://polygonscan.com/token/0x3005ef86386858a31d76f4cef03d435Ad86A8E88#balances" target="_blank" rel="noopener">Top holders</a></li>
+            <li>Transfers: <a href="https://polygonscan.com/token/0x3005ef86386858a31d76f4cef03d435Ad86A8E88#tokentxns" target="_blank" rel="noopener">Token transfers</a></li>
+            <li>X: <a href="https://x.com/BloodyRubynt" target="_blank" rel="noopener">@BloodyRubynt</a></li>
+            <li>Reddit: <a href="https://www.reddit.com/r/BloodyRubynt/" target="_blank" rel="noopener">r/BloodyRubynt</a></li>
+            <li>TikTok: <a href="https://www.tiktok.com/@bloodyr666" target="_blank" rel="noopener">@bloodyr666</a></li>
+          </ul>
+        </div>
+
+        <div class="rm-card">
+          <div class="rm-head">
+            <p class="rm-quarter">Listings Status</p>
+            <span class="rm-status">In Progress</span>
+          </div>
+          <ul class="rm-list">
+            <li>CoinGecko: submitted, under review</li>
+            <li>CoinMarketCap: ticket opened, follow-up in progress</li>
+          </ul>
+        </div>
+
+        <div class="rm-card">
+          <div class="rm-head">
+            <p class="rm-quarter">Next Steps</p>
+            <span class="rm-status">Upcoming</span>
+          </div>
+          <ul class="rm-list">
+            <li>Expand the progress section with dates and cleaner weekly updates</li>
+            <li>Refine the “How to Buy” section for clarity and readability</li>
+            <li>Continue game development and ecosystem structure step by step</li>
+            <li>Maintain a calm, documented, trust-first public presence</li>
+          </ul>
+        </div>
       </div>
-      <ul class="rm-list" id="prog-now-list">
-        <li>Weboldal él: <a href="https://bloodyruby.com" target="_blank" rel="noopener">bloodyruby.com</a></li>
-        <li>Token szerződés verifikálva PolygonScan-en</li>
-        <li>Likviditás elérhető (QuickSwap), on-chain forgalom látható</li>
-        <li>Dokumentumok: Dokumentáció / Bonus / Whitepaper (PDF)</li>
-      </ul>
-    </div>
-
-    <div class="rm-card">
-      <div class="rm-head">
-        <p class="rm-quarter" id="prog-links-title">Hivatalos linkek</p>
-        <span class="rm-status" id="prog-links-status">Publikus</span>
-      </div>
-      <ul class="rm-list" id="prog-links-list">
-        <li>Explorer: <a href="https://polygonscan.com/token/0x3005ef86386858a31d76f4cef03d435Ad86A8E88" target="_blank" rel="noopener">PolygonScan token oldal</a></li>
-        <li>Holders: <a href="https://polygonscan.com/token/0x3005ef86386858a31d76f4cef03d435Ad86A8E88#balances" target="_blank" rel="noopener">Top holders</a></li>
-        <li>Transfers: <a href="https://polygonscan.com/token/0x3005ef86386858a31d76f4cef03d435Ad86A8E88#tokentxns" target="_blank" rel="noopener">Token tranzakciók</a></li>
-        <li>X: <a href="https://x.com/BloodyRubynt" target="_blank" rel="noopener">@BloodyRubynt</a></li>
-        <li>Reddit: <a href="https://www.reddit.com/r/BloodyRubynt/" target="_blank" rel="noopener">r/BloodyRubynt</a></li>
-        <li>TikTok: <a href="https://www.tiktok.com/@bloodyr666" target="_blank" rel="noopener">@bloodyr666</a></li>
-      </ul>
-    </div>
-
-    <div class="rm-card">
-      <div class="rm-head">
-        <p class="rm-quarter" id="prog-submissions-title">Listázások státusza</p>
-        <span class="rm-status" id="prog-submissions-status">Folyamatban</span>
-      </div>
-      <ul class="rm-list" id="prog-submissions-list">
-        <li>CoinGecko: beadva, elbírálás alatt</li>
-        <li>CoinMarketCap: ticket megnyitva, egyeztetés folyamatban</li>
-      </ul>
-    </div>
-
-    <div class="rm-card">
-      <div class="rm-head">
-        <p class="rm-quarter" id="prog-next-title">Következő lépések</p>
-        <span class="rm-status" id="prog-next-status">Következik</span>
-      </div>
-      <ul class="rm-list" id="prog-next-list">
-        <li>Progress oldal bővítése dátumokkal + heti frissítéssel</li>
-        <li>How to Buy finomítás (tömörebb, képernyőbarát)</li>
-        <li>Később: Telegram csatorna + link a weben</li>
-      </ul>
-    </div>
-  </div>
-</section>
+    </section>
 
     <section id="roadmap">
       <h2 id="roadmap-title">Roadmap</h2>
@@ -609,58 +682,58 @@
       <div class="roadmap-grid">
         <div class="rm-card">
           <div class="rm-head">
-            <p class="rm-quarter" id="rm-q1-title">Q1 (Alapok)</p>
-            <span class="rm-status" id="rm-q1-status">Készül</span>
+            <p class="rm-quarter">Q1 (Foundation)</p>
+            <span class="rm-status">In Progress</span>
           </div>
-          <ul class="rm-list" id="rm-q1-list">
-            <li>Token telepítés + verifikáció Polygonon</li>
-            <li>Alap weboldal + dokumentáció publikálás</li>
-            <li>Kezdeti likviditás (QuickSwap / Uniswap)</li>
+          <ul class="rm-list">
+            <li>Deploy and verify token contract on Polygon</li>
+            <li>Publish the basic website and core documentation</li>
+            <li>Establish initial liquidity</li>
           </ul>
         </div>
 
         <div class="rm-card">
           <div class="rm-head">
-            <p class="rm-quarter" id="rm-q2-title">Q2 (Láthatóság)</p>
-            <span class="rm-status" id="rm-q2-status">Tervezett</span>
+            <p class="rm-quarter">Q2 (Visibility)</p>
+            <span class="rm-status">Planned</span>
           </div>
-          <ul class="rm-list" id="rm-q2-list">
-            <li>CoinGecko / CoinMarketCap beadások követése</li>
-            <li>Közösségi csatornák bővítése (X / Reddit / TikTok)</li>
-            <li>How to Buy + átláthatóság finomítás</li>
+          <ul class="rm-list">
+            <li>Follow CoinGecko / CoinMarketCap submissions</li>
+            <li>Expand social visibility and public project history</li>
+            <li>Improve clarity, transparency, and accessibility of the website</li>
           </ul>
         </div>
 
         <div class="rm-card">
           <div class="rm-head">
-            <p class="rm-quarter" id="rm-q3-title">Q3 (Közösség)</p>
-            <span class="rm-status" id="rm-q3-status">Tervezett</span>
+            <p class="rm-quarter">Q3 (Community & Ecosystem)</p>
+            <span class="rm-status">Planned</span>
           </div>
-          <ul class="rm-list" id="rm-q3-list">
-            <li>Oktató és közösségi tartalmak</li>
-            <li>Partnerségek feltérképezése</li>
-            <li>Biztonsági folyamatok erősítése</li>
+          <ul class="rm-list">
+            <li>Continue Jewel Vault / RubyntsVault development</li>
+            <li>Strengthen community channels and public communication</li>
+            <li>Prepare early merchandise presentation</li>
           </ul>
         </div>
 
         <div class="rm-card">
           <div class="rm-head">
-            <p class="rm-quarter" id="rm-q4-title">Q4 (Növekedés)</p>
-            <span class="rm-status" id="rm-q4-status">Tervezett</span>
+            <p class="rm-quarter">Q4 (Growth)</p>
+            <span class="rm-status">Planned</span>
           </div>
-          <ul class="rm-list" id="rm-q4-list">
-            <li>Likviditás és forgalom bővítése</li>
-            <li>Ökoszisztéma lehetőségek (utility / dApp)</li>
-            <li>Felkészülés további listázásokra</li>
+          <ul class="rm-list">
+            <li>Expand liquidity gradually and responsibly</li>
+            <li>Develop broader ecosystem direction</li>
+            <li>Prepare for further listings and future utility growth</li>
           </ul>
         </div>
       </div>
     </section>
 
     <section id="security">
-      <h2 id="sec-title">Biztonság és átláthatóság</h2>
+      <h2 id="sec-title">Security & Transparency</h2>
       <p id="sec-text">
-        A Bloody Rubynts (BR) egy Polygon hálózaton futó ERC-20 token. A szerződés forráskódja ellenőrzött a Polygonscan-en.
+        Bloody Rubynts (BR) is an ERC-20 token on the Polygon network. The contract source code is verified on Polygonscan.
       </p>
       <ul>
         <li><b>Explorer (Token):</b>
@@ -680,783 +753,644 @@
         </li>
       </ul>
     </section>
-    
-<section id="docs">
-  <h2 id="docs-title">Documentation</h2>
 
-  <p>
-    <a href="Bloody_Rubynts_Documentation.pdf" class="pdf-link" download>
-      📄 Project Documentation (PDF)
-    </a>
-  </p> 
+    <section id="docs">
+      <h2 id="docs-title">Documentation</h2>
 
-<p>
-<a href="bloody-rubynts-whitepaper-v8-en.pdf" class="pdf-link" target="_blank">
-📄 Whitepaper – English
-</a>
-</p>
+      <p>
+        <a href="Bloody_Rubynts_Documentation.pdf" class="pdf-link" download>
+          📄 Project Documentation (PDF)
+        </a>
+      </p>
 
-<p>
-<a href="bloody-rubynts-whitepaper-v8-hu.pdf" class="pdf-link" target="_blank">
-📄 Whitepaper – Hungarian
-</a>
-</p>
-  
-</section>
+      <p>
+        <a href="bloody-rubynts-whitepaper-v8-en.pdf" class="pdf-link" target="_blank">
+          📄 Whitepaper – English
+        </a>
+      </p>
 
-   <section id="whitepaper">
-  <h2>Whitepaper</h2>
-  <p>
-    The Bloody Rubynts (BR) Whitepaper outlines the vision, transparency principles,
-    token structure and long-term goals of the project.
-  </p>
+      <p>
+        <a href="bloody-rubynts-whitepaper-v8-hu.pdf" class="pdf-link" target="_blank">
+          📄 Whitepaper – Hungarian
+        </a>
+      </p>
+    </section>
 
-  <a href="bloody-rubynts-whitepaper-v8-en.pdf"
-  class="pdf-link"
-  target="_blank">
-  Download Whitepaper (PDF)
-</a>
-</section>
+    <section id="whitepaper">
+      <h2>Whitepaper</h2>
+      <p>
+        The Bloody Rubynts (BR) Whitepaper outlines the vision, transparency principles,
+        token structure, music and game connection, and the long-term direction of the project.
+      </p>
 
-    
+      <a href="bloody-rubynts-whitepaper-v8-en.pdf" class="pdf-link" target="_blank">
+        Download Whitepaper (PDF)
+      </a>
+    </section>
+
     <section id="contact">
-      <h2 id="contact-title">Kapcsolat</h2>
-      <a href="mailto:bloodyrubynts@gmail.com">bloodyrubynts@gmail.com</a>
-</p>
+      <h2 id="contact-title">Contact</h2>
+      <p>
+        <a href="mailto:bloodyrubynts@gmail.com">bloodyrubynts@gmail.com</a>
+      </p>
       <p class="quiet-links" style="margin-top:12px;">
-  <a href="https://discord.gg/FNu55YDtKp" target="_blank" rel="noopener noreferrer">
-    Discord (community)
-  </a>
-</p>
-
+        <a href="https://discord.gg/FNu55YDtKp" target="_blank" rel="noopener noreferrer">
+          Discord (community)
+        </a>
+      </p>
     </section>
 
     <section id="updates" class="updates">
-  <div class="container">
-    <h2>Updates</h2>
-
-    <article class="update">
-      <div class="update-meta">Jan __, 2026</div>
-      <ul>
-        <li>The Bloody Rubynts website is live and checked daily.</li>
-        <li>Liquidity on Polygon is operating normally.</li>
-        <li>Organic visits have been observed from multiple countries.</li>
-        <li>No price discussion, promotion, or artificial activity has taken place.</li>
-      </ul>
-      <p class="update-note">
-        This project is built slowly and deliberately. Everyone is free to observe, stay, or leave — we will continue to document only what actually happens.
-      </p>
-    </article>
-  </div>
-</section>
-
-  <article class="update">
-  <div class="update-meta">Week 1 Summary · Jan 2026</div>
-
-   <!-- One-Pager (quiet, optional) -->
-<details class="updates-onepager">
-  <summary>One-Pager (Quick Overview)</summary>
-
-  <div class="onepager-body">
-    <h3>BLOODY RUBYNTS — One-Pager</h3>
-
-    <p><strong>What it is</strong><br>
-      Bloody Rubynts is an early-stage project built on one principle: <em>trust is earned through actions, not promises.</em>
-    </p>
-
-    <p><strong>Why it exists</strong><br>
-      “Bloody” represents real struggle and hard work. “Ruby” represents value that forms over time—under pressure, through patience.
-    </p>
-
-    <p><strong>Mission</strong><br>
-      To bring value back to people in a human, transparent, and verifiable way—without hype and without shortcuts.
-    </p>
-
-    <p><strong>How we approach support</strong><br>
-      We aim for gradual, accountable steps. Support is <strong>targeted</strong> and <strong>problem-based</strong> (not uncontrolled cash). Where possible, help is delivered directly to the provider (school, utility, medical institution, studio).
-    </p>
-
-    <p><strong>Focus areas (long-term direction)</strong></p>
-    <ul>
-      <li>education access</li>
-      <li>basic stability (housing / essential needs)</li>
-      <li>health-related support</li>
-      <li>emerging creators—especially music (studio time, mentoring, essential tools)</li>
-    </ul>
-
-    <p><strong>Token philosophy</strong><br>
-      The token is a tool, not the goal. It may support transparency, community involvement, and long-term alignment—without financial promises.
-    </p>
-
-    <p><strong>Transparency</strong><br>
-      We document actions and outcomes (with privacy respected). We share what is real—including lessons when something does not work as planned.
-    </p>
-
-    <p><strong>Bottom line</strong><br>
-      No campaigns. No guarantees. Only steady progress and honest reporting.
-    </p>
-
-    <p class="onepager-note">
-      This document describes principles and intention, not financial advice or profit expectations.
-    </p>
-  </div>
-</details>
- 
-  <p>
-    The bonus period has ended as scheduled. Thank you for taking the time to observe the project.
-  </p>
-  
-  <p>
-    The first week of Bloody Rubynts has been quiet, steady, and intentional.
-  </p>
-
-  <p>
-    There was no marketing campaign, no paid promotion, and no promises made.
-    Everything that happened was organic.
-  </p>
-
-  <p><strong>What we observed this week:</strong></p>
-  <ul>
-    <li>Visitors from multiple countries discovered the website on their own</li>
-    <li>The token was traded in small volumes, without sudden spikes</li>
-    <li>Liquidity was adjusted carefully to keep swaps working smoothly</li>
-    <li>No artificial price actions or supply manipulation took place</li>
-  </ul>
-
-  <p>
-    This week was not about growth numbers. It was about stability, transparency,
-    and learning how the project behaves in real conditions.
-  </p>
-
-  <p>
-    Bloody Rubynts is still at a very early stage. Anyone who is here now is seeing
-    the project as it truly is — unfinished, honest, and evolving.
-  </p>
-
-  <p>
-    We will continue to move slowly, share only confirmed information,
-    and let everyone decide for themselves what they want to do next.
-    New paragraphs:
-    Quiet airdrop completed: Three community addresses received 20 BR each without prior promotion.
-    Transaction count: total interactions on-chain reached 82 during the period.
-    Footer correction: public contact email aligned to the project’s real channel.
-    YouTube update: narrative video replaced with the creators’ own short film.
-    Optional closing sentence:
-    Updates reflect what has already happened, not what might happen.
-  </p>                                                                                                                                            
-  
-  <p>— Bloody Rubynts</p>
-</article>
-
-<article class="update">
-  <div class="update-meta">Week 2 Summary · Jan 2026</div>
-
-  <section id="weekly-summary" style="max-width: 900px; margin: 24px auto; padding: 0 16px;">
-  <h2 style="margin: 0 0 12px 0;">Weekly Summary</h2>
-
-  <details open style="border: 1px solid rgba(0,0,0,0.12); border-radius: 12px; padding: 12px 14px; background: rgba(255,255,255,0.6); margin-bottom: 12px;">
-    <summary style="cursor: pointer; font-weight: 700;">Week 2 (January 2026) — Last updated: 2026-01-12</summary>
-
-    <div style="margin-top: 12px;">
-      <p style="margin: 0 0 12px 0;"><strong>Project status</strong><br>
-        The project remains in a stable early phase. No irregular on-chain activity has been observed during this period.
-      </p>
-
-      <p style="margin: 0 0 12px 0;"><strong>On-chain &amp; liquidity</strong><br>
-        Token contract and liquidity pools remain unchanged. Liquidity is in range and functioning as expected. No liquidity movements or removals occurred.
-      </p>
-
-      <p style="margin: 0 0 12px 0;"><strong>Community activity</strong><br>
-        Community presence continues to grow slowly and organically.<br>
-        Reddit activity showed natural engagement without paid promotion or coordinated campaigns.<br>
-        Other social platforms remain intentionally quiet at this stage.
-      </p>
-
-      <p style="margin: 0 0 12px 0;"><strong>Development &amp; maintenance</strong><br>
-        Website maintenance and content review were completed.<br>
-        Documentation continues to be refined to ensure clarity and transparency.
-      </p>
-
-      <p style="margin: 0 0 12px 0;"><strong>Approach &amp; focus</strong><br>
-        The project continues to follow a trust-first, non-promotional approach.<br>
-        No marketing campaigns, incentives, or urgency-driven actions are planned.
-      </p>
-
-      <p style="margin: 0;"><strong>Next steps</strong><br>
-        Focus remains on organic community growth, transparency, and long-term stability.<br>
-        Any future actions will be documented openly when appropriate.
-      </p>
-    </div>
-  </details>
-
-  <article class="update">
-  <div class="update-meta">Week 3 Summary · Jan 2026</div>
-
-  <details class="update-details">
-    <summary>Open</summary>
-
-    <p>
-      Week 3 was about steady, calm visibility — no hype, no promises, just consistent presence and real updates.
-    </p>
-
-    <h4>Website & Transparency</h4>
-    <ul>
-      <li>Weekly updates continue in the same “quiet + honest” format.</li>
-      <li>Focus remains: trust-first communication, no marketing pressure, no artificial activity.</li>
-    </ul>
-
-    <h4>Community Presence (Reddit)</h4>
-    <ul>
-      <li>We continued our “non-crypto-first” presence to avoid a one-directional profile.</li>
-      <li>r/homecooking: posted real homemade meals (simple descriptions, polite replies, no promotion).</li>
-      <li>r/collectables: shared part of a personal collection (calm post, not selling, no links).</li>
-      <li>Light commenting to stay human and consistent (no spam, no overposting).</li>
-    </ul>
-
-    <h4>On-chain & Liquidity Check</h4>
-    <ul>
-      <li>Transaction activity increased (normal swap activity observed).</li>
-      <li>Liquidity positions remained in range; fees moved slightly as expected.</li>
-      <li>No structural changes — everything stable.</li>
-    </ul>
-
-    <h4>Traffic Snapshot (Google Analytics)</h4>
-    <ul>
-      <li>Users and page views rose gradually vs previous days.</li>
-      <li>Top countries remained the U.S. and U.K., with more countries appearing over time.</li>
-      <li>Average engagement stayed steady (short but consistent visits).</li>
-    </ul>
-
-    <h4>Next Week (calm plan)</h4>
-    <ul>
-      <li>Keep the same rhythm: real posts, small comments, no pushy messaging.</li>
-      <li>Prepare the “airdrop-style support” concept in a pump-free way (details later, only when ready).</li>
-      <li>Continue daily checks and weekly summaries to build a public history.</li>
-    </ul>
-
-    <p>
-      We’re building slowly on purpose — and documenting everything as proof of consistency.
-    </p>
-  </details>
-</article>
-
-<article class="update-">
-  <details>
-    <summary>
-      🩸 Week Summary #4 — Documenting progress
-      <span class="meta">(~40 days since Dec 12)</span>
-    </summary>
-
-    <p><strong>Date:</strong>
-      <time datetime="2026-01-25">January 25, 2026</time>
-    </p>
-
-    <p>
-      This week marks roughly 40 days since the initial idea was formed on December 12.
-    </p>
-
-    <p>
-      We wanted to pause briefly and document what has been built so far —
-      without interpretation, without expectations, and without looking ahead.
-    </p>
-
-    <h3>Timeline</h3>
-    <ul>
-      <li><strong>December 12</strong> — the initial idea was formed</li>
-      <li><strong>December 25</strong> — listing applications were submitted</li>
-      <li><strong>Early January</strong> — the smart contract was deployed and verified on Polygon</li>
-      <li><strong>Ongoing</strong> — liquidity has been added and maintained continuously</li>
-    </ul>
-
-    <h3>Current state</h3>
-    <ul>
-      <li>Verified smart contract live on Polygon</li>
-      <li>Active liquidity pool functioning without interruption</li>
-      <li><strong>99</strong> on-chain transactions, organically distributed</li>
-      <li>Website live with documentation available</li>
-      <li>Analytics installed and monitored daily</li>
-      <li>Early, real user engagement observed</li>
-      <li>No paid promotion or incentives used</li>
-    </ul>
-
-    <h3>What has not been done</h3>
-    <ul>
-      <li>No launch countdown</li>
-      <li>No marketing campaigns</li>
-      <li>No price discussion</li>
-      <li>No pressure to participate</li>
-    </ul>
-
-    <p>Everything above reflects what has already happened.</p>
-
-    <p>
-      We’ll continue documenting progress as it occurs,
-      allowing the work itself to stand without interpretation.
-    </p>
-  </details>
-</article>
-
-  <article class="update-">
-  <details>
-    <summary>🩸 Week Summary #5 — Quiet progress</summary>
-
-    <p>
-      This week continued the same approach we’ve followed from the beginning:
-      steady work, careful observation, and documenting what actually exists.
-    </p>
-
-    <p>
-      No announcements.<br>
-      No campaigns.<br>
-      No promises.
-    </p>
-
-    <h4>Timeline context</h4>
-    <ul>
-      <li>Over one month has passed since the initial idea (December 12)</li>
-      <li>The smart contract remains deployed and verified on Polygon</li>
-      <li>Liquidity continues to function without interruption</li>
-      <li>The project remains fully operational without external promotion</li>
-    </ul>
-
-    <h4>Website &amp; analytics</h4>
-    <ul>
-      <li>Daily website activity continues to be monitored</li>
-      <li>Total visitors decreased compared to earlier weeks, while:</li>
-      <ul>
-        <li>Average time on site increased</li>
-        <li>Pages viewed per user increased</li>
-        <li>Engagement actions (scrolls, clicks, interactions) remain consistent</li>
-      </ul>
-      <li>Traffic has naturally concentrated into fewer regions, with longer session durations</li>
-    </ul>
-
-    <p>
-      This reflects a shift from broad visibility toward more focused,
-      intentional interest.
-    </p>
-
-    <h4>On-chain activity</h4>
-    <ul>
-      <li>On-chain transactions increased to <strong>105</strong> total</li>
-      <li>Small, organic swaps continue to occur</li>
-      <li>No abnormal movements or liquidity disruptions observed</li>
-      <li>No incentives or artificial volume used</li>
-    </ul>
-
-    <h4>Community &amp; communication</h4>
-    <ul>
-      <li>No new marketing channels were opened</li>
-      <li>No paid promotion or outreach was conducted</li>
-      <li>Existing channels remain quiet, transparent, and unchanged</li>
-      <li>Human presence continues through normal, non-promotional activity</li>
-    </ul>
-
-    <h4>What has not changed</h4>
-    <ul>
-      <li>No launch dates announced</li>
-      <li>No price discussion</li>
-      <li>No pressure to participate</li>
-      <li>No promises about future outcomes</li>
-    </ul>
-
-    <p>
-      <em>Everything documented above reflects only what has already happened.</em>
-    </p>
-
-    <p>
-      We will continue observing, documenting, and maintaining the project
-      at the same pace and with the same principles.
-    </p>
-
-    <p>
-      Progress will be recorded when it occurs.
-    </p>
-
-  </details>
-</article>
-  
- <article class="update-">
-  <details>
-    <summary>Hetiösszefoglaló #6 – Likviditás növelése és játék előkészítése</summary>
-
-    <p>
-      Ezen a héten a Bloody Rubynts ökoszisztéma további stabil erősítésére és a következő fejlesztési lépések
-      előkészítésére koncentráltunk.
-    </p>
-
-    <p>
-      A QuickSwap likviditás ismét növelésre került a most elindított heti bővítési terv részeként. Célunk a
-      folyamatos, nyugodt ütemű növekedés, amely hosszú távon stabilabb kereskedést biztosít a közösség számára.
-    </p>
-
-    <p>
-      Közben tovább halad a <strong>Jewel Vault match-3 játék</strong> fejlesztése is, a játék fájljainak
-      rendszerezése és GitHubra történő feltöltése megkezdődött.
-    </p>
-
-    <p>
-      Előkészítés alatt áll egy jövőbeni közösségi jutalmazási rendszer is, amely rendszeres sorsolások és
-      jutalmak formájában vonja majd be a közösséget.
-    </p>
-
-    <p>
-      A weboldal látogatottsága továbbra is több országból érkezik, ami stabil, organikus érdeklődést mutat
-      a projekt iránt.
-    </p>
-
-    <p>
-      A haladást akkor rögzítjük, amikor az megtörténik.
-    </p>
-
-  </details>
-</article>
-
- <article class="update-">
-  <details>
-    <summary>Weekly Summary #7 – Stable Core & Power System Upgrade</summary>
-
-    <p>
-      This week focused on stabilizing and improving the core gameplay systems of Jewel Vault.
-      The goal was not adding flashy features, but making the experience smoother,
-      more reliable, and closer to the long-term vision of the game.
-    </p>
-
-    <p><strong>Gameplay Improvements</strong></p>
-    <ul>
-      <li>Board gravity and refill system stabilized to prevent empty spaces after matches.</li>
-      <li>Power gems (stripes, bombs, rainbow) reworked for consistent behavior.</li>
-      <li>Power combinations during swaps now activate correctly.</li>
-      <li>Bomb and stripe interactions refined to match expected match-3 mechanics.</li>
-    </ul>
-
-    <p><strong>Shuffle System Added</strong></p>
-    <ul>
-      <li>Each level now provides one shuffle use.</li>
-      <li>Players can reshuffle the board when stuck.</li>
-      <li>Shuffle resets automatically when entering a new level.</li>
-    </ul>
-
-    <p><strong>Life & Move System Fixes</strong></p>
-    <ul>
-      <li>Moves reaching zero now correctly trigger level end.</li>
-      <li>Life counter properly decreases when restarting a failed level.</li>
-      <li>Replay and map return flow stabilized.</li>
-    </ul>
-
-    <p><strong>Audio Improvements</strong></p>
-    <ul>
-      <li>Explosion and power effects now use dedicated sound effects.</li>
-      <li>Bomb and special gem activations have distinct sounds.</li>
-      <li>Audio system reorganized for future expansion.</li>
-    </ul>
-
-    <p><strong>General Stability Work</strong></p>
-    <ul>
-      <li>Cascade behavior fixes.</li>
-      <li>Swap edge-case corrections.</li>
-      <li>Stuck board situations resolved.</li>
-      <li>Power activation inconsistencies reduced.</li>
-    </ul>
-
-    <p><strong>Next Focus</strong></p>
-    <ul>
-      <li>Improved explosion visual feedback.</li>
-      <li>Slight pacing adjustments for clearer match visibility.</li>
-      <li>Background story visuals restoration.</li>
-      <li>Continued power gem behavior polishing.</li>
-    </ul>
-
-    <p>
-      Step by step, Jewel Vault continues evolving into a smoother and more immersive experience.
-    </p>
-
-  </details>
-</article>
-
-    <article class="update-">
-  <details>
-    <summary>Weekly Summary #8 – Jewel Vault Trial Live + Analytics Connected</summary>
-
-    <p>
-      This week we reached a major milestone: the <strong>Jewel Vault trial version</strong> is now <strong>live and playable</strong>.
-      The focus was stability first — making sure the game loads correctly on GitHub Pages, works on mobile, and is measurable through analytics.
-    </p>
-
-    <p><strong>What’s new this week:</strong></p>
-    <ul>
-      <li><strong>Trial version is live</strong> (gameplay-only, no BR rewards yet).</li>
-      <li><strong>GitHub Pages deployment stabilized</strong> (workflow location fixed, base-path issue resolved).</li>
-      <li><strong>Mobile support confirmed</strong> (loads and plays correctly on phones).</li>
-      <li><strong>Google Analytics connected</strong> and verified.</li>
-      <li><strong>New GA event tracking:</strong> <code>jewel_vault_loaded</code> (so we can measure real game launches).</li>
-    </ul>
-
-    <p>
-      <strong>Try it and tell us what to improve:</strong><br>
-      The trial is intentionally simple — we want real player feedback before expanding features.
-      Feel free to leave comments with <strong>bug reports, UI suggestions, balance ideas</strong>,
-      or even <strong>new level / feature concepts</strong>.
-    </p>
-
-    <p><strong>Next steps:</strong></p>
-    <ul>
-      <li>Polish minor issues (win/loss sounds, mobile UI refinements).</li>
-      <li>Create a dedicated game section on the main website (info + quick access).</li>
-      <li>Continue developing the full reward-integrated version in parallel.</li>
-    </ul>
-
-    <p>
-      Thank you to everyone testing early. We are building this step by step — stable first, expansion later.
-    </p>
-
-  </details>
-</article>
-
-    <article class="update">
-  <details>
-    <summary>Weekly Summary #9 – Wallet + Withdraw System Added (Manual Payout) + Admin Panel</summary>
-
-    <p>
-      This week we shipped a major new foundation: the <strong>Wallet</strong> and a
-      <strong>manual BR withdrawal system</strong> with a clear payout process.
-      The goal was to keep it <strong>simple, trackable, and safe</strong> while we continue testing the live trial build.
-      Every withdrawal creates a request ID and can be emailed to support for a clean audit trail.
-    </p>
-
-    <p><strong>What’s new this week:</strong></p>
-    <ul>
-      <li><strong>Wallet modal implemented</strong> (connect/disconnect, dev-mode linking, Polygon chain check).</li>
-      <li><strong>Manual withdrawal requests added</strong> with a <strong>minimum payout of 100 BR</strong>.</li>
-      <li><strong>Payout message included</strong>: “Payout within 24–48 hours.” (visible in the wallet UI).</li>
-      <li><strong>Request ID + Email flow</strong> (copy request + mailto to <code>rubyntspayments@gmail.com</code>).</li>
-      <li><strong>Admin panel added</strong> (internal use) to review withdrawal requests.</li>
-      <li><strong>Admin dashboard stats</strong>: pending requests, <strong>total pending BR</strong>, total paid BR, all-time requested.</li>
-      <li><strong>Export tools</strong>: JSON export + CSV export for record keeping.</li>
-      <li><strong>Admin mode is local-only</strong> via <code>localStorage</code> flag (<code>br_admin</code>), so it’s not visible to normal players.</li>
-    </ul>
-
-    <p><strong>Notes / Next steps:</strong></p>
-    <ul>
-      <li>Run a few real-world withdrawal tests end-to-end and validate the tracking flow.</li>
-      <li>Decide whether to close the trial build after ~8 days and evaluate results (analytics + community feedback).</li>
-      <li>Continue polishing UX on mobile and ensure all modals behave consistently across screens.</li>
-    </ul>
-  </details>
-</article>
-
-    <article class="update">
-<details>
-<summary>Weekly Summary #10 – Dragon Boss Polish + 7-Day Daily Rewards System</summary>
-
-<p>
-This week focused on <strong>gameplay polish and player retention systems</strong> inside the 
-<strong>Rubynts Vault</strong> game.
-We introduced the new <strong>Dragon Boss improvements</strong> and a full 
-<strong>7-day Daily Reward system</strong> designed to encourage consistent play and progression.
-</p>
-
-<p>
-The goal is to keep the gameplay loop <strong>rewarding, engaging, and balanced</strong> while 
-continuing to test the live trial build and collect feedback.
-These systems form part of the long-term player progression and economy.
-</p>
-
-<p><strong>What's new this week:</strong></p>
-
-<ul>
-<li>🐉 Dragon Boss UI improvements with HP feedback and defeat state</li>
-<li>🎮 Boss victory screen updated for better immersion</li>
-<li>🎁 New <strong>7-Day Daily Reward System</strong> with login streak tracking</li>
-<li>📅 Weekly reward chest on Day 7 with BR token rewards</li>
-<li>⚙️ Improved board scaling and gameplay layout</li>
-<li>✨ Multiple UI polish improvements across the game interface</li>
-</ul>
-
-<p>
-These changes improve the overall <strong>player experience and retention loop</strong>
-while preparing the foundation for future reward systems and progression features.
-</p>
-
-</details>
-</article>
-  
-  </section>
-
-<section id="youtube">
-  <div class="container">
-    <h2>YouTube</h2>
-
-    <p>
-      This channel is part of Bloody Rubynts.  
-      It focuses on music, creative work, and supporting independent artists.
-      There is no promotion here — just what is being created and shared.
-    </p>
-
-    <div class="video-wrapper">
-      <iframe 
-  width="100%" 
-  height="315" 
-  src="https://www.youtube.com/embed/3jL3qokpHxk" 
-  title="Bloody Rubynts — Music"
-  frameborder="0" 
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-  allowfullscreen>
-</iframe>
-
-
-<p style="font-style: italic; opacity: 0.85;">
-This space features original music created within the Bloody Rubynts project.
-</p>
-
-      <p style="margin-top:12px; font-size:14px; opacity:0.85;">
-  More music & updates:
-  <a href="https://www.youtube.com/@bloodyrubynts" target="_blank" rel="noopener">
-    youtube.com/@bloodyrubynts
-  </a>
-</p>
-
-    </div>
-  </div>
-</section>
-
+      <div class="container">
+        <h2>Updates</h2>
+
+        <article class="update">
+          <div class="update-meta">Jan __, 2026</div>
+          <ul>
+            <li>The Bloody Rubynts website is live and checked daily.</li>
+            <li>Liquidity on Polygon is operating normally.</li>
+            <li>Organic visits have been observed from multiple countries.</li>
+            <li>No price discussion, promotion, or artificial activity has taken place.</li>
+          </ul>
+          <p class="update-note">
+            This project is built slowly and deliberately. Everyone is free to observe, stay, or leave — we will continue to document only what actually happens.
+          </p>
+        </article>
+      </div>
+
+      <article class="update">
+        <div class="update-meta">Week 1 Summary · Jan 2026</div>
+
+        <details class="updates-onepager">
+          <summary>One-Pager (Quick Overview)</summary>
+
+          <div class="onepager-body">
+            <h3>BLOODY RUBYNTS — One-Pager</h3>
+
+            <p><strong>What it is</strong><br>
+              Bloody Rubynts is an early-stage project built on one principle: <em>trust is earned through actions, not promises.</em>
+            </p>
+
+            <p><strong>Why it exists</strong><br>
+              “Bloody” represents real struggle and hard work. “Ruby” represents value that forms over time — under pressure, through patience.
+            </p>
+
+            <p><strong>Mission</strong><br>
+              To bring value back to people in a human, transparent, and verifiable way — without hype and without shortcuts.
+            </p>
+
+            <p><strong>How we approach support</strong><br>
+              We aim for gradual, accountable steps. Support is <strong>targeted</strong> and <strong>problem-based</strong> (not uncontrolled cash). Where possible, help is delivered directly to the provider (school, utility, medical institution, studio).
+            </p>
+
+            <p><strong>Focus areas (long-term direction)</strong></p>
+            <ul>
+              <li>education access</li>
+              <li>basic stability (housing / essential needs)</li>
+              <li>health-related support</li>
+              <li>emerging creators — especially music (studio time, mentoring, essential tools)</li>
+            </ul>
+
+            <p><strong>Token philosophy</strong><br>
+              The token is a tool, not the goal. It may support transparency, community involvement, and long-term alignment — without financial promises.
+            </p>
+
+            <p><strong>Transparency</strong><br>
+              We document actions and outcomes (with privacy respected). We share what is real — including lessons when something does not work as planned.
+            </p>
+
+            <p><strong>Bottom line</strong><br>
+              No campaigns. No guarantees. Only steady progress and honest reporting.
+            </p>
+
+            <p class="onepager-note">
+              This document describes principles and intention, not financial advice or profit expectations.
+            </p>
+          </div>
+        </details>
+
+        <p>
+          The bonus period ended as scheduled. Thank you to everyone who took the time to observe the project.
+        </p>
+
+        <p>
+          The first week of Bloody Rubynts was quiet, steady, and intentional.
+        </p>
+
+        <p>
+          There was no marketing campaign, no paid promotion, and no promises made.
+          Everything that happened was organic.
+        </p>
+
+        <p><strong>What we observed this week:</strong></p>
+        <ul>
+          <li>Visitors from multiple countries discovered the website organically</li>
+          <li>The token was traded in small volumes, without sudden spikes</li>
+          <li>Liquidity was adjusted carefully to keep swaps working smoothly</li>
+          <li>No artificial price actions or supply manipulation took place</li>
+        </ul>
+
+        <p>
+          This week was not about growth numbers. It was about stability, transparency,
+          and learning how the project behaves in real conditions.
+        </p>
+
+        <p>
+          Bloody Rubynts is still at a very early stage. Anyone who is here now is seeing
+          the project as it truly is — unfinished, honest, and evolving.
+        </p>
+
+        <p>
+          We will continue to move slowly, share only confirmed information,
+          and let everyone decide for themselves what they want to do next.
+        </p>
+
+        <ul>
+          <li>Quiet airdrop completed: three community addresses received 20 BR each without prior promotion</li>
+          <li>Total on-chain interactions reached 82 during the period</li>
+          <li>Public contact email was aligned with the project’s real channel</li>
+          <li>The YouTube section was updated with the creators’ own short film</li>
+        </ul>
+
+        <p><em>Updates reflect what has already happened, not what might happen.</em></p>
+        <p>— Bloody Rubynts</p>
+      </article>
+
+      <article class="update">
+        <div class="update-meta">Week 2 Summary · Jan 2026</div>
+
+        <section id="weekly-summary" style="max-width: 900px; margin: 24px auto; padding: 0 16px;">
+          <h2 style="margin: 0 0 12px 0;">Weekly Summary</h2>
+
+          <details open style="border: 1px solid rgba(0,0,0,0.12); border-radius: 12px; padding: 12px 14px; background: rgba(255,255,255,0.6); margin-bottom: 12px;">
+            <summary style="cursor: pointer; font-weight: 700;">Week 2 (January 2026) — Last updated: 2026-01-12</summary>
+
+            <div style="margin-top: 12px;">
+              <p style="margin: 0 0 12px 0;"><strong>Project status</strong><br>
+                The project remains in a stable early phase. No irregular on-chain activity was observed during this period.
+              </p>
+
+              <p style="margin: 0 0 12px 0;"><strong>On-chain &amp; liquidity</strong><br>
+                Token contract and liquidity pools remained unchanged. Liquidity stayed in range and functioned as expected. No liquidity movements or removals occurred.
+              </p>
+
+              <p style="margin: 0 0 12px 0;"><strong>Community activity</strong><br>
+                Community presence continued to grow slowly and organically.<br>
+                Reddit activity showed natural engagement without paid promotion or coordinated campaigns.<br>
+                Other social platforms remained intentionally quiet at this stage.
+              </p>
+
+              <p style="margin: 0 0 12px 0;"><strong>Development &amp; maintenance</strong><br>
+                Website maintenance and content review were completed.<br>
+                Documentation continued to be refined to improve clarity and transparency.
+              </p>
+
+              <p style="margin: 0 0 12px 0;"><strong>Approach &amp; focus</strong><br>
+                The project continued to follow a trust-first, non-promotional approach.<br>
+                No marketing campaigns, incentives, or urgency-driven actions were planned.
+              </p>
+
+              <p style="margin: 0;"><strong>Next steps</strong><br>
+                Focus remains on organic community growth, transparency, and long-term stability.<br>
+                Any future actions will be documented openly when appropriate.
+              </p>
+            </div>
+          </details>
+        </section>
+      </article>
+
+      <article class="update">
+        <div class="update-meta">Week 3 Summary · Jan 2026</div>
+
+        <details class="update-details">
+          <summary>Open</summary>
+
+          <p>
+            Week 3 was about steady, calm visibility — no hype, no promises, just consistent presence and real updates.
+          </p>
+
+          <h4>Website & Transparency</h4>
+          <ul>
+            <li>Weekly updates continued in the same quiet and honest format.</li>
+            <li>The focus remained trust-first communication, with no marketing pressure and no artificial activity.</li>
+          </ul>
+
+          <h4>Community Presence (Reddit)</h4>
+          <ul>
+            <li>We continued our non-crypto-first presence to avoid a one-directional profile.</li>
+            <li>r/homecooking: posted real homemade meals with simple descriptions and polite replies, without promotion.</li>
+            <li>r/collectables: shared part of a personal collection in a calm post, with no selling and no links.</li>
+            <li>Light commenting continued to keep the account human and consistent, without spam or overposting.</li>
+          </ul>
+
+          <h4>On-chain & Liquidity Check</h4>
+          <ul>
+            <li>Transaction activity increased through normal swap activity.</li>
+            <li>Liquidity positions remained in range and fees moved slightly as expected.</li>
+            <li>No structural changes occurred. Everything remained stable.</li>
+          </ul>
+
+          <h4>Traffic Snapshot (Google Analytics)</h4>
+          <ul>
+            <li>Users and page views rose gradually compared with previous days.</li>
+            <li>Top countries remained the U.S. and U.K., with more countries appearing over time.</li>
+            <li>Average engagement stayed steady, with short but consistent visits.</li>
+          </ul>
+
+          <h4>Next Week (calm plan)</h4>
+          <ul>
+            <li>Keep the same rhythm: real posts, small comments, no pushy messaging.</li>
+            <li>Prepare the airdrop-style support concept in a pump-free way, with details only when ready.</li>
+            <li>Continue daily checks and weekly summaries to build a public history.</li>
+          </ul>
+
+          <p>
+            We are building slowly on purpose — and documenting everything as proof of consistency.
+          </p>
+        </details>
+      </article>
+
+      <article class="update">
+        <details>
+          <summary>
+            Weekly Summary #4 — Documenting Progress
+            <span class="meta">(~40 days since Dec 12)</span>
+          </summary>
+
+          <p><strong>Date:</strong>
+            <time datetime="2026-01-25">January 25, 2026</time>
+          </p>
+
+          <p>
+            This week marked roughly 40 days since the initial idea was formed on December 12.
+          </p>
+
+          <p>
+            We wanted to pause briefly and document what has already been built —
+            without interpretation, without expectations, and without looking ahead.
+          </p>
+
+          <h3>Timeline</h3>
+          <ul>
+            <li><strong>December 12</strong> — the initial idea was formed</li>
+            <li><strong>December 25</strong> — listing applications were submitted</li>
+            <li><strong>Early January</strong> — the smart contract was deployed and verified on Polygon</li>
+            <li><strong>Ongoing</strong> — liquidity has been added and maintained continuously</li>
+          </ul>
+
+          <h3>Current state</h3>
+          <ul>
+            <li>Verified smart contract live on Polygon</li>
+            <li>Active liquidity pool functioning without interruption</li>
+            <li><strong>99</strong> on-chain transactions, organically distributed</li>
+            <li>Website live with documentation available</li>
+            <li>Analytics installed and monitored daily</li>
+            <li>Early, real user engagement observed</li>
+            <li>No paid promotion or incentives used</li>
+          </ul>
+
+          <h3>What has not been done</h3>
+          <ul>
+            <li>No launch countdown</li>
+            <li>No marketing campaigns</li>
+            <li>No price discussion</li>
+            <li>No pressure to participate</li>
+          </ul>
+
+          <p>Everything above reflects what has already happened.</p>
+
+          <p>
+            We will continue documenting progress as it occurs,
+            allowing the work itself to stand without interpretation.
+          </p>
+        </details>
+      </article>
+
+      <article class="update">
+        <details>
+          <summary>Weekly Summary #5 — Quiet Progress</summary>
+
+          <p>
+            This week continued the same approach we have followed from the beginning:
+            steady work, careful observation, and documenting what actually exists.
+          </p>
+
+          <p>
+            No announcements.<br>
+            No campaigns.<br>
+            No promises.
+          </p>
+
+          <h4>Timeline context</h4>
+          <ul>
+            <li>More than one month has passed since the initial idea on December 12</li>
+            <li>The smart contract remains deployed and verified on Polygon</li>
+            <li>Liquidity continues to function without interruption</li>
+            <li>The project remains fully operational without external promotion</li>
+          </ul>
+
+          <h4>Website &amp; analytics</h4>
+          <ul>
+            <li>Daily website activity continues to be monitored</li>
+            <li>Total visitors decreased compared to earlier weeks, while:</li>
+            <ul>
+              <li>Average time on site increased</li>
+              <li>Pages viewed per user increased</li>
+              <li>Engagement actions (scrolls, clicks, interactions) remained consistent</li>
+            </ul>
+            <li>Traffic naturally concentrated into fewer regions, with longer session durations</li>
+          </ul>
+
+          <p>
+            This reflects a shift from broad visibility toward more focused,
+            intentional interest.
+          </p>
+
+          <h4>On-chain activity</h4>
+          <ul>
+            <li>On-chain transactions increased to <strong>105</strong> total</li>
+            <li>Small, organic swaps continued to occur</li>
+            <li>No abnormal movements or liquidity disruptions were observed</li>
+            <li>No incentives or artificial volume were used</li>
+          </ul>
+
+          <h4>Community &amp; communication</h4>
+          <ul>
+            <li>No new marketing channels were opened</li>
+            <li>No paid promotion or outreach was conducted</li>
+            <li>Existing channels remained quiet, transparent, and unchanged</li>
+            <li>Human presence continued through normal, non-promotional activity</li>
+          </ul>
+
+          <h4>What has not changed</h4>
+          <ul>
+            <li>No launch dates announced</li>
+            <li>No price discussion</li>
+            <li>No pressure to participate</li>
+            <li>No promises about future outcomes</li>
+          </ul>
+
+          <p>
+            <em>Everything documented above reflects only what has already happened.</em>
+          </p>
+
+          <p>
+            We will continue observing, documenting, and maintaining the project
+            at the same pace and with the same principles.
+          </p>
+
+          <p>
+            Progress will be recorded when it occurs.
+          </p>
+        </details>
+      </article>
+
+      <article class="update">
+        <details>
+          <summary>Weekly Summary #6 — Liquidity Expansion and Game Preparation</summary>
+
+          <p>
+            This week focused on further strengthening the stability of the Bloody Rubynts ecosystem
+            and preparing the next stage of development.
+          </p>
+
+          <p>
+            QuickSwap liquidity was increased again as part of the weekly expansion approach now in motion.
+            The goal is calm, steady growth that supports more stable trading over the long term.
+          </p>
+
+          <p>
+            At the same time, development of the <strong>Jewel Vault match-3 game</strong> continued,
+            and the process of organizing the game files and uploading them to GitHub began.
+          </p>
+
+          <p>
+            A future community reward concept is also being prepared, designed to involve the community
+            through regular draws and structured rewards when appropriate.
+          </p>
+
+          <p>
+            Website traffic continues to arrive from multiple countries, showing stable, organic interest
+            in the project.
+          </p>
+
+          <p>
+            Progress is documented when it actually happens.
+          </p>
+        </details>
+      </article>
+
+      <article class="update">
+        <details>
+          <summary>Weekly Summary #7 — Stable Core & Power System Upgrade</summary>
+
+          <p>
+            This week focused on stabilizing and improving the core gameplay systems of Jewel Vault.
+            The goal was not adding flashy features, but making the experience smoother,
+            more reliable, and closer to the long-term vision of the game.
+          </p>
+
+          <p><strong>Gameplay Improvements</strong></p>
+          <ul>
+            <li>Board gravity and refill system stabilized to prevent empty spaces after matches.</li>
+            <li>Power gems (stripes, bombs, rainbow) were reworked for consistent behavior.</li>
+            <li>Power combinations during swaps now activate correctly.</li>
+            <li>Bomb and stripe interactions were refined to match expected match-3 mechanics.</li>
+          </ul>
+
+          <p><strong>Shuffle System Added</strong></p>
+          <ul>
+            <li>Each level now provides one shuffle use.</li>
+            <li>Players can reshuffle the board when stuck.</li>
+            <li>Shuffle resets automatically when entering a new level.</li>
+          </ul>
+
+          <p><strong>Life & Move System Fixes</strong></p>
+          <ul>
+            <li>Moves reaching zero now correctly trigger level end.</li>
+            <li>Life counter properly decreases when restarting a failed level.</li>
+            <li>Replay and map return flow were stabilized.</li>
+          </ul>
+
+          <p><strong>Audio Improvements</strong></p>
+          <ul>
+            <li>Explosion and power effects now use dedicated sound effects.</li>
+            <li>Bomb and special gem activations have distinct sounds.</li>
+            <li>The audio system was reorganized for future expansion.</li>
+          </ul>
+
+          <p><strong>General Stability Work</strong></p>
+          <ul>
+            <li>Cascade behavior fixes.</li>
+            <li>Swap edge-case corrections.</li>
+            <li>Stuck board situations resolved.</li>
+            <li>Power activation inconsistencies reduced.</li>
+          </ul>
+
+          <p><strong>Next Focus</strong></p>
+          <ul>
+            <li>Improved explosion visual feedback.</li>
+            <li>Slight pacing adjustments for clearer match visibility.</li>
+            <li>Background story visuals restoration.</li>
+            <li>Continued power gem behavior polishing.</li>
+          </ul>
+
+          <p>
+            Step by step, Jewel Vault continues evolving into a smoother and more immersive experience.
+          </p>
+        </details>
+      </article>
+
+      <article class="update">
+        <details>
+          <summary>Weekly Summary #8 — Jewel Vault Trial Live + Analytics Connected</summary>
+
+          <p>
+            This week we reached a major milestone: the <strong>Jewel Vault trial version</strong> is now <strong>live and playable</strong>.
+            The focus was stability first — making sure the game loads correctly on GitHub Pages, works on mobile, and can be measured through analytics.
+          </p>
+
+          <p><strong>What is new this week:</strong></p>
+          <ul>
+            <li><strong>Trial version is live</strong> (gameplay-only, no BR rewards yet).</li>
+            <li><strong>GitHub Pages deployment stabilized</strong> (workflow location fixed, base-path issue resolved).</li>
+            <li><strong>Mobile support confirmed</strong> (loads and plays correctly on phones).</li>
+            <li><strong>Google Analytics connected</strong> and verified.</li>
+            <li><strong>New GA event tracking:</strong> <code>jewel_vault_loaded</code> (so real game launches can be measured).</li>
+          </ul>
+
+          <p>
+            <strong>Try it and tell us what to improve:</strong><br>
+            The trial is intentionally simple — we want real player feedback before expanding features.
+            Feel free to leave comments with <strong>bug reports, UI suggestions, balance ideas</strong>,
+            or even <strong>new level or feature concepts</strong>.
+          </p>
+
+          <p><strong>Next steps:</strong></p>
+          <ul>
+            <li>Polish minor issues (win/loss sounds, mobile UI refinements).</li>
+            <li>Create a dedicated game section on the main website (info + quick access).</li>
+            <li>Continue developing the full reward-integrated version in parallel.</li>
+          </ul>
+
+          <p>
+            Thank you to everyone testing early. We are building this step by step — stable first, expansion later.
+          </p>
+        </details>
+      </article>
+
+      <article class="update">
+        <details>
+          <summary>Weekly Summary #9 — Wallet + Withdraw System Added (Manual Payout) + Admin Panel</summary>
+
+          <p>
+            This week we shipped a major new foundation: the <strong>Wallet</strong> and a
+            <strong>manual BR withdrawal system</strong> with a clear payout process.
+            The goal was to keep it <strong>simple, trackable, and safe</strong> while we continue testing the live trial build.
+            Every withdrawal creates a request ID and can be emailed to support for a clean audit trail.
+          </p>
+
+          <p><strong>What is new this week:</strong></p>
+          <ul>
+            <li><strong>Wallet modal implemented</strong> (connect/disconnect, dev-mode linking, Polygon chain check).</li>
+            <li><strong>Manual withdrawal requests added</strong> with a <strong>minimum payout of 100 BR</strong>.</li>
+            <li><strong>Payout message included:</strong> “Payout within 24–48 hours.” (visible in the wallet UI).</li>
+            <li><strong>Request ID + Email flow</strong> (copy request + mailto to <code>rubyntspayments@gmail.com</code>).</li>
+            <li><strong>Admin panel added</strong> (internal use) to review withdrawal requests.</li>
+            <li><strong>Admin dashboard stats</strong>: pending requests, <strong>total pending BR</strong>, total paid BR, all-time requested.</li>
+            <li><strong>Export tools</strong>: JSON export + CSV export for record keeping.</li>
+            <li><strong>Admin mode is local-only</strong> via <code>localStorage</code> flag (<code>br_admin</code>), so it is not visible to normal players.</li>
+          </ul>
+
+          <p><strong>Notes / Next steps:</strong></p>
+          <ul>
+            <li>Run a few real-world withdrawal tests end-to-end and validate the tracking flow.</li>
+            <li>Decide whether to close the trial build after about 8 days and evaluate results (analytics + community feedback).</li>
+            <li>Continue polishing UX on mobile and ensure all modals behave consistently across screen sizes.</li>
+          </ul>
+        </details>
+      </article>
+
+      <article class="update">
+        <details>
+          <summary>Weekly Summary #10 — Dragon Boss Polish + 7-Day Daily Rewards System</summary>
+
+          <p>
+            This week focused on <strong>gameplay polish and player retention systems</strong> inside the
+            <strong>Rubynts Vault</strong> game.
+            We introduced the new <strong>Dragon Boss improvements</strong> and a full
+            <strong>7-day Daily Reward system</strong> designed to encourage consistent play and progression.
+          </p>
+
+          <p>
+            The goal is to keep the gameplay loop <strong>rewarding, engaging, and balanced</strong> while
+            continuing to test the live trial build and collect feedback.
+            These systems form part of the long-term player progression and economy.
+          </p>
+
+          <p><strong>What is new this week:</strong></p>
+          <ul>
+            <li>🐉 Dragon Boss UI improvements with HP feedback and defeat state</li>
+            <li>🎮 Boss victory screen updated for better immersion</li>
+            <li>🎁 New <strong>7-Day Daily Reward System</strong> with login streak tracking</li>
+            <li>📅 Weekly reward chest on Day 7 with BR token rewards</li>
+            <li>⚙️ Improved board scaling and gameplay layout</li>
+            <li>✨ Multiple UI polish improvements across the game interface</li>
+          </ul>
+
+          <p>
+            These changes improve the overall <strong>player experience and retention loop</strong>
+            while preparing the foundation for future reward systems and progression features.
+          </p>
+        </details>
+      </article>
+    </section>
+
+    <section id="youtube">
+      <div class="container">
+        <h2>YouTube</h2>
+
+        <p>
+          This channel is part of Bloody Rubynts.
+          It focuses on music, creative work, and supporting independent artists.
+          There is no promotion here — only what is being created and shared.
+        </p>
+
+        <div class="video-wrapper">
+          <iframe
+            width="100%"
+            height="315"
+            src="https://www.youtube.com/embed/3jL3qokpHxk"
+            title="Bloody Rubynts — Music"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <p style="font-style: italic; opacity: 0.85; margin-top: 16px;">
+          This space features original music created within the Bloody Rubynts project.
+        </p>
+
+        <p style="margin-top:12px; font-size:14px; opacity:0.85;">
+          More music & updates:
+          <a href="https://www.youtube.com/@bloodyrubynts" target="_blank" rel="noopener">
+            youtube.com/@bloodyrubynts
+          </a>
+        </p>
+      </div>
+    </section>
   </main>
 
   <footer>
-    &copy; 2025 Bloody Rubynts. Minden jog fenntartva.
+    &copy; 2025 Bloody Rubynts. All rights reserved.
   </footer>
 
- <script>
-  const lang = (navigator.language || navigator.userLanguage || 'hu').toLowerCase();
-
-  if (lang.startsWith('en')) {
-    // NAV
-    const set = (id, text) => { const el = document.getElementById(id); if (el) el.textContent = text; };
-
-    set('nav-project', 'Project');
-    set('nav-token', 'Token Info');
-    set('nav-how', 'How to Buy');
-    set('nav-roadmap', 'Roadmap');
-    set('nav-docs', 'Documentation');
-    set('nav-contact', 'Contact');
-    set('nav-security', 'Security');
-    set('nav-reward', 'Reward');
-    set('nav-progress', 'Progress');
-
-    // PROJECT
-    set('project-title', 'Project');
-    const pd = document.getElementById('project-desc');
-    if (pd) pd.textContent =
-      'Bloody Rubynts (BR) is an ERC-20 token on the Polygon network focused on community-driven value creation, transparency, and accessibility.';
-
-    // TOKEN
-    set('token-title', 'Token Information');
-
-    // HOW TO BUY
-    set('howtobuy-title', 'How to Buy BR');
-    set('htb-1-title', '1) Wallet (MetaMask)');
-    set('htb-1-text', 'Install MetaMask, create a wallet, and never share your seed phrase.');
-    set('htb-2-title', '2) Switch to Polygon');
-    set('htb-2-text', 'Use Polygon network. You need POL for transaction fees (gas).');
-    set('htb-3-title', '3) QuickSwap / Uniswap');
-    set('htb-3-text', 'Open the DEX on Polygon, connect your wallet, and select BR.');
-    set('htb-4-title', '4) Swap POL/WPOL → BR');
-    set('htb-4-text', 'Test with a small amount first and verify the transaction on Polygonscan.');
-    set('htb-note-title', 'Security tip:');
-    set('htb-note-text', 'Always verify the contract address on Polygonscan and use official links only.');
-
-    // ROADMAP
-    set('roadmap-title', 'Roadmap');
-
-    set('rm-q1-title', 'Q1 (Foundation)');
-    set('rm-q1-status', 'In progress');
-    const q1 = document.getElementById('rm-q1-list');
-    if (q1) q1.innerHTML = `
-      <li>Deploy + verify token contract on Polygon</li>
-      <li>Publish basic website + documentation</li>
-      <li>Initial liquidity (QuickSwap / Uniswap)</li>
-    `;
-
-    set('rm-q2-title', 'Q2 (Visibility)');
-    set('rm-q2-status', 'Planned');
-    const q2 = document.getElementById('rm-q2-list');
-    if (q2) q2.innerHTML = `
-      <li>Track CoinGecko / CoinMarketCap submissions</li>
-      <li>Expand social channels (X / Reddit / TikTok)</li>
-      <li>Refine “How to Buy” and transparency</li>
-    `;
-
-    set('rm-q3-title', 'Q3 (Community)');
-    set('rm-q3-status', 'Planned');
-    const q3 = document.getElementById('rm-q3-list');
-    if (q3) q3.innerHTML = `
-      <li>Educational and community content</li>
-      <li>Explore partnerships and collaborations</li>
-      <li>Strengthen security processes</li>
-    `;
-
-    set('rm-q4-title', 'Q4 (Growth)');
-    set('rm-q4-status', 'Planned');
-    const q4 = document.getElementById('rm-q4-list');
-    if (q4) q4.innerHTML = `
-      <li>Grow liquidity and trading volume</li>
-      <li>Ecosystem options (utility / dApp)</li>
-      <li>Prepare for further listings and integrations</li>
-    `;
-
-    // SECURITY
-    set('sec-title', 'Security & Transparency');
-    const st = document.getElementById('sec-text');
-    if (st) st.textContent =
-      'Bloody Rubynts (BR) is an ERC-20 token on Polygon. The contract source code is verified on Polygonscan.';
-
-    // PROGRESS
-    set('progress-title', 'Progress / Work in Progress');
-    const pi = document.getElementById('progress-intro');
-    if (pi) pi.textContent = 'We track Bloody Rubynts (BR) milestones and official links here.';
-
-    set('prog-now-title', 'Current status');
-    set('prog-now-status', 'Active');
-    const nowL = document.getElementById('prog-now-list');
-    if (nowL) nowL.innerHTML = `
-      <li>Website live: <a href="https://bloodyruby.com" target="_blank" rel="noopener">bloodyruby.com</a></li>
-      <li>Token contract verified on PolygonScan</li>
-      <li>Liquidity available (QuickSwap), on-chain activity visible</li>
-      <li>Documents: Documentation / Reward / Whitepaper (PDF)</li>
-    `;
-
-    set('prog-links-title', 'Official links');
-    set('prog-links-status', 'Public');
-
-    set('prog-submissions-title', 'Listings status');
-    set('prog-submissions-status', 'In progress');
-
-    set('prog-next-title', 'Next steps');
-    set('prog-next-status', 'Upcoming');
-
-    // DOCS title
-    set('docs-title', 'Documentation');
-
-    // CONTACT
-    set('contact-title', 'Contact');
- window.addEventListener("scroll", function () {
-  const scroll = window.pageYOffset;
-  document.body.style.backgroundPosition = "center " + (scroll * 0.3) + "px";
-});
-const sections = document.querySelectorAll("section");
-
-function revealSections() {
-  sections.forEach((section) => {
-    const top = section.getBoundingClientRect().top;
-    if (top < window.innerHeight - 80) {
-      section.classList.add("show");
-    }
-  });
-}
-
-window.addEventListener("scroll", revealSections);
-window.addEventListener("load", revealSections);  
-</script>
- 
+  <script>
+    window.addEventListener("scroll", function () {
+      const scroll = window.pageYOffset;
+      document.body.style.backgroundPosition = "center " + (scroll * 0.3) + "px";
+    });
+  </script>
 </body>
-</html>
+</html>>
