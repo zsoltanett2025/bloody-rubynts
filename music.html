@@ -1,13 +1,1111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KEME1H89R4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag("js", new Date());
+    gtag("config", "G-KEME1H89R4");
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bloody Rubynts Music</title>
+
+  <title>Bloody Rubynts™ Music</title>
+
+  <meta
+    name="description"
+    content="Official Bloody Rubynts music page featuring releases, albums, singles, videos, and music-related merchandise."
+  >
+
+  <link rel="manifest" href="/manifest.json">
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  >
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.74), rgba(0, 0, 0, 0.84)),
+        url("assets/images/br_background.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    /* RUBY RAIN */
+
+    .ruby-rain {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .ruby {
+      position: absolute;
+      width: 36px;
+      opacity: 0.92;
+      animation-name: fall, shimmer;
+      animation-timing-function: linear, ease-in-out;
+      animation-iteration-count: infinite, infinite;
+    }
+
+    .ruby-a {
+      left: 8%;
+      animation-duration: 8s, 2.4s;
+    }
+
+    .ruby-b {
+      left: 28%;
+      animation-duration: 11s, 2.8s;
+    }
+
+    .ruby-c {
+      left: 63%;
+      animation-duration: 9s, 2.2s;
+    }
+
+    .ruby-d {
+      left: 86%;
+      animation-duration: 12s, 3s;
+    }
+
+    .br-token {
+      width: 58px;
+      opacity: 0.95;
+      filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.35));
+    }
+
+    .token-a {
+      left: 46%;
+      animation-duration: 14s;
+    }
+
+    .token-b {
+      left: 74%;
+      animation-duration: 16s;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-120px) rotate(0deg);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes shimmer {
+      0% {
+        filter:
+          brightness(1)
+          drop-shadow(0 0 6px rgba(255, 0, 0, 0.18));
+      }
+
+      50% {
+        filter:
+          brightness(1.22)
+          drop-shadow(0 0 14px rgba(255, 0, 0, 0.34));
+      }
+
+      100% {
+        filter:
+          brightness(1)
+          drop-shadow(0 0 6px rgba(255, 0, 0, 0.18));
+      }
+    }
+
+    /* HEADER */
+
+    header {
+      position: relative;
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 22px;
+      background: rgba(43, 0, 0, 0.96);
+      border-bottom: 1px solid #660000;
+      flex-wrap: wrap;
+    }
+
+    .site-logo {
+      height: 48px;
+      width: auto;
+      animation: rubyGlow 3s infinite ease-in-out;
+    }
+
+    @keyframes rubyGlow {
+      0% {
+        filter: drop-shadow(0 0 4px rgba(255, 0, 0, 0.35));
+      }
+
+      50% {
+        filter: drop-shadow(0 0 14px rgba(255, 0, 0, 0.85));
+      }
+
+      100% {
+        filter: drop-shadow(0 0 4px rgba(255, 0, 0, 0.35));
+      }
+    }
+
+    .site-title {
+      margin: 0;
+      font-size: 22px;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    nav {
+      margin-left: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    nav a {
+      color: #f0f0f0;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 8px 11px;
+      border: 1px solid transparent;
+      border-radius: 10px;
+      transition:
+        border-color 0.2s ease,
+        background-color 0.2s ease,
+        color 0.2s ease;
+    }
+
+    nav a:hover,
+    nav a.active {
+      border-color: #990000;
+      background: #1a0b0b;
+      color: #ff6666;
+    }
+
+    /* MAIN */
+
+    main {
+      position: relative;
+      z-index: 2;
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 34px 0 60px;
+    }
+
+    section {
+      margin: 28px 0;
+      padding: 24px;
+      background: rgba(20, 20, 20, 0.94);
+      border: 1px solid #3a0000;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.38);
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      overflow-wrap: break-word;
+    }
+
+    h2 {
+      color: #ff3b3b;
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+
+    .section-intro {
+      max-width: 760px;
+      line-height: 1.7;
+      color: #dddddd;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 480px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(110, 0, 0, 0.42),
+          rgba(5, 5, 5, 0.94)
+        );
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255, 0, 0, 0.05),
+          transparent 42%,
+          rgba(255, 0, 0, 0.08)
+        );
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 760px;
+    }
+
+    .hero-label {
+      display: inline-block;
+      padding: 7px 14px;
+      margin-bottom: 18px;
+      color: #ff8c8c;
+      background: rgba(43, 0, 0, 0.82);
+      border: 1px solid #7a0000;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      margin: 0 0 18px;
+      font-size: clamp(38px, 7vw, 72px);
+      color: #ffffff;
+      text-shadow:
+        0 0 16px rgba(255, 0, 0, 0.45),
+        0 4px 16px rgba(0, 0, 0, 0.8);
+    }
+
+    .hero p {
+      max-width: 680px;
+      margin: 0 auto 26px;
+      font-size: 18px;
+      line-height: 1.7;
+      color: #e8e8e8;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 20px;
+      border: 1px solid #ff3b3b;
+      border-radius: 10px;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 800;
+      background: rgba(43, 0, 0, 0.68);
+      transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      background: #d90000;
+      box-shadow: 0 0 16px rgba(255, 0, 0, 0.55);
+    }
+
+    .button.secondary {
+      border-color: #555555;
+      background: rgba(15, 15, 15, 0.86);
+    }
+
+    .button.secondary:hover {
+      border-color: #ff3b3b;
+      background: #1a0b0b;
+    }
+
+    /* CARDS */
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .music-card {
+      min-width: 0;
+      background: #101010;
+      border: 1px solid #3a0000;
+      border-radius: 14px;
+      overflow: hidden;
+      transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .music-card:hover {
+      transform: translateY(-4px);
+      border-color: #9d0000;
+      box-shadow: 0 10px 28px rgba(255, 0, 0, 0.12);
+    }
+
+    .cover-placeholder {
+      aspect-ratio: 1 / 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(160, 0, 0, 0.44),
+          rgba(8, 8, 8, 0.98)
+        );
+      color: #ffb0b0;
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .music-card-content {
+      padding: 18px;
+    }
+
+    .music-card h3 {
+      margin: 0 0 8px;
+      color: #ffffff;
+    }
+
+    .music-card p {
+      margin: 0 0 14px;
+      line-height: 1.55;
+      color: #cccccc;
+    }
+
+    .status {
+      display: inline-block;
+      padding: 5px 9px;
+      border: 1px solid #660000;
+      border-radius: 999px;
+      background: #2b0000;
+      color: #ffaaaa;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    /* LATEST RELEASE */
+
+    .latest-release {
+      display: grid;
+      grid-template-columns: minmax(240px, 380px) 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .latest-cover {
+      aspect-ratio: 1 / 1;
+      border: 1px solid #660000;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      text-align: center;
+      background:
+        radial-gradient(
+          circle,
+          rgba(150, 0, 0, 0.5),
+          rgba(5, 5, 5, 0.98)
+        );
+      color: #ffb4b4;
+      font-size: 21px;
+      font-weight: 800;
+      box-shadow: 0 0 28px rgba(255, 0, 0, 0.12);
+    }
+
+    .latest-info h2 {
+      font-size: clamp(28px, 4vw, 42px);
+    }
+
+    .latest-info p {
+      line-height: 1.7;
+      color: #dddddd;
+    }
+
+    /* LISTEN PLATFORMS */
+
+    .platforms {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .platform-link {
+      min-height: 92px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 14px;
+      background: #101010;
+      border: 1px solid #3a0000;
+      border-radius: 12px;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 800;
+      transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background-color 0.2s ease;
+    }
+
+    .platform-link i {
+      font-size: 28px;
+      color: #ff4d4d;
+    }
+
+    .platform-link:hover {
+      transform: translateY(-3px);
+      border-color: #aa0000;
+      background: #1a0b0b;
+    }
+
+    /* MUSIC MERCH */
+
+    .merch-preview {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+      margin-top: 22px;
+    }
+
+    .merch-card {
+      min-height: 280px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 22px;
+      border: 1px solid #4b0000;
+      border-radius: 14px;
+      background:
+        linear-gradient(
+          rgba(0, 0, 0, 0.2),
+          rgba(0, 0, 0, 0.92)
+        ),
+        radial-gradient(
+          circle at top,
+          rgba(180, 0, 0, 0.34),
+          #080808 70%
+        );
+    }
+
+    .merch-card h3 {
+      margin: 0 0 8px;
+      color: #ffffff;
+    }
+
+    .merch-card p {
+      margin: 0 0 14px;
+      color: #d5d5d5;
+      line-height: 1.55;
+    }
+
+    /* SOCIAL */
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .social-link {
+      width: 46px;
+      height: 46px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      text-decoration: none;
+      background: #1a0b0b;
+      border: 1px solid #660000;
+      border-radius: 50%;
+      font-size: 20px;
+      transition:
+        transform 0.2s ease,
+        background-color 0.2s ease;
+    }
+
+    .social-link:hover {
+      transform: scale(1.08);
+      background: #e00000;
+    }
+
+    /* FOOTER */
+
+    footer {
+      position: relative;
+      z-index: 5;
+      padding: 20px;
+      text-align: center;
+      background: rgba(43, 0, 0, 0.96);
+      border-top: 1px solid #660000;
+      color: #d7d7d7;
+      font-size: 14px;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .latest-release {
+        grid-template-columns: 1fr;
+      }
+
+      .latest-cover {
+        width: min(100%, 430px);
+        margin: 0 auto;
+      }
+
+      .platforms {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 650px) {
+      header {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .site-title {
+        width: 100%;
+      }
+
+      nav {
+        width: 100%;
+        margin-left: 0;
+        justify-content: center;
+      }
+
+      main {
+        width: min(100% - 22px, 1120px);
+        padding-top: 18px;
+      }
+
+      section {
+        padding: 18px;
+      }
+
+      .hero {
+        min-height: 420px;
+      }
+
+      .card-grid,
+      .merch-preview,
+      .platforms {
+        grid-template-columns: 1fr;
+      }
+
+      .button-row {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .ruby,
+      .site-logo {
+        animation: none;
+      }
+
+      * {
+        transition: none !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <h1>Bloody Rubynts Music</h1>
-  <p>Music releases, albums, videos, and music-related merchandise.</p>
+  <!-- Ruby and BR token rain -->
+  <div class="ruby-rain" aria-hidden="true">
+    <img src="assets/images/ruby1.png" class="ruby ruby-a" alt="">
+    <img src="assets/images/ruby2.png" class="ruby ruby-b" alt="">
+    <img src="assets/images/ruby3.png" class="ruby ruby-c" alt="">
+    <img src="assets/images/ruby4.png" class="ruby ruby-d" alt="">
+
+    <img
+      src="assets/images/bg_token.png"
+      class="ruby br-token token-a"
+      alt=""
+    >
+
+    <img
+      src="assets/images/bg_token.png"
+      class="ruby br-token token-b"
+      alt=""
+    >
+  </div>
+
+  <header>
+    <a href="index.html" aria-label="Bloody Rubynts home">
+      <img
+        src="bloody_rubynts_logo.png"
+        class="site-logo"
+        alt="Bloody Rubynts Logo"
+      >
+    </a>
+
+    <h1 class="site-title">Bloody Rubynts™ Music</h1>
+
+    <nav aria-label="Music page navigation">
+      <a href="index.html">Home</a>
+      <a href="#latest">Latest Release</a>
+      <a href="#albums">Albums</a>
+      <a href="#singles">Singles</a>
+      <a href="#music-merch">Music Merch</a>
+      <a href="#follow">Follow</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-content">
+        <span class="hero-label">Official Music</span>
+
+        <h1>Bloody Rubynts</h1>
+
+        <p>
+          Original music shaped by darkness, emotion, survival, and the world
+          being built around the Bloody Rubynts project.
+        </p>
+
+        <div class="button-row">
+          <a
+            href="https://www.youtube.com/@bloodyrubynts"
+            target="_blank"
+            rel="noopener"
+            class="button"
+          >
+            <i class="fa-brands fa-youtube"></i>
+            Listen on YouTube
+          </a>
+
+          <a
+            href="#music-merch"
+            class="button secondary"
+          >
+            <i class="fa-solid fa-shirt"></i>
+            View Music Merch
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- LATEST RELEASE -->
+    <section id="latest">
+      <div class="latest-release">
+        <div class="latest-cover">
+          Latest release artwork will be added here
+        </div>
+
+        <div class="latest-info">
+          <span class="status">Latest Release</span>
+
+          <h2>Bloody Rubynts Music</h2>
+
+          <p>
+            The latest Bloody Rubynts music, release artwork, description,
+            streaming links, and related merchandise will appear in this
+            section.
+          </p>
+
+          <p>
+            The page is being prepared gradually. Only released and verified
+            music will be added.
+          </p>
+
+          <div class="button-row" style="justify-content:flex-start;">
+            <a
+              href="https://www.youtube.com/@bloodyrubynts"
+              target="_blank"
+              rel="noopener"
+              class="button"
+            >
+              Listen Now
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ALBUMS -->
+    <section id="albums">
+      <h2>Albums</h2>
+
+      <p class="section-intro">
+        Bloody Rubynts albums will be displayed here with cover artwork,
+        release information, track details, and official listening links.
+      </p>
+
+      <div class="card-grid">
+        <article class="music-card">
+          <div class="cover-placeholder">
+            Hungarian Album
+          </div>
+
+          <div class="music-card-content">
+            <span class="status">Released</span>
+            <h3>Hungarian Album</h3>
+            <p>
+              An eight-track Hungarian-language Bloody Rubynts album.
+            </p>
+          </div>
+        </article>
+
+        <article class="music-card">
+          <div class="cover-placeholder">
+            Future Album
+          </div>
+
+          <div class="music-card-content">
+            <span class="status">In Development</span>
+            <h3>Future Release</h3>
+            <p>
+              Future music will be added only when its release information is
+              confirmed.
+            </p>
+          </div>
+        </article>
+
+        <article class="music-card">
+          <div class="cover-placeholder">
+            Archive
+          </div>
+
+          <div class="music-card-content">
+            <span class="status">Growing</span>
+            <h3>Music Archive</h3>
+            <p>
+              Earlier releases and future collections will remain available
+              through this archive.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SINGLES -->
+    <section id="singles">
+      <h2>Singles</h2>
+
+      <p class="section-intro">
+        Individual Bloody Rubynts releases and their related artwork will be
+        added here.
+      </p>
+
+      <div class="card-grid">
+        <article class="music-card">
+          <div class="cover-placeholder">
+            Shards of the Blood Moon
+          </div>
+
+          <div class="music-card-content">
+            <span class="status">Released</span>
+            <h3>Shards of the Blood Moon</h3>
+            <p>
+              Official Bloody Rubynts single.
+            </p>
+          </div>
+        </article>
+
+        <article class="music-card">
+          <div class="cover-placeholder">
+            Black Horizon
+          </div>
+
+          <div class="music-card-content">
+            <span class="status">Released</span>
+            <h3>Black Horizon</h3>
+            <p>
+              Official Bloody Rubynts single.
+            </p>
+          </div>
+        </article>
+
+        <article class="music-card">
+          <div class="cover-placeholder">
+            Bloody Wings
+          </div>
+
+          <div class="music-card-content">
+            <span class="status">Released</span>
+            <h3>Bloody Wings</h3>
+            <p>
+              Official Bloody Rubynts single.
+            </p>
+          </div>
+        </article>
+
+        <article class="music-card">
+          <div class="cover-placeholder">
+            In the Depth of Shadows
+          </div>
+
+          <div class="music-card-content">
+            <span class="status">Released</span>
+            <h3>In the Depth of Shadows</h3>
+            <p>
+              Official Bloody Rubynts single.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- LISTEN -->
+    <section id="listen">
+      <h2>Watch and Listen</h2>
+
+      <p class="section-intro">
+        Follow Bloody Rubynts through official music and social channels.
+        Additional verified streaming links will be added later.
+      </p>
+
+      <div class="platforms">
+        <a
+          href="https://www.youtube.com/@bloodyrubynts"
+          target="_blank"
+          rel="noopener"
+          class="platform-link"
+        >
+          <i class="fa-brands fa-youtube"></i>
+          YouTube
+        </a>
+
+        <a
+          href="https://direct.distrokid.com/bloodyrubyr"
+          target="_blank"
+          rel="noopener"
+          class="platform-link"
+        >
+          <i class="fa-solid fa-music"></i>
+          Official Music
+        </a>
+
+        <a
+          href="https://www.tiktok.com/@bloodyr666"
+          target="_blank"
+          rel="noopener"
+          class="platform-link"
+        >
+          <i class="fa-brands fa-tiktok"></i>
+          TikTok
+        </a>
+
+        <a
+          href="https://www.reddit.com/user/BloodyRubynts_Log/"
+          target="_blank"
+          rel="noopener"
+          class="platform-link"
+        >
+          <i class="fa-brands fa-reddit-alien"></i>
+          Reddit
+        </a>
+      </div>
+    </section>
+
+    <!-- MUSIC MERCH -->
+    <section id="music-merch">
+      <h2>Music Merchandise</h2>
+
+      <p class="section-intro">
+        This collection is reserved for designs connected directly to Bloody
+        Rubynts songs, albums, lyrics, and release artwork. Brand-only clothing
+        will remain separate.
+      </p>
+
+      <div class="merch-preview">
+        <article class="merch-card">
+          <span class="status">Sample Collection</span>
+
+          <h3>Album and Song Designs</h3>
+
+          <p>
+            T-shirts and future products inspired by Bloody Rubynts music and
+            artwork.
+          </p>
+
+          <a
+            href="https://direct.distrokid.com/bloodyrubyr"
+            target="_blank"
+            rel="noopener"
+            class="button"
+          >
+            View Current Store
+          </a>
+        </article>
+
+        <article class="merch-card">
+          <span class="status">Coming Later</span>
+
+          <h3>Future Music Collections</h3>
+
+          <p>
+            Additional designs will be introduced gradually after testing,
+            photography, and final quality checks.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- BEHIND THE MUSIC -->
+    <section id="behind">
+      <h2>Behind the Music</h2>
+
+      <p class="section-intro">
+        Bloody Rubynts music is developed as part of a wider creative
+        ecosystem involving music, visual art, merchandise, and games.
+        This section will later include the stories, ideas, and development
+        process behind selected releases.
+      </p>
+    </section>
+
+    <!-- FOLLOW -->
+    <section id="follow">
+      <h2>Follow Bloody Rubynts</h2>
+
+      <p class="section-intro">
+        Follow the project for new music, visual work, merchandise updates,
+        and game-development progress.
+      </p>
+
+      <div class="social-links">
+        <a
+          href="https://x.com/BloodyRubynt"
+          target="_blank"
+          rel="noopener"
+          class="social-link"
+          aria-label="X"
+        >
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+
+        <a
+          href="https://www.youtube.com/@bloodyrubynts"
+          target="_blank"
+          rel="noopener"
+          class="social-link"
+          aria-label="YouTube"
+        >
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+
+        <a
+          href="https://www.reddit.com/user/BloodyRubynts_Log/"
+          target="_blank"
+          rel="noopener"
+          class="social-link"
+          aria-label="Reddit"
+        >
+          <i class="fa-brands fa-reddit-alien"></i>
+        </a>
+
+        <a
+          href="https://www.tiktok.com/@bloodyr666"
+          target="_blank"
+          rel="noopener"
+          class="social-link"
+          aria-label="TikTok"
+        >
+          <i class="fa-brands fa-tiktok"></i>
+        </a>
+
+        <a
+          href="https://t.me/BloodyRubynts"
+          target="_blank"
+          rel="noopener"
+          class="social-link"
+          aria-label="Telegram"
+        >
+          <i class="fa-brands fa-telegram"></i>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2026 Bloody Rubynts™. All rights reserved.
+  </footer>
+
+  <script>
+    window.addEventListener("scroll", function () {
+      const scrollPosition = window.pageYOffset;
+
+      document.body.style.backgroundPosition =
+        "center " + scrollPosition * 0.3 + "px";
+    });
+  </script>
 </body>
 </html>
