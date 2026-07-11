@@ -31,9 +31,68 @@
     .gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:22px}.gallery-card{overflow:hidden;background:#0d0d0d;border:1px solid var(--border);border-radius:14px;transition:.2s}.gallery-card:hover{transform:translateY(-4px);border-color:#a00000;box-shadow:0 12px 28px rgba(255,0,0,.14)}.gallery-link{display:block;text-decoration:none}.gallery-image{width:100%;height:280px;object-fit:cover;background:radial-gradient(circle at center,rgba(110,0,0,.3),#050505)}.gallery-image.contain{object-fit:contain;padding:18px}.gallery-caption{padding:16px}.gallery-caption h3{margin:0 0 7px;font-size:20px}.gallery-caption p{margin:0;color:#cfcfcf;font-size:14px;line-height:1.55}
     .palette-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:22px}.colour-card{overflow:hidden;background:#101010;border:1px solid #3c0000;border-radius:12px}.colour-swatch{height:100px}.colour-info{padding:14px}.colour-info strong{display:block;margin-bottom:4px}.colour-info span{color:#bfbfbf;font-size:13px}
     .future-box{padding:26px;text-align:center;background:linear-gradient(rgba(0,0,0,.18),rgba(0,0,0,.9)),radial-gradient(circle at top,rgba(155,0,0,.32),#080808 72%);border:1px solid var(--border);border-radius:14px}.future-box i{margin-bottom:14px;color:var(--ruby-light);font-size:42px}.future-box h3{margin:0 0 10px;font-size:26px}.future-box p{max-width:760px;margin:0 auto;color:#d3d3d3;line-height:1.7}
+    
+    .apparel-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:20px;
+      margin-top:22px
+    }
+    .apparel-collection{
+      overflow:hidden;
+      background:#0d0d0d;
+      border:1px solid var(--border);
+      border-radius:14px;
+      transition:.2s
+    }
+    .apparel-collection:hover{
+      transform:translateY(-4px);
+      border-color:#a00000;
+      box-shadow:0 12px 28px rgba(255,0,0,.14)
+    }
+    .apparel-images{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:2px;
+      background:#1a0000
+    }
+    .apparel-images.single{
+      grid-template-columns:1fr
+    }
+    .apparel-images img{
+      width:100%;
+      height:340px;
+      object-fit:cover;
+      background:#080808
+    }
+    .apparel-content{
+      padding:18px
+    }
+    .apparel-content h3{
+      margin:0 0 8px;
+      font-size:23px
+    }
+    .apparel-content p{
+      margin:0;
+      color:#d0d0d0;
+      line-height:1.6
+    }
+    .apparel-status{
+      display:inline-block;
+      margin-bottom:10px;
+      padding:5px 9px;
+      color:#ffb0b0;
+      background:#2d0000;
+      border:1px solid #670000;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:800;
+      text-transform:uppercase
+    }
+
     footer{position:relative;z-index:4;padding:26px 18px;text-align:center;color:#d1d1d1;background:rgba(43,0,0,.96);border-top:1px solid #650000;font-size:14px}.footer-quote{margin:10px 0 0;color:#ff8f8f;font-weight:700;letter-spacing:.4px}
     @media(max-width:900px){.identity-grid,.palette-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ruby-feature{grid-template-columns:1fr}}
-    @media(max-width:720px){header{justify-content:center;text-align:center}.site-title,nav{width:100%}nav{margin-left:0;justify-content:center}main{width:min(100% - 22px,1140px);padding-top:18px}section{padding:18px}.hero{min-height:560px}.card-grid,.identity-grid,.gallery-grid,.palette-grid{grid-template-columns:1fr}.trademark-box{grid-template-columns:1fr;text-align:center}.trademark-symbol{margin:0 auto}.gallery-image{height:250px}}
+    @media(max-width:720px){.apparel-grid{grid-template-columns:1fr}.apparel-images img{height:300px}header{justify-content:center;text-align:center}.site-title,nav{width:100%}nav{margin-left:0;justify-content:center}main{width:min(100% - 22px,1140px);padding-top:18px}section{padding:18px}.hero{min-height:560px}.card-grid,.identity-grid,.gallery-grid,.palette-grid{grid-template-columns:1fr}.trademark-box{grid-template-columns:1fr;text-align:center}.trademark-symbol{margin:0 auto}.gallery-image{height:250px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
   </style>
 </head>
@@ -114,6 +173,83 @@
         <article class="gallery-card"><a href="assets/images/artwork/ruby-vault.png" target="_blank" rel="noopener" class="gallery-link"><img src="assets/images/artwork/ruby-vault.png" class="gallery-image" alt="Bloody Rubynts Jewel Vault artwork"><div class="gallery-caption"><h3>Jewel Vault</h3><p>A gateway into stories, worlds, games, and future Bloody Rubynts® experiences.</p></div></a></article>
       </div>
     </section>
+
+    <section id="wear">
+      <h2>Wear Bloody Rubynts®</h2>
+
+      <p class="section-intro">
+        Real people. Real streetwear. Real Bloody Rubynts®. These photographs
+        show early Bloody Rubynts® brand clothing worn in everyday life.
+        The wider official brand collection is still being prepared and will
+        be introduced gradually after testing and quality review.
+      </p>
+
+      <div class="apparel-grid">
+        <article class="apparel-collection">
+          <div class="apparel-images">
+            <img src="assets/brand/ruby-front.jpg" alt="Bloody Rubynts ruby shirt front view">
+            <img src="assets/brand/ruby-angle.jpg" alt="Bloody Rubynts ruby shirt angle view">
+          </div>
+
+          <div class="apparel-content">
+            <span class="apparel-status">Brand Collection Preview</span>
+            <h3>Ruby Collection</h3>
+            <p>
+              A bold ruby-centred design connected directly to the core symbol
+              of the Bloody Rubynts® universe.
+            </p>
+          </div>
+        </article>
+
+        <article class="apparel-collection">
+          <div class="apparel-images">
+            <img src="assets/brand/skeleton-front.jpg" alt="Bloody Rubynts skeleton shirt front view">
+            <img src="assets/brand/skeleton-angle.jpg" alt="Bloody Rubynts skeleton shirt angle view">
+          </div>
+
+          <div class="apparel-content">
+            <span class="apparel-status">Brand Collection Preview</span>
+            <h3>Skeleton Collection</h3>
+            <p>
+              Dark streetwear artwork built around music, attitude, and the
+              heavier visual side of Bloody Rubynts®.
+            </p>
+          </div>
+        </article>
+
+        <article class="apparel-collection">
+          <div class="apparel-images">
+            <img src="assets/brand/shesmine-front.jpg" alt="Bloody Rubynts She's Mine shirt front view">
+            <img src="assets/brand/shesmine-angle.jpg" alt="Bloody Rubynts She's Mine shirt angle view">
+          </div>
+
+          <div class="apparel-content">
+            <span class="apparel-status">Brand Collection Preview</span>
+            <h3>She's Mine Collection</h3>
+            <p>
+              A character-led design shown as real everyday clothing rather
+              than a studio mock-up.
+            </p>
+          </div>
+        </article>
+
+        <article class="apparel-collection">
+          <div class="apparel-images single">
+            <img src="assets/brand/bloodskull-front.jpg" alt="Bloody Rubynts blood skull shirt front view">
+          </div>
+
+          <div class="apparel-content">
+            <span class="apparel-status">Brand Collection Preview</span>
+            <h3>Blood Skull Collection</h3>
+            <p>
+              A darker graphic concept combining skull imagery, crimson detail,
+              and Bloody Rubynts® streetwear style.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <section>
       <h2>Official Colour Palette</h2>
       <p class="section-intro">The core palette is inspired by deep crimson rubies, black shadows, dark metallic tones, and pale highlights.</p>
