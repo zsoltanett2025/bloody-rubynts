@@ -1,1 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KEME1H89R4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag("js", new Date());
+    gtag("config", "G-KEME1H89R4");
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Bloody Rubynts®</title>
+  <meta name="description" content="Learn about Bloody Rubynts®, its independent creative direction, step-by-step development, music, games, visual identity, merchandise, and future plans.">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    :root {
+      --ruby-light: #ff4d4d;
+      --ruby-soft: #ff9a9a;
+      --panel: rgba(15, 15, 15, 0.94);
+      --text: #f2f2f2;
+      --muted: #d2d2d2;
+      --border: #4b0000;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      color: var(--text);
+      background:
+        linear-gradient(rgba(0,0,0,.72), rgba(0,0,0,.9)),
+        url("assets/images/br_background.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    a { color: inherit; }
+    img { display: block; max-width: 100%; }
+
+    .ruby-rain {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .ruby {
+      position: absolute;
+      top: -120px;
+      width: 34px;
+      opacity: .9;
+      animation: rubyFall linear infinite;
+    }
+
+    .ruby-a { left: 8%; animation-duration: 9s; }
+    .ruby-b { left: 29%; animation-duration: 12s; }
+    .ruby-c { left: 64%; animation-duration: 10s; }
+    .ruby-d { left: 87%; animation-duration: 13s; }
+
+    .token {
+      width: 58px;
+      filter: drop-shadow(0 0 11px rgba(255,0,0,.35));
+    }
+
+    .token-a { left: 46%; animation-duration: 15s; }
+    .token-b { left: 75%; animation-duration: 17s; }
+
+    @keyframes rubyFall {
+      0% { transform: translateY(-120px) rotate(0deg); opacity: 0; }
+      10% { opacity: .9; }
+      100% { transform: translateY(115vh) rotate(360deg); opacity: 0; }
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      padding: 14px 22px;
+      background: rgba(43,0,0,.95);
+      border-bottom: 1px solid #650000;
+      backdrop-filter: blur(8px);
+    }
+
+    .site-logo {
+      height: 48px;
+      width: auto;
+      filter: drop-shadow(0 0 8px rgba(255,0,0,.5));
+    }
+
+    .site-title {
+      margin: 0;
+      font-size: 21px;
+      white-space: nowrap;
+    }
+
+    nav {
+      margin-left: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 7px;
+    }
+
+    nav a {
+      padding: 8px 10px;
+      color: #eee;
+      border: 1px solid transparent;
+      border-radius: 9px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    nav a:hover {
+      color: #ff7777;
+      background: #1a0b0b;
+      border-color: #920000;
+    }
+
+    main {
+      position: relative;
+      z-index: 2;
+      width: min(1140px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 34px 0 60px;
+    }
+
+    section {
+      margin: 28px 0;
+      padding: 25px;
+      background: var(--panel);
+      border: 1px solid #3f0000;
+      border-radius: 16px;
+      box-shadow: 0 10px 28px rgba(0,0,0,.38);
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      color: var(--ruby-light);
+    }
+
+    .section-intro {
+      max-width: 860px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .hero {
+      min-height: 590px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      background:
+        linear-gradient(rgba(0,0,0,.18), rgba(0,0,0,.92)),
+        radial-gradient(circle at center, rgba(130,0,0,.48), rgba(5,5,5,.97));
+    }
+
+    .hero-content { max-width: 850px; }
+
+    .hero-wordmark {
+      width: min(520px, 90vw);
+      margin: 0 auto 22px;
+      filter: drop-shadow(0 0 18px rgba(255,0,0,.48));
+    }
+
+    .hero-label {
+      display: inline-block;
+      margin-bottom: 16px;
+      padding: 7px 14px;
+      color: var(--ruby-soft);
+      background: rgba(54,0,0,.82);
+      border: 1px solid #7c0000;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      margin: 0 0 18px;
+      font-size: clamp(42px, 8vw, 76px);
+      line-height: 1.05;
+      text-shadow: 0 0 18px rgba(255,0,0,.45), 0 6px 20px rgba(0,0,0,.8);
+    }
+
+    .hero p {
+      max-width: 770px;
+      margin: 0 auto;
+      color: #e5e5e5;
+      font-size: clamp(17px, 2.5vw, 21px);
+      line-height: 1.7;
+    }
+
+    .story-layout {
+      display: grid;
+      grid-template-columns: minmax(260px,.85fr) 1.15fr;
+      gap: 26px;
+      align-items: center;
+    }
+
+    .story-image {
+      padding: 18px;
+      background: radial-gradient(circle at center, rgba(140,0,0,.32), #070707 78%);
+      border: 1px solid #5f0000;
+      border-radius: 15px;
+    }
+
+    .story-image img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .story-text h3 { margin: 0 0 12px; font-size: 29px; }
+    .story-text p { color: #d3d3d3; line-height: 1.72; }
+
+    .story-quote {
+      margin-top: 18px;
+      padding: 16px 18px;
+      color: #ffb0b0;
+      background: rgba(50,0,0,.6);
+      border-left: 4px solid var(--ruby-light);
+      border-radius: 8px;
+      font-style: italic;
+    }
+
+    .principle-grid,
+    .community-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .ecosystem-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .principle-card,
+    .community-card,
+    .ecosystem-card,
+    .timeline-item {
+      background: #101010;
+      border: 1px solid #3c0000;
+      border-radius: 12px;
+    }
+
+    .principle-card,
+    .community-card {
+      padding: 22px;
+    }
+
+    .ecosystem-card {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .principle-card i,
+    .community-card i,
+    .ecosystem-card i {
+      margin-bottom: 14px;
+      color: var(--ruby-light);
+      font-size: 34px;
+    }
+
+    .principle-card h3,
+    .community-card h3,
+    .ecosystem-card h3 {
+      margin: 0 0 9px;
+    }
+
+    .principle-card p,
+    .community-card p,
+    .ecosystem-card p {
+      margin: 0;
+      color: #c9c9c9;
+      line-height: 1.6;
+    }
+
+    .timeline {
+      position: relative;
+      margin-top: 24px;
+      padding-left: 28px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 8px;
+      width: 2px;
+      background: linear-gradient(var(--ruby-light), #470000);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 24px;
+      padding: 18px 20px;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      top: 24px;
+      left: -27px;
+      width: 14px;
+      height: 14px;
+      background: var(--ruby-light);
+      border: 3px solid #3d0000;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(255,0,0,.45);
+    }
+
+    .timeline-item h3 { margin: 0 0 8px; font-size: 22px; }
+    .timeline-item p { margin: 0; color: #cdcdcd; line-height: 1.65; }
+
+    .independent-box {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 20px;
+      align-items: center;
+      padding: 24px;
+      background: rgba(39,0,0,.56);
+      border: 1px solid #680000;
+      border-radius: 14px;
+    }
+
+    .independent-icon {
+      width: 82px;
+      height: 82px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: #650000;
+      border-radius: 50%;
+      font-size: 36px;
+    }
+
+    .independent-box h3 { margin: 0 0 8px; font-size: 26px; }
+    .independent-box p { margin: 0; color: #d7d7d7; line-height: 1.7; }
+
+    .future-box {
+      padding: 28px;
+      text-align: center;
+      background:
+        linear-gradient(rgba(0,0,0,.18), rgba(0,0,0,.9)),
+        radial-gradient(circle at top, rgba(155,0,0,.32), #080808 72%);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    .future-box i {
+      margin-bottom: 14px;
+      color: var(--ruby-light);
+      font-size: 42px;
+    }
+
+    .future-box h3 { margin: 0 0 10px; font-size: 27px; }
+
+    .future-box p {
+      max-width: 800px;
+      margin: 0 auto;
+      color: #d3d3d3;
+      line-height: 1.72;
+    }
+
+    footer {
+      position: relative;
+      z-index: 4;
+      padding: 26px 18px;
+      text-align: center;
+      color: #d1d1d1;
+      background: rgba(43,0,0,.96);
+      border-top: 1px solid #650000;
+      font-size: 14px;
+    }
+
+    .footer-quote {
+      margin-top: 10px;
+      color: #ff8f8f;
+      font-weight: 700;
+    }
+
+    @media (max-width: 920px) {
+      .principle-grid,
+      .community-grid { grid-template-columns: 1fr; }
+
+      .ecosystem-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+
+      .story-layout { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 760px) {
+      header { justify-content: center; text-align: center; }
+      .site-title, nav { width: 100%; }
+      nav { margin-left: 0; justify-content: center; }
+      main { width: min(100% - 22px, 1140px); padding-top: 18px; }
+      section { padding: 18px; }
+      .ecosystem-grid { grid-template-columns: 1fr; }
+      .independent-box { grid-template-columns: 1fr; text-align: center; }
+      .independent-icon { margin: 0 auto; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="ruby-rain" aria-hidden="true">
+    <img src="assets/images/ruby1.png" class="ruby ruby-a" alt="">
+    <img src="assets/images/ruby2.png" class="ruby ruby-b" alt="">
+    <img src="assets/images/ruby3.png" class="ruby ruby-c" alt="">
+    <img src="assets/images/ruby4.png" class="ruby ruby-d" alt="">
+    <img src="assets/images/bg_token.png" class="ruby token token-a" alt="">
+    <img src="assets/images/bg_token.png" class="ruby token token-b" alt="">
+  </div>
+
+  <header>
+    <a href="home-preview.html" aria-label="Bloody Rubynts home">
+      <img src="assets/images/brand/bloody-ruby-symbol.png" class="site-logo" alt="Bloody Rubynts ruby symbol">
+    </a>
+
+    <h1 class="site-title">About Bloody Rubynts®</h1>
+
+    <nav aria-label="About page navigation">
+      <a href="home-preview.html">Home</a>
+      <a href="music.html">Music</a>
+      <a href="games.html">Games</a>
+      <a href="brand.html">Brand</a>
+      <a href="#story">Story</a>
+      <a href="#values">Values</a>
+      <a href="#future">Future</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <img src="assets/images/brand/bloody-rubynts-wordmark.png" class="hero-wordmark" alt="Bloody Rubynts wordmark">
+
+        <span class="hero-label">Independent Creative Ecosystem</span>
+
+        <h1>About Bloody Rubynts®</h1>
+
+        <p>
+          Bloody Rubynts® is a growing independent creative world built through
+          music, games, artwork, merchandise, storytelling, practical work,
+          experimentation, and long-term perseverance.
+        </p>
+      </div>
+    </section>
+
+    <section id="story">
+      <h2>The Bloody Rubynts® Story</h2>
+
+      <div class="story-layout">
+        <div class="story-image">
+          <img src="assets/images/artwork/ruby-priestess.jpg" alt="Bloody Rubynts ruby artwork">
+        </div>
+
+        <div class="story-text">
+          <h3>One Idea, Many Connected Paths</h3>
+
+          <p>
+            Bloody Rubynts® began as more than a single product or release.
+            The idea was to build one recognisable world in which music,
+            visual identity, games, merchandise, stories, and future digital
+            experiences could support one another.
+          </p>
+
+          <p>
+            The project is developed independently and gradually. Some parts
+            are already public, while others are still being tested, redesigned,
+            expanded, or prepared for later release.
+          </p>
+
+          <div class="story-quote">
+            The past shaped today. What comes next is still being written.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="values">
+      <h2>How We Work</h2>
+
+      <p class="section-intro">
+        Bloody Rubynts® is not built around rushing, empty promises, or pretending
+        that unfinished work is final. The project follows a practical development
+        process based on steady progress, review, testing, and improvement.
+      </p>
+
+      <div class="principle-grid">
+        <article class="principle-card">
+          <i class="fa-solid fa-stairs"></i>
+          <h3>Step by Step</h3>
+          <p>
+            Large ideas are divided into smaller working parts. Each completed
+            part becomes a stable base for the next stage.
+          </p>
+        </article>
+
+        <article class="principle-card">
+          <i class="fa-solid fa-screwdriver-wrench"></i>
+          <h3>Function Before Polish</h3>
+          <p>
+            Prototypes, draft artwork, and early systems are used first so the
+            project can work before every visual detail is finalised.
+          </p>
+        </article>
+
+        <article class="principle-card">
+          <i class="fa-solid fa-arrows-rotate"></i>
+          <h3>Review and Improve</h3>
+          <p>
+            Code, artwork, music, interfaces, and written material are reviewed,
+            corrected, replaced, and improved when stronger versions become available.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>One Connected Ecosystem</h2>
+
+      <p class="section-intro">
+        Each area has its own purpose, but every part belongs to the same
+        Bloody Rubynts® identity.
+      </p>
+
+      <div class="ecosystem-grid">
+        <article class="ecosystem-card">
+          <i class="fa-solid fa-music"></i>
+          <h3>Music</h3>
+          <p>Original releases, albums, artwork, distribution, and music merchandise.</p>
+        </article>
+
+        <article class="ecosystem-card">
+          <i class="fa-solid fa-gamepad"></i>
+          <h3>Games</h3>
+          <p>Match-3, BR Lost Isle 2D, future 3D development, systems, and interactive worlds.</p>
+        </article>
+
+        <article class="ecosystem-card">
+          <i class="fa-solid fa-gem"></i>
+          <h3>Brand</h3>
+          <p>Registered identity, logos, symbols, visual direction, and official materials.</p>
+        </article>
+
+        <article class="ecosystem-card">
+          <i class="fa-solid fa-shirt"></i>
+          <h3>Merchandise</h3>
+          <p>Music-linked products, future brand collections, testing, and quality checks.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Development Journey</h2>
+
+      <p class="section-intro">
+        The project continues to grow through real work rather than a fixed finish line.
+      </p>
+
+      <div class="timeline">
+        <article class="timeline-item">
+          <h3>Establish the Identity</h3>
+          <p>
+            Create the Bloody Rubynts® name, central ruby symbol, visual direction,
+            and the foundation of one connected creative universe.
+          </p>
+        </article>
+
+        <article class="timeline-item">
+          <h3>Release and Test</h3>
+          <p>
+            Publish music, build working game systems, produce early merchandise,
+            test presentation, and learn from practical results.
+          </p>
+        </article>
+
+        <article class="timeline-item">
+          <h3>Improve Quality</h3>
+          <p>
+            Replace weaker assets, upgrade sound and visuals, refine code,
+            improve animation, strengthen the website, and correct mistakes.
+          </p>
+        </article>
+
+        <article class="timeline-item">
+          <h3>Expand Carefully</h3>
+          <p>
+            Add new chapters, designs, games, music, products, and community work
+            only when there is a strong enough base to support them.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Independent Development</h2>
+
+      <div class="independent-box">
+        <div class="independent-icon" aria-hidden="true">
+          <i class="fa-solid fa-hammer"></i>
+        </div>
+
+        <div>
+          <h3>Built Through Real Work</h3>
+
+          <p>
+            Bloody Rubynts® is independently financed, organised, developed,
+            tested, and improved. Progress is made around work, family responsibilities,
+            limited time, and practical constraints. This makes the process slower
+            than a large studio, but it also keeps the direction personal and controlled.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Community and Purpose</h2>
+
+      <p class="section-intro">
+        Long-term growth is not only about products. The wider vision also includes
+        useful community support and opportunities that are introduced carefully
+        when the project is stable enough to sustain them.
+      </p>
+
+      <div class="community-grid">
+        <article class="community-card">
+          <i class="fa-solid fa-headphones"></i>
+          <h3>Creative Support</h3>
+          <p>
+            A future aim is to help beginner musicians and creators through
+            practical support, visibility, and useful resources.
+          </p>
+        </article>
+
+        <article class="community-card">
+          <i class="fa-solid fa-people-roof"></i>
+          <h3>Families and Students</h3>
+          <p>
+            The long-term plan includes carefully verified support for families,
+            children, and students facing genuine difficulty.
+          </p>
+        </article>
+
+        <article class="community-card">
+          <i class="fa-solid fa-box-open"></i>
+          <h3>Practical Help</h3>
+          <p>
+            Support is intended to focus on useful goods and services such as
+            food, clothing, essential bills, and other directly needed assistance.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="future">
+      <h2>The Future</h2>
+
+      <div class="future-box">
+        <i class="fa-solid fa-arrow-up-right-dots"></i>
+
+        <h3>Growth Without Losing the Core</h3>
+
+        <p>
+          Bloody Rubynts® will continue to develop through new music, improved
+          production quality, game demos, future chapters, 2D and 3D development,
+          artwork, merchandise, website expansion, and community-focused work.
+          The direction may grow, but the core principle remains the same:
+          build carefully, test honestly, and improve step by step.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>&copy; 2026 Bloody Rubynts®. All rights reserved.</div>
+    <div>Registered trademark in the United Kingdom.</div>
+    <div class="footer-quote">One Ruby. Countless Stories. Endless Adventures.</div>
+  </footer>
+</body>
+</html>
 
