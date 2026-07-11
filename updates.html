@@ -1,1 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KEME1H89R4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag("js", new Date());
+    gtag("config", "G-KEME1H89R4");
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloody Rubynts® Updates</title>
+  <meta name="description" content="Weekly and monthly Bloody Rubynts® development updates covering music, games, merchandise, the BR ecosystem, and website progress.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root{--ruby:#d90000;--ruby-light:#ff4d4d;--ruby-soft:#ff9a9a;--panel:rgba(15,15,15,.94);--text:#f2f2f2;--muted:#d2d2d2;--border:#4b0000}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}
+    body{margin:0;min-height:100vh;font-family:Arial,sans-serif;color:var(--text);background:linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.9)),url("assets/images/br_background.jpg");background-size:cover;background-position:center;background-attachment:fixed}
+    a{color:inherit}img{display:block;max-width:100%}
+    .ruby-rain{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}.ruby{position:absolute;top:-120px;width:34px;opacity:.9;animation:rubyFall linear infinite}.ruby-a{left:8%;animation-duration:9s}.ruby-b{left:29%;animation-duration:12s}.ruby-c{left:64%;animation-duration:10s}.ruby-d{left:87%;animation-duration:13s}.token{width:58px}.token-a{left:46%;animation-duration:15s}.token-b{left:75%;animation-duration:17s}
+    @keyframes rubyFall{0%{transform:translateY(-120px) rotate(0);opacity:0}10%{opacity:.9}100%{transform:translateY(115vh) rotate(360deg);opacity:0}}
+    header{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:14px 22px;background:rgba(43,0,0,.95);border-bottom:1px solid #650000;backdrop-filter:blur(8px)}
+    .site-logo{height:48px;width:auto;filter:drop-shadow(0 0 8px rgba(255,0,0,.5))}.site-title{margin:0;font-size:21px;white-space:nowrap}
+    nav{margin-left:auto;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:7px}nav a{padding:8px 10px;color:#eee;border:1px solid transparent;border-radius:9px;text-decoration:none;font-weight:700}nav a:hover{color:#ff7777;background:#1a0b0b;border-color:#920000}
+    main{position:relative;z-index:2;width:min(1140px,calc(100% - 32px));margin:0 auto;padding:34px 0 60px}
+    section{margin:28px 0;padding:25px;background:var(--panel);border:1px solid #3f0000;border-radius:16px;box-shadow:0 10px 28px rgba(0,0,0,.38)}
+    h2{margin:0 0 12px;color:var(--ruby-light)}.section-intro{max-width:860px;color:var(--muted);line-height:1.7}
+    .hero{min-height:520px;display:grid;place-items:center;text-align:center;background:linear-gradient(rgba(0,0,0,.18),rgba(0,0,0,.92)),radial-gradient(circle,rgba(125,0,0,.46),rgba(5,5,5,.96))}.hero-content{max-width:840px}.hero-wordmark{width:min(520px,90vw);margin:0 auto 22px;filter:drop-shadow(0 0 18px rgba(255,0,0,.5))}.hero-label{display:inline-block;margin-bottom:16px;padding:7px 14px;color:var(--ruby-soft);background:rgba(54,0,0,.82);border:1px solid #7c0000;border-radius:999px;font-size:13px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase}.hero h1{margin:0 0 18px;font-size:clamp(42px,8vw,76px);line-height:1.05}.hero p{max-width:760px;margin:0 auto;color:#e5e5e5;font-size:clamp(17px,2.5vw,21px);line-height:1.7}
+    .category-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:22px}.category-card{padding:18px;text-align:center;background:#101010;border:1px solid #3c0000;border-radius:12px}.category-card i{margin-bottom:10px;color:var(--ruby-light);font-size:30px}.category-card h3{margin:0 0 8px}.category-card p{margin:0;color:#c9c9c9;font-size:14px;line-height:1.5}
+    .update-list{display:grid;gap:14px;margin-top:22px}
+    details{background:#101010;border:1px solid #3c0000;border-radius:12px;overflow:hidden}
+    summary{cursor:pointer;padding:18px 20px;color:#f3f3f3;font-weight:800;line-height:1.45;background:linear-gradient(90deg,rgba(90,0,0,.42),rgba(16,16,16,.96))}
+    summary:hover{color:#ff9a9a;background:linear-gradient(90deg,rgba(120,0,0,.48),rgba(16,16,16,.96))}
+    .update-body{padding:20px;color:#d0d0d0;line-height:1.68;border-top:1px solid #3c0000}.update-body h3,.update-body h4{color:#ff7777}.update-body ul{padding-left:22px}.update-body li{margin:7px 0}
+    .update-note{margin-top:16px;padding:14px 16px;background:#1a0b0b;border-left:4px solid var(--ruby-light);border-radius:8px;color:#f0f0f0}
+    footer{position:relative;z-index:4;padding:26px 18px;text-align:center;color:#d1d1d1;background:rgba(43,0,0,.96);border-top:1px solid #650000;font-size:14px}.footer-quote{margin-top:10px;color:#ff8f8f;font-weight:700}
+    @media(max-width:900px){.category-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:760px){header{justify-content:center;text-align:center}.site-title,nav{width:100%}nav{margin-left:0;justify-content:center}main{width:min(100% - 22px,1140px);padding-top:18px}section{padding:18px}.category-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="ruby-rain" aria-hidden="true">
+    <img src="assets/images/ruby1.png" class="ruby ruby-a" alt=""><img src="assets/images/ruby2.png" class="ruby ruby-b" alt=""><img src="assets/images/ruby3.png" class="ruby ruby-c" alt=""><img src="assets/images/ruby4.png" class="ruby ruby-d" alt=""><img src="assets/images/bg_token.png" class="ruby token token-a" alt=""><img src="assets/images/bg_token.png" class="ruby token token-b" alt="">
+  </div>
+  <header>
+    <a href="home-preview.html" aria-label="Bloody Rubynts home"><img src="assets/images/brand/bloody-ruby-symbol.png" class="site-logo" alt="Bloody Rubynts ruby symbol"></a>
+    <h1 class="site-title">Bloody Rubynts® Updates</h1>
+    <nav><a href="home-preview.html">Home</a><a href="music.html">Music</a><a href="games.html">Games</a><a href="brand.html">Brand</a><a href="about.html">About</a><a href="shop.html">Shop</a><a href="token.html">BR Token</a><a href="#weekly">Weekly</a><a href="#monthly">Monthly</a></nav>
+  </header>
 
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <img src="assets/images/brand/bloody-rubynts-wordmark.png" class="hero-wordmark" alt="Bloody Rubynts wordmark">
+        <span class="hero-label">Documented Progress</span>
+        <h1>Weekly and Monthly Updates</h1>
+        <p>A public record of Bloody Rubynts® development across music, games, merchandise, the website, and the wider BR ecosystem.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>What We Document</h2>
+      <div class="category-grid">
+        <article class="category-card"><i class="fa-solid fa-music"></i><h3>Music</h3><p>Releases, production progress, artwork, and music merchandise.</p></article>
+        <article class="category-card"><i class="fa-solid fa-gamepad"></i><h3>Games</h3><p>Match-3, BR Lost Isle 2D, systems, testing, and visual development.</p></article>
+        <article class="category-card"><i class="fa-solid fa-shirt"></i><h3>Merchandise</h3><p>Samples, quality checks, available products, and future collections.</p></article>
+        <article class="category-card"><i class="fa-solid fa-gem"></i><h3>BR Ecosystem</h3><p>Token, liquidity, website, documentation, and community progress.</p></article>
+      </div>
+    </section>
+
+    <section id="weekly">
+      <h2>Weekly Summaries</h2>
+      <p class="section-intro">Earlier weekly updates are kept as a development record. Some details describe the project at that time and may no longer represent the current status.</p>
+      <div class="update-list">
+        <details><summary>Weekly Summary #1 — Foundation and First Signals</summary><div class="update-body"><p>The first week was quiet, steady, and intentional.</p><ul><li>Visitors discovered the website organically.</li><li>The token was traded in small volumes.</li><li>Liquidity was adjusted carefully.</li><li>The focus remained stability and transparency.</li></ul></div></details>
+        <details><summary>Weekly Summary #2 — Stability and Quiet Structure</summary><div class="update-body"><ul><li>Token contract and liquidity pools remained stable.</li><li>Website maintenance and documentation review continued.</li><li>Community presence grew slowly and organically.</li></ul></div></details>
+        <details><summary>Weekly Summary #3 — Presence Without Noise</summary><div class="update-body"><ul><li>Weekly updates continued honestly.</li><li>Reddit activity remained human and non-promotional.</li><li>On-chain activity increased naturally.</li></ul></div></details>
+        <details><summary>Weekly Summary #4 — Documenting Progress</summary><div class="update-body"><ul><li>The smart contract was deployed and verified.</li><li>Liquidity was active and maintained.</li><li>Website analytics and documentation were in place.</li></ul></div></details>
+        <details><summary>Weekly Summary #5 — Quiet Progress</summary><div class="update-body"><ul><li>Website engagement became more focused.</li><li>Small organic swaps continued.</li><li>Communication remained calm and transparent.</li></ul></div></details>
+        <details><summary>Weekly Summary #6 — Liquidity Expansion and Game Preparation</summary><div class="update-body"><ul><li>QuickSwap liquidity was increased carefully.</li><li>Jewel Vault development continued.</li><li>Game files and GitHub structure were prepared.</li></ul></div></details>
+        <details><summary>Weekly Summary #7 — Stable Core and Power System Upgrade</summary><div class="update-body"><ul><li>Board gravity and refill systems were stabilised.</li><li>Power gems and combinations were reworked.</li><li>Shuffle, life, move, and audio systems were improved.</li></ul></div></details>
+        <details><summary>Weekly Summary #8 — Jewel Vault Trial Live and Analytics Connected</summary><div class="update-body"><ul><li>The trial version went live.</li><li>GitHub Pages deployment was stabilised.</li><li>Mobile support and Google Analytics were confirmed.</li></ul></div></details>
+        <details><summary>Weekly Summary #9 — Wallet and Manual Withdrawal System</summary><div class="update-body"><ul><li>A wallet interface and Polygon checks were added.</li><li>Manual withdrawal requests and request IDs were introduced.</li><li>An internal admin panel and export tools were prepared.</li></ul></div></details>
+        <details><summary>Weekly Summary #10 — Dragon Boss and Daily Rewards</summary><div class="update-body"><ul><li>Dragon Boss presentation was improved.</li><li>A seven-day reward system was added.</li><li>Board scaling and interface polish continued.</li></ul></div></details>
+        <details><summary>Weekly Summary #11 — Reaching Out and Continuing Step by Step</summary><div class="update-body"><ul><li>The website and communication were refined.</li><li>Visitors were invited to share feedback.</li><li>The game ecosystem continued developing gradually.</li></ul></div></details>
+        <details><summary>Weekly Summary #12 — Refining the World and Website Evolution</summary><div class="update-body"><ul><li>World map visuals were reworked.</li><li>Background presentation became more immersive.</li><li>The website moved toward a cleaner visual direction.</li></ul></div></details>
+      </div>
+    </section>
+
+    <section id="monthly">
+      <h2>Monthly Summaries</h2>
+      <div class="update-list">
+        <details><summary>Monthly Summary #5 — Foundation Strengthening</summary><div class="update-body"><h4>Liquidity</h4><ul><li>Liquidity was adjusted and increased.</li><li>Trading remained stable and functional.</li></ul><h4>Game Development</h4><ul><li>Jewel Vault systems continued to improve.</li><li>Core mechanics were refined step by step.</li></ul><h4>Brand and Identity</h4><ul><li>Trademark progress and public naming were aligned.</li></ul></div></details>
+
+        <details><summary>Monthly Summary #6 — Quiet Progress and Creative Expansion</summary><div class="update-body"><h4>Music</h4><ul><li>Multiple songs were prepared and released through DistroKid.</li><li>Production quality improvements continued.</li></ul><h4>Community</h4><ul><li>Reddit communication remained personal and genuine.</li></ul><h4>Games and Infrastructure</h4><ul><li>Match-3 ideas and systems continued developing.</li></ul></div></details>
+
+        <details open><summary>Monthly Summary — June 2026 | Game Expansion, Music and Merch Progress</summary><div class="update-body"><h4>Music Development</h4><ul><li>The Hungarian Bloody Rubynts® album was released.</li><li>Multiple singles and albums became available across streaming platforms.</li><li>Music merchandise remained available.</li></ul><h4>Merchandise Progress</h4><ul><li>Early merchandise samples were received and tested.</li><li>The Bloody Wings shirt remained in good condition after washing.</li><li>The tote bag continued to be used in everyday life.</li></ul><h4>Jewel Vault Development</h4><ul><li>Progression systems were expanded and tested.</li><li>Cage Challenge levels were added and balanced.</li><li>Multiple game updates were deployed through GitHub Pages.</li></ul><h4>Bloody Rubynts® Ecosystem</h4><ul><li>Website restructuring and separate content pages were prepared.</li><li>Music, merchandise, game development, and updates were separated clearly.</li><li>The long-term direction remained consistency, transparency, and gradual development.</li></ul><div class="update-note">The journey continues one step at a time.</div></div></details>
+      </div>
+    </section>
+  </main>
+
+  <footer><div>&copy; 2026 Bloody Rubynts®. All rights reserved.</div><div>Registered trademark in the United Kingdom.</div><div class="footer-quote">One Ruby. Countless Stories. Endless Adventures.</div></footer>
+</body>
+</html>
