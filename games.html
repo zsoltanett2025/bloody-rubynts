@@ -1,1 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KEME1H89R4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag("js", new Date());
+    gtag("config", "G-KEME1H89R4");
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Bloody Rubynts® Games</title>
+
+  <meta
+    name="description"
+    content="Explore Bloody Rubynts® games, including the Match-3 project, BR Lost Isle 2D, development previews, characters, systems, and behind-the-scenes work."
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  >
+
+  <style>
+    :root {
+      --ruby: #d90000;
+      --ruby-light: #ff4d4d;
+      --ruby-soft: #ff9a9a;
+      --ruby-dark: #430000;
+      --panel: rgba(15, 15, 15, 0.94);
+      --text: #f2f2f2;
+      --muted: #d2d2d2;
+      --border: #4b0000;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      color: var(--text);
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.9)),
+        url("assets/images/br_background.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    /* RUBY RAIN */
+
+    .ruby-rain {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .ruby {
+      position: absolute;
+      top: -120px;
+      width: 34px;
+      opacity: 0.9;
+      animation: rubyFall linear infinite;
+    }
+
+    .ruby-a { left: 8%; animation-duration: 9s; }
+    .ruby-b { left: 29%; animation-duration: 12s; }
+    .ruby-c { left: 64%; animation-duration: 10s; }
+    .ruby-d { left: 87%; animation-duration: 13s; }
+
+    .token {
+      width: 58px;
+      filter: drop-shadow(0 0 11px rgba(255, 0, 0, 0.35));
+    }
+
+    .token-a { left: 46%; animation-duration: 15s; }
+    .token-b { left: 75%; animation-duration: 17s; }
+
+    @keyframes rubyFall {
+      0% {
+        transform: translateY(-120px) rotate(0deg);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 0.9;
+      }
+
+      100% {
+        transform: translateY(115vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      padding: 14px 22px;
+      background: rgba(43, 0, 0, 0.95);
+      border-bottom: 1px solid #650000;
+      backdrop-filter: blur(8px);
+    }
+
+    .site-logo {
+      height: 48px;
+      width: auto;
+      filter: drop-shadow(0 0 8px rgba(255, 0, 0, 0.5));
+    }
+
+    .site-title {
+      margin: 0;
+      font-size: 21px;
+      white-space: nowrap;
+    }
+
+    nav {
+      margin-left: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 7px;
+    }
+
+    nav a {
+      padding: 8px 10px;
+      color: #eeeeee;
+      border: 1px solid transparent;
+      border-radius: 9px;
+      text-decoration: none;
+      font-weight: 700;
+      transition:
+        color 0.2s ease,
+        border-color 0.2s ease,
+        background-color 0.2s ease;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #ff7777;
+      background: #1a0b0b;
+      border-color: #920000;
+    }
+
+    /* MAIN */
+
+    main {
+      position: relative;
+      z-index: 2;
+      width: min(1140px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 34px 0 60px;
+    }
+
+    section {
+      margin: 28px 0;
+      padding: 25px;
+      background: var(--panel);
+      border: 1px solid #3f0000;
+      border-radius: 16px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.38);
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      overflow-wrap: break-word;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      color: var(--ruby-light);
+    }
+
+    .section-intro {
+      max-width: 860px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 570px;
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.92)),
+        radial-gradient(circle at center, rgba(130, 0, 0, 0.48), rgba(5, 5, 5, 0.97));
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 830px;
+    }
+
+    .hero-symbol {
+      width: min(210px, 58vw);
+      margin: 0 auto 22px;
+      filter: drop-shadow(0 0 22px rgba(255, 0, 0, 0.5));
+    }
+
+    .hero-label {
+      display: inline-block;
+      margin-bottom: 16px;
+      padding: 7px 14px;
+      color: var(--ruby-soft);
+      background: rgba(54, 0, 0, 0.82);
+      border: 1px solid #7c0000;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      margin: 0 0 18px;
+      font-size: clamp(42px, 8vw, 76px);
+      line-height: 1.05;
+      text-shadow:
+        0 0 18px rgba(255, 0, 0, 0.45),
+        0 6px 20px rgba(0, 0, 0, 0.8);
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: 0 auto;
+      color: #e5e5e5;
+      font-size: clamp(17px, 2.5vw, 21px);
+      line-height: 1.7;
+    }
+
+    /* GAME CARDS */
+
+    .game-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 22px;
+    }
+
+    .game-card {
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.95)),
+        radial-gradient(circle at top, rgba(145, 0, 0, 0.32), #080808 72%);
+      border: 1px solid var(--border);
+      border-radius: 15px;
+    }
+
+    .game-visual {
+      position: relative;
+      min-height: 300px;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at center, rgba(105, 0, 0, 0.33), #050505 78%);
+    }
+
+    .game-visual img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .game-placeholder {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      padding: 28px;
+      text-align: center;
+      color: #ffaaaa;
+    }
+
+    .game-placeholder i {
+      display: block;
+      margin-bottom: 14px;
+      font-size: 48px;
+    }
+
+    .game-placeholder strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 22px;
+    }
+
+    .game-placeholder span {
+      color: #cccccc;
+      line-height: 1.55;
+    }
+
+    .game-content {
+      padding: 22px;
+    }
+
+    .status {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 6px 11px;
+      color: #ffb0b0;
+      background: rgba(70, 0, 0, 0.72);
+      border: 1px solid #880000;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .game-content h3 {
+      margin: 0 0 10px;
+      font-size: 28px;
+    }
+
+    .game-content p {
+      margin: 0 0 14px;
+      color: #d3d3d3;
+      line-height: 1.65;
+    }
+
+    .feature-list {
+      margin: 0;
+      padding-left: 20px;
+      color: #cccccc;
+      line-height: 1.7;
+    }
+
+    /* PREVIEW GALLERY */
+
+    .preview-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .preview-card {
+      overflow: hidden;
+      background: #0c0c0c;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    .preview-image-wrap {
+      position: relative;
+      min-height: 280px;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle at center, rgba(110, 0, 0, 0.3), #050505);
+    }
+
+    .preview-image {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+    }
+
+    .preview-placeholder {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      text-align: center;
+      color: #ffaaaa;
+    }
+
+    .preview-placeholder i {
+      display: block;
+      margin-bottom: 12px;
+      font-size: 42px;
+    }
+
+    .preview-placeholder strong {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 21px;
+    }
+
+    .preview-placeholder span {
+      color: #cfcfcf;
+      line-height: 1.5;
+    }
+
+    .preview-caption {
+      padding: 16px;
+    }
+
+    .preview-caption h3 {
+      margin: 0 0 7px;
+      font-size: 20px;
+    }
+
+    .preview-caption p {
+      margin: 0;
+      color: #cfcfcf;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    /* DEVELOPMENT */
+
+    .development-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .development-card {
+      padding: 20px;
+      text-align: center;
+      background: #101010;
+      border: 1px solid #3c0000;
+      border-radius: 12px;
+    }
+
+    .development-card i {
+      margin-bottom: 12px;
+      color: var(--ruby-light);
+      font-size: 34px;
+    }
+
+    .development-card h3 {
+      margin: 0 0 8px;
+    }
+
+    .development-card p {
+      margin: 0;
+      color: #c9c9c9;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    /* QUALITY NOTICE */
+
+    .notice {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 18px;
+      align-items: center;
+      padding: 22px;
+      background: rgba(39, 0, 0, 0.56);
+      border: 1px solid #680000;
+      border-radius: 14px;
+    }
+
+    .notice-icon {
+      width: 74px;
+      height: 74px;
+      display: grid;
+      place-items: center;
+      color: #ffffff;
+      background: #650000;
+      border-radius: 50%;
+      font-size: 32px;
+    }
+
+    .notice h3 {
+      margin: 0 0 8px;
+      font-size: 25px;
+    }
+
+    .notice p {
+      margin: 0;
+      color: #d7d7d7;
+      line-height: 1.65;
+    }
+
+    /* FUTURE */
+
+    .future-box {
+      padding: 26px;
+      text-align: center;
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.9)),
+        radial-gradient(circle at top, rgba(155, 0, 0, 0.32), #080808 72%);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    .future-box i {
+      margin-bottom: 14px;
+      color: var(--ruby-light);
+      font-size: 42px;
+    }
+
+    .future-box h3 {
+      margin: 0 0 10px;
+      font-size: 26px;
+    }
+
+    .future-box p {
+      max-width: 780px;
+      margin: 0 auto;
+      color: #d3d3d3;
+      line-height: 1.7;
+    }
+
+    /* FOOTER */
+
+    footer {
+      position: relative;
+      z-index: 4;
+      padding: 26px 18px;
+      text-align: center;
+      color: #d1d1d1;
+      background: rgba(43, 0, 0, 0.96);
+      border-top: 1px solid #650000;
+      font-size: 14px;
+    }
+
+    .footer-quote {
+      margin-top: 10px;
+      color: #ff8f8f;
+      font-weight: 700;
+    }
+
+    @media (max-width: 900px) {
+      .development-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 760px) {
+      header {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .site-title,
+      nav {
+        width: 100%;
+      }
+
+      nav {
+        margin-left: 0;
+        justify-content: center;
+      }
+
+      main {
+        width: min(100% - 22px, 1140px);
+        padding-top: 18px;
+      }
+
+      section {
+        padding: 18px;
+      }
+
+      .game-grid,
+      .preview-grid,
+      .development-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .notice {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .notice-icon {
+        margin: 0 auto;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="ruby-rain" aria-hidden="true">
+    <img src="assets/images/ruby1.png" class="ruby ruby-a" alt="">
+    <img src="assets/images/ruby2.png" class="ruby ruby-b" alt="">
+    <img src="assets/images/ruby3.png" class="ruby ruby-c" alt="">
+    <img src="assets/images/ruby4.png" class="ruby ruby-d" alt="">
+    <img src="assets/images/bg_token.png" class="ruby token token-a" alt="">
+    <img src="assets/images/bg_token.png" class="ruby token token-b" alt="">
+  </div>
+
+  <header>
+    <a href="home-preview.html" aria-label="Bloody Rubynts home">
+      <img
+        src="assets/images/brand/bloody-ruby-symbol.png"
+        class="site-logo"
+        alt="Bloody Rubynts ruby symbol"
+      >
+    </a>
+
+    <h1 class="site-title">Bloody Rubynts® Games</h1>
+
+    <nav aria-label="Games page navigation">
+      <a href="home-preview.html">Home</a>
+      <a href="music.html">Music</a>
+      <a href="brand.html">Brand</a>
+      <a href="#projects">Projects</a>
+      <a href="#previews">Previews</a>
+      <a href="#development">Development</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <img
+          src="assets/images/brand/bloody-ruby-symbol.png"
+          class="hero-symbol"
+          alt="Bloody Rubynts ruby symbol"
+        >
+
+        <span class="hero-label">Games and Interactive Worlds</span>
+
+        <h1>Bloody Rubynts® Games</h1>
+
+        <p>
+          From the existing Match-3 experience to BR Lost Isle 2D and future
+          3D development, every project expands the same connected creative universe.
+        </p>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Current Game Projects</h2>
+
+      <p class="section-intro">
+        Bloody Rubynts® game development is growing in stages. Existing projects
+        continue to improve while new games are built through prototypes,
+        testing, visual development, systems, and gradual expansion.
+      </p>
+
+      <div class="game-grid">
+        <article class="game-card">
+          <div class="game-visual">
+            <div class="game-placeholder">
+              <div>
+                <i class="fa-solid fa-gem"></i>
+                <strong>Match-3 Preview</strong>
+                <span>The official screenshot will appear here after upload.</span>
+              </div>
+            </div>
+
+            <img
+              src="assets/images/game/match3-gameplay.png"
+              alt="Bloody Rubynts Match-3 gameplay"
+              onload="this.previousElementSibling.style.display='none'"
+              onerror="this.style.display='none'"
+            >
+          </div>
+
+          <div class="game-content">
+            <span class="status">Available Project</span>
+            <h3>Bloody Rubynts® Match-3</h3>
+
+            <p>
+              A jewel-matching game built around the Bloody Rubynts® visual
+              identity, ruby fragments, rewards, progression, and fantasy environments.
+            </p>
+
+            <ul class="feature-list">
+              <li>Level progression and world map</li>
+              <li>Daily rewards and collectible systems</li>
+              <li>Boosters, lives, BR balance, and shop features</li>
+              <li>Ongoing visual and gameplay improvements</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="game-card">
+          <div class="game-visual">
+            <div class="game-placeholder">
+              <div>
+                <i class="fa-solid fa-ship"></i>
+                <strong>BR Lost Isle 2D Preview</strong>
+                <span>The official development image will appear here after upload.</span>
+              </div>
+            </div>
+
+            <img
+              src="assets/images/backgrounds/stormy-shipwreck.png"
+              alt="BR Lost Isle 2D stormy shipwreck concept"
+              onload="this.previousElementSibling.style.display='none'"
+              onerror="this.style.display='none'"
+            >
+          </div>
+
+          <div class="game-content">
+            <span class="status">In Development</span>
+            <h3>BR Lost Isle 2D</h3>
+
+            <p>
+              A dark 2D adventure set in an 1800s-inspired world. The journey
+              begins with a shipwreck and grows through survival, exploration,
+              branching routes, collectibles, companions, and story progression.
+            </p>
+
+            <ul class="feature-list">
+              <li>Shipwreck opening and island survival</li>
+              <li>Characters, companions, and rescue objectives</li>
+              <li>Rune stones, keys, items, and branching paths</li>
+              <li>Unity-based development and custom systems</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="previews">
+      <h2>Development Previews</h2>
+
+      <p class="section-intro">
+        Selected screenshots and concept images from current Bloody Rubynts®
+        game-development work. Images may be replaced as quality, animation,
+        environments, and production assets improve.
+      </p>
+
+      <div class="preview-grid">
+        <article class="preview-card">
+          <div class="preview-image-wrap">
+            <div class="preview-placeholder">
+              <div>
+                <i class="fa-solid fa-map"></i>
+                <strong>Match-3 World Map</strong>
+                <span>Upload: match3-world-map.png</span>
+              </div>
+            </div>
+
+            <img
+              src="assets/images/game/match3-world-map.png"
+              class="preview-image"
+              alt="Bloody Rubynts Match-3 world map"
+              onload="this.previousElementSibling.style.display='none'"
+              onerror="this.style.display='none'"
+            >
+          </div>
+
+          <div class="preview-caption">
+            <h3>World Map and Progression</h3>
+            <p>Level routes, story elements, rewards, and progression through the Match-3 world.</p>
+          </div>
+        </article>
+
+        <article class="preview-card">
+          <div class="preview-image-wrap">
+            <div class="preview-placeholder">
+              <div>
+                <i class="fa-solid fa-gift"></i>
+                <strong>Daily Reward System</strong>
+                <span>Upload: match3-daily-reward.png</span>
+              </div>
+            </div>
+
+            <img
+              src="assets/images/game/match3-daily-reward.png"
+              class="preview-image"
+              alt="Bloody Rubynts Match-3 daily reward system"
+              onload="this.previousElementSibling.style.display='none'"
+              onerror="this.style.display='none'"
+            >
+          </div>
+
+          <div class="preview-caption">
+            <h3>Daily Rewards</h3>
+            <p>Reward tracks, chests, streaks, and player progression systems.</p>
+          </div>
+        </article>
+
+        <article class="preview-card">
+          <div class="preview-image-wrap">
+            <div class="preview-placeholder">
+              <div>
+                <i class="fa-solid fa-tree"></i>
+                <strong>Jungle Environment</strong>
+                <span>Upload: jungle-temple.png</span>
+              </div>
+            </div>
+
+            <img
+              src="assets/images/backgrounds/jungle-temple.png"
+              class="preview-image"
+              alt="BR Lost Isle 2D jungle temple concept"
+              onload="this.previousElementSibling.style.display='none'"
+              onerror="this.style.display='none'"
+            >
+          </div>
+
+          <div class="preview-caption">
+            <h3>Island Environment Concept</h3>
+            <p>A draft environment showing the atmosphere and direction of the island world.</p>
+          </div>
+        </article>
+
+        <article class="preview-card">
+          <div class="preview-image-wrap">
+            <div class="preview-placeholder">
+              <div>
+                <i class="fa-solid fa-dog"></i>
+                <strong>Companion Concept</strong>
+                <span>Upload: daniff-companion.png</span>
+              </div>
+            </div>
+
+            <img
+              src="assets/images/characters/daniff-companion.png"
+              class="preview-image"
+              alt="BR Lost Isle 2D Daniff companion concept"
+              onload="this.previousElementSibling.style.display='none'"
+              onerror="this.style.display='none'"
+            >
+          </div>
+
+          <div class="preview-caption">
+            <h3>Daniff Companion</h3>
+            <p>A loyal black companion planned to support exploration, rescue, and story moments.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="development">
+      <h2>Behind the Development</h2>
+
+      <p class="section-intro">
+        Bloody Rubynts® games are being developed through practical systems,
+        visual experiments, programming, animation, testing, and gradual refinement.
+      </p>
+
+      <div class="development-grid">
+        <article class="development-card">
+          <i class="fa-solid fa-person-walking"></i>
+          <h3>Characters</h3>
+          <p>Survivors, companions, enemies, costumes, and animation work.</p>
+        </article>
+
+        <article class="development-card">
+          <i class="fa-solid fa-coins"></i>
+          <h3>Game Systems</h3>
+          <p>Collectibles, rewards, HUD, objectives, inventory, and progression.</p>
+        </article>
+
+        <article class="development-card">
+          <i class="fa-brands fa-unity"></i>
+          <h3>Unity</h3>
+          <p>Scenes, prefabs, physics, animation, testing, and gameplay integration.</p>
+        </article>
+
+        <article class="development-card">
+          <i class="fa-solid fa-code"></i>
+          <h3>Development</h3>
+          <p>C#, Python tools, Visual Studio, debugging, and technical iteration.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Work-in-Progress Quality Notice</h2>
+
+      <div class="notice">
+        <div class="notice-icon" aria-hidden="true">
+          <i class="fa-solid fa-screwdriver-wrench"></i>
+        </div>
+
+        <div>
+          <h3>Draft Assets and Ongoing Improvement</h3>
+
+          <p>
+            Some images shown on this page are early concepts, placeholders,
+            prototypes, or development screenshots. They are used to document
+            progress and may be replaced with higher-quality artwork, animation,
+            environments, interfaces, and final production assets as development continues.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>The Future of Bloody Rubynts® Games</h2>
+
+      <div class="future-box">
+        <i class="fa-solid fa-arrow-up-right-dots"></i>
+
+        <h3>Built and Improved Step by Step</h3>
+
+        <p>
+          Match-3 improvements, BR Lost Isle 2D, future 3D development,
+          demos, additional chapters, characters, companions, environments,
+          music, and game-related merchandise will be introduced gradually
+          after testing and review.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>&copy; 2026 Bloody Rubynts®. All rights reserved.</div>
+    <div>Registered trademark in the United Kingdom.</div>
+    <div class="footer-quote">One Ruby. Countless Stories. Endless Adventures.</div>
+  </footer>
+</body>
+</html>
 
