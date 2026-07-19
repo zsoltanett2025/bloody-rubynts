@@ -191,6 +191,7 @@
       function loadAnalytics() {
         if (analyticsLoaded) return;
         analyticsLoaded = true;
+        window["ga-disable-" + measurementId] = false;
         window.dataLayer = window.dataLayer || [];
         window.gtag = function(){ window.dataLayer.push(arguments); };
         window.gtag("js", new Date());
@@ -201,10 +202,25 @@
         document.head.appendChild(script);
       }
 
+      function disableAnalytics() {
+        window["ga-disable-" + measurementId] = true;
+        if (typeof window.gtag === "function") {
+          window.gtag("consent", "update", {analytics_storage: "denied"});
+        }
+        document.cookie.split(";").forEach(cookie => {
+          const name = cookie.split("=")[0].trim();
+          if (name === "_ga" || name.startsWith("_ga_")) {
+            document.cookie = `${name}=; Max-Age=0; path=/; SameSite=Lax`;
+            document.cookie = `${name}=; Max-Age=0; path=/; domain=.bloodyruby.com; SameSite=Lax`;
+          }
+        });
+      }
+
       function saveChoice(choice) {
         try { localStorage.setItem(consentKey, choice); } catch (error) { /* Consent still applies for this page view. */ }
         banner.hidden = true;
         if (choice === "accepted") loadAnalytics();
+        else disableAnalytics();
       }
 
       function showBanner() {
