@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,37 +13,23 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Bloody Rubynts® Shop</title>
-
-  <meta
-    name="description"
-    content="Explore the official Bloody Rubynts® brand shop, music merchandise, apparel, accessories, and future game collections."
-  >
-
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-  >
+  <meta name="description" content="Explore the official Bloody Rubynts® brand shop, music merchandise, apparel, accessories, and future game collections.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
     :root {
       --ruby: #d90000;
       --ruby-light: #ff4d4d;
       --ruby-soft: #ff9a9a;
-      --panel: rgba(15, 15, 15, 0.94);
+      --panel: rgba(15,15,15,.94);
       --text: #f2f2f2;
       --muted: #d2d2d2;
       --border: #4b0000;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -50,23 +37,15 @@
       font-family: Arial, sans-serif;
       color: var(--text);
       background:
-        linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.9)),
+        linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.9)),
         url("assets/images/br_background.jpg");
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
     }
 
-    a {
-      color: inherit;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    /* RUBY RAIN */
+    a { color: inherit; }
+    img { display: block; max-width: 100%; }
 
     .ruby-rain {
       position: fixed;
@@ -80,7 +59,7 @@
       position: absolute;
       top: -120px;
       width: 34px;
-      opacity: 0.9;
+      opacity: .9;
       animation: rubyFall linear infinite;
     }
 
@@ -91,29 +70,17 @@
 
     .token {
       width: 58px;
-      filter: drop-shadow(0 0 11px rgba(255, 0, 0, 0.35));
+      filter: drop-shadow(0 0 11px rgba(255,0,0,.35));
     }
 
     .token-a { left: 46%; animation-duration: 15s; }
     .token-b { left: 75%; animation-duration: 17s; }
 
     @keyframes rubyFall {
-      0% {
-        transform: translateY(-120px) rotate(0deg);
-        opacity: 0;
-      }
-
-      10% {
-        opacity: 0.9;
-      }
-
-      100% {
-        transform: translateY(115vh) rotate(360deg);
-        opacity: 0;
-      }
+      0% { transform: translateY(-120px) rotate(0); opacity: 0; }
+      10% { opacity: .9; }
+      100% { transform: translateY(115vh) rotate(360deg); opacity: 0; }
     }
-
-    /* HEADER */
 
     header {
       position: sticky;
@@ -124,7 +91,7 @@
       gap: 14px;
       flex-wrap: wrap;
       padding: 14px 22px;
-      background: rgba(43, 0, 0, 0.95);
+      background: rgba(43,0,0,.95);
       border-bottom: 1px solid #650000;
       backdrop-filter: blur(8px);
     }
@@ -132,7 +99,7 @@
     .site-logo {
       height: 48px;
       width: auto;
-      filter: drop-shadow(0 0 8px rgba(255, 0, 0, 0.5));
+      filter: drop-shadow(0 0 8px rgba(255,0,0,.5));
     }
 
     .site-title {
@@ -151,7 +118,7 @@
 
     nav a {
       padding: 8px 10px;
-      color: #eeeeee;
+      color: #eee;
       border: 1px solid transparent;
       border-radius: 9px;
       text-decoration: none;
@@ -165,12 +132,10 @@
       border-color: #920000;
     }
 
-    /* MAIN */
-
     main {
       position: relative;
       z-index: 2;
-      width: min(1140px, calc(100% - 32px));
+      width: min(1140px,calc(100% - 32px));
       margin: 0 auto;
       padding: 34px 0 60px;
     }
@@ -181,20 +146,11 @@
       background: var(--panel);
       border: 1px solid #3f0000;
       border-radius: 16px;
-      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.38);
+      box-shadow: 0 10px 28px rgba(0,0,0,.38);
     }
 
-    h1,
-    h2,
-    h3,
-    p {
-      overflow-wrap: break-word;
-    }
-
-    h2 {
-      margin: 0 0 12px;
-      color: var(--ruby-light);
-    }
+    h1,h2,h3,p { overflow-wrap: break-word; }
+    h2 { margin: 0 0 12px; color: var(--ruby-light); }
 
     .section-intro {
       max-width: 860px;
@@ -202,26 +158,22 @@
       line-height: 1.7;
     }
 
-    /* HERO */
-
     .hero {
       min-height: 580px;
       display: grid;
       place-items: center;
       text-align: center;
       background:
-        linear-gradient(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.92)),
-        radial-gradient(circle at center, rgba(130, 0, 0, 0.48), rgba(5, 5, 5, 0.97));
+        linear-gradient(rgba(0,0,0,.18),rgba(0,0,0,.92)),
+        radial-gradient(circle,rgba(130,0,0,.48),rgba(5,5,5,.97));
     }
 
-    .hero-content {
-      max-width: 850px;
-    }
+    .hero-content { max-width: 850px; }
 
     .hero-symbol {
-      width: min(210px, 58vw);
+      width: min(210px,58vw);
       margin: 0 auto 22px;
-      filter: drop-shadow(0 0 22px rgba(255, 0, 0, 0.5));
+      filter: drop-shadow(0 0 22px rgba(255,0,0,.5));
     }
 
     .hero-label {
@@ -229,7 +181,7 @@
       margin-bottom: 16px;
       padding: 7px 14px;
       color: var(--ruby-soft);
-      background: rgba(54, 0, 0, 0.82);
+      background: rgba(54,0,0,.82);
       border: 1px solid #7c0000;
       border-radius: 999px;
       font-size: 13px;
@@ -240,22 +192,18 @@
 
     .hero h1 {
       margin: 0 0 18px;
-      font-size: clamp(42px, 8vw, 76px);
+      font-size: clamp(42px,8vw,76px);
       line-height: 1.05;
-      text-shadow:
-        0 0 18px rgba(255, 0, 0, 0.45),
-        0 6px 20px rgba(0, 0, 0, 0.8);
+      text-shadow: 0 0 18px rgba(255,0,0,.45);
     }
 
     .hero p {
       max-width: 770px;
       margin: 0 auto;
       color: #e5e5e5;
-      font-size: clamp(17px, 2.5vw, 21px);
+      font-size: clamp(17px,2.5vw,21px);
       line-height: 1.7;
     }
-
-    /* BUTTON */
 
     .button {
       display: inline-flex;
@@ -263,34 +211,29 @@
       justify-content: center;
       gap: 9px;
       padding: 12px 20px;
-      color: #ffffff;
-      background: rgba(78, 0, 0, 0.78);
+      color: #fff;
+      background: rgba(78,0,0,.78);
       border: 1px solid var(--ruby-light);
       border-radius: 10px;
       text-decoration: none;
       font-weight: 800;
-      transition:
-        transform 0.2s ease,
-        background-color 0.2s ease,
-        box-shadow 0.2s ease;
+      transition: transform .2s,background-color .2s,box-shadow .2s;
     }
 
     .button:hover {
       transform: translateY(-2px);
       background: var(--ruby);
-      box-shadow: 0 0 18px rgba(255, 0, 0, 0.48);
+      box-shadow: 0 0 18px rgba(255,0,0,.48);
     }
 
     .button.secondary {
-      background: #111111;
-      border-color: #555555;
+      background: #111;
+      border-color: #555;
     }
-
-    /* MUSIC STORE */
 
     .store-feature {
       display: grid;
-      grid-template-columns: minmax(280px, 0.9fr) 1.1fr;
+      grid-template-columns: minmax(280px,.9fr) 1.1fr;
       gap: 26px;
       align-items: center;
     }
@@ -301,8 +244,7 @@
       place-items: center;
       padding: 24px;
       text-align: center;
-      background:
-        radial-gradient(circle at center, rgba(155, 0, 0, 0.34), #070707 76%);
+      background: radial-gradient(circle,rgba(155,0,0,.34),#070707 76%);
       border: 1px solid #5d0000;
       border-radius: 15px;
     }
@@ -320,7 +262,7 @@
     }
 
     .store-visual span {
-      color: #cccccc;
+      color: #ccc;
       line-height: 1.55;
     }
 
@@ -336,7 +278,7 @@
 
     .available-list {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(2,minmax(0,1fr));
       gap: 10px;
       margin: 20px 0;
     }
@@ -355,11 +297,9 @@
       color: var(--ruby-light);
     }
 
-    /* BRAND PREVIEW */
-
     .collection-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(2,minmax(0,1fr));
       gap: 20px;
       margin-top: 22px;
     }
@@ -373,7 +313,7 @@
 
     .collection-images {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(2,minmax(0,1fr));
       gap: 2px;
       background: #1a0000;
     }
@@ -381,13 +321,11 @@
     .collection-images img {
       width: 100%;
       height: 330px;
-      object-fit: cover;
-      background: #080808;
+      object-fit: contain;
+      background: #f5f5f5;
     }
 
-    .collection-content {
-      padding: 18px;
-    }
+    .collection-content { padding: 18px; }
 
     .status {
       display: inline-block;
@@ -413,11 +351,9 @@
       line-height: 1.6;
     }
 
-    /* COMING SOON */
-
     .coming-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(3,minmax(0,1fr));
       gap: 18px;
       margin-top: 22px;
     }
@@ -429,8 +365,8 @@
       justify-content: flex-end;
       padding: 22px;
       background:
-        linear-gradient(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.95)),
-        radial-gradient(circle at top, rgba(145, 0, 0, 0.32), #080808 72%);
+        linear-gradient(rgba(0,0,0,.18),rgba(0,0,0,.95)),
+        radial-gradient(circle at top,rgba(145,0,0,.32),#080808 72%);
       border: 1px solid var(--border);
       border-radius: 14px;
     }
@@ -452,15 +388,13 @@
       line-height: 1.6;
     }
 
-    /* QUALITY */
-
     .quality-box {
       display: grid;
       grid-template-columns: auto 1fr;
       gap: 20px;
       align-items: center;
       padding: 24px;
-      background: rgba(39, 0, 0, 0.56);
+      background: rgba(39,0,0,.56);
       border: 1px solid #680000;
       border-radius: 14px;
     }
@@ -470,7 +404,7 @@
       height: 82px;
       display: grid;
       place-items: center;
-      color: #ffffff;
+      color: #fff;
       background: #650000;
       border-radius: 50%;
       font-size: 36px;
@@ -487,15 +421,13 @@
       line-height: 1.7;
     }
 
-    /* FOOTER */
-
     footer {
       position: relative;
       z-index: 4;
       padding: 26px 18px;
       text-align: center;
       color: #d1d1d1;
-      background: rgba(43, 0, 0, 0.96);
+      background: rgba(43,0,0,.96);
       border-top: 1px solid #650000;
       font-size: 14px;
     }
@@ -506,68 +438,30 @@
       font-weight: 700;
     }
 
-    @media (max-width: 920px) {
-      .coming-grid {
-        grid-template-columns: 1fr;
-      }
+    @media(max-width:920px) {
+      .coming-grid { grid-template-columns: 1fr; }
     }
 
-    @media (max-width: 760px) {
-      header {
-        justify-content: center;
-        text-align: center;
-      }
-
-      .site-title,
-      nav {
-        width: 100%;
-      }
-
-      nav {
-        margin-left: 0;
-        justify-content: center;
-      }
-
-      main {
-        width: min(100% - 22px, 1140px);
-        padding-top: 18px;
-      }
-
-      section {
-        padding: 18px;
-      }
+    @media(max-width:760px) {
+      header { justify-content: center; text-align: center; }
+      .site-title,nav { width: 100%; }
+      nav { margin-left: 0; justify-content: center; }
+      main { width: min(100% - 22px,1140px); padding-top: 18px; }
+      section { padding: 18px; }
 
       .store-feature,
       .collection-grid,
-      .quality-box {
-        grid-template-columns: 1fr;
-      }
+      .quality-box { grid-template-columns: 1fr; }
 
-      .available-list {
-        grid-template-columns: 1fr;
-      }
-
-      .collection-images img {
-        height: 280px;
-      }
-
-      .quality-box {
-        text-align: center;
-      }
-
-      .quality-icon {
-        margin: 0 auto;
-      }
+      .available-list { grid-template-columns: 1fr; }
+      .collection-images img { height: 280px; }
+      .quality-box { text-align: center; }
+      .quality-icon { margin: 0 auto; }
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *,
-      *::before,
-      *::after {
+    @media(prefers-reduced-motion:reduce) {
+      html { scroll-behavior: auto; }
+      *,*::before,*::after {
         animation: none !important;
         transition: none !important;
       }
@@ -586,18 +480,14 @@
   </div>
 
   <header>
-    <a href="home-preview.html" aria-label="Bloody Rubynts home">
-      <img
-        src="assets/images/brand/bloody-ruby-symbol.png"
-        class="site-logo"
-        alt="Bloody Rubynts ruby symbol"
-      >
+    <a href="index.html" aria-label="Bloody Rubynts home">
+      <img src="assets/images/brand/bloody-ruby-symbol.png" class="site-logo" alt="Bloody Rubynts ruby symbol">
     </a>
 
     <h1 class="site-title">Bloody Rubynts® Shop</h1>
 
     <nav aria-label="Shop page navigation">
-      <a href="home-preview.html">Home</a>
+      <a href="index.html">Home</a>
       <a href="music.html">Music</a>
       <a href="games.html">Games</a>
       <a href="brand.html">Brand</a>
@@ -611,16 +501,9 @@
   <main>
     <section class="hero">
       <div class="hero-content">
-        <img
-          src="assets/images/brand/bloody-ruby-symbol.png"
-          class="hero-symbol"
-          alt="Bloody Rubynts ruby symbol"
-        >
-
+        <img src="assets/images/brand/bloody-ruby-symbol.png" class="hero-symbol" alt="Bloody Rubynts ruby symbol">
         <span class="hero-label">Official Merchandise</span>
-
         <h1>Bloody Rubynts® Shop</h1>
-
         <p>
           The official Bloody Rubynts® Brand Shop and Music Merchandise Store
           are now open. Explore the current collections and follow future releases
@@ -646,40 +529,19 @@
 
         <div class="store-content">
           <h3>Music Designs and Album Artwork</h3>
-
           <p>
             Shop official merchandise connected to Bloody Rubynts® songs,
             albums, artwork, and music releases.
           </p>
 
           <div class="available-list">
-            <div class="available-item">
-              <i class="fa-solid fa-shirt"></i>
-              T-Shirts
-            </div>
-
-            <div class="available-item">
-              <i class="fa-solid fa-mug-hot"></i>
-              Mugs
-            </div>
-
-            <div class="available-item">
-              <i class="fa-solid fa-bag-shopping"></i>
-              Tote Bags
-            </div>
-
-            <div class="available-item">
-              <i class="fa-solid fa-image"></i>
-              Album Designs
-            </div>
+            <div class="available-item"><i class="fa-solid fa-shirt"></i>T-Shirts</div>
+            <div class="available-item"><i class="fa-solid fa-mug-hot"></i>Mugs</div>
+            <div class="available-item"><i class="fa-solid fa-bag-shopping"></i>Tote Bags</div>
+            <div class="available-item"><i class="fa-solid fa-image"></i>Album Designs</div>
           </div>
 
-          <a
-            href="https://direct.distrokid.com/bloodyrubynts/home"
-            target="_blank"
-            rel="noopener"
-            class="button"
-          >
+          <a href="https://direct.distrokid.com/bloodyrubynts/home" target="_blank" rel="noopener" class="button">
             <i class="fa-solid fa-cart-shopping"></i>
             Visit Official Music Store
           </a>
@@ -691,92 +553,133 @@
       <h2>Bloody Rubynts® Brand Collection</h2>
 
       <p class="section-intro">
-        The official Bloody Rubynts® Brand Shop is now open. Explore the first
-        collection of hoodies, oversized T-shirts, embroidered caps, and other
-        selected apparel and accessories.
+        Explore selected clothing and accessories from the Bloody Rubynts®
+        Brand Shop, including hoodies, graphic T-shirts, embroidered caps,
+        bags and sweatpants. Visit the official store for current
+        products, sizes, prices and availability.
       </p>
 
       <p>
-        <a
-          href="https://bloody-rubynts.printify.me/"
-          target="_blank"
-          rel="noopener"
-          class="button"
-        >
+        <a href="https://bloody-rubynts.printify.me/" target="_blank" rel="noopener" class="button">
           <i class="fa-solid fa-cart-shopping"></i>
           Visit Official Brand Shop
         </a>
       </p>
 
       <div class="collection-grid">
+
         <article class="collection-card">
           <div class="collection-images">
-            <img src="assets/brand/ruby-front.jpg" alt="Bloody Rubynts ruby shirt front view">
-            <img src="assets/brand/ruby-angle.jpg" alt="Bloody Rubynts ruby shirt angle view">
+            <img src="assets/merch/br-handbag-front.png" alt="Bloody Rubynts handbag front" loading="lazy">
+            <img src="assets/merch/br-handbag-back.png" alt="Bloody Rubynts handbag reverse side" loading="lazy">
           </div>
-
           <div class="collection-content">
-            <span class="status">Available Now</span>
-            <h3>Ruby Collection</h3>
-            <p>
-              Official Bloody Rubynts® apparel connected to the central ruby
-              symbol and the registered brand identity.
-            </p>
+            <span class="status">Brand Shop Selection</span>
+            <h3>Structured Handbag</h3>
+            <p>Black structured bag with red ruby and BR emblem details.</p>
           </div>
         </article>
 
         <article class="collection-card">
           <div class="collection-images">
-            <img src="assets/brand/skeleton-front.jpg" alt="Bloody Rubynts skeleton shirt front view">
-            <img src="assets/brand/skeleton-angle.jpg" alt="Bloody Rubynts skeleton shirt angle view">
+            <img src="assets/merch/br-cotton-tote-front.png" alt="Bloody Rubynts cotton tote bag" loading="lazy">
+            <img src="assets/merch/br-cotton-tote-model.png" alt="Bloody Rubynts tote bag worn on the shoulder" loading="lazy">
           </div>
-
           <div class="collection-content">
-            <span class="status">Available Now</span>
-            <h3>Skeleton Collection</h3>
-            <p>
-              Official darker apparel influenced by music, gothic artwork,
-              and the Bloody Rubynts® visual identity.
-            </p>
+            <span class="status">Brand Shop Selection</span>
+            <h3>Cotton Tote Bag</h3>
+            <p>An everyday black tote featuring the red BR emblem.</p>
           </div>
         </article>
 
         <article class="collection-card">
           <div class="collection-images">
-            <img src="assets/brand/shesmine-front.jpg" alt="Bloody Rubynts She's Mine shirt front view">
-            <img src="assets/brand/shesmine-angle.jpg" alt="Bloody Rubynts She's Mine shirt angle view">
+            <img src="assets/merch/br-zip-hoodie-art1-front.png" alt="Bloody Rubynts zip hoodie design one front" loading="lazy">
+            <img src="assets/merch/br-zip-hoodie-art1-back.png" alt="Bloody Rubynts zip hoodie design one back" loading="lazy">
           </div>
-
           <div class="collection-content">
-            <span class="status">Available Now</span>
-            <h3>She's Mine Collection</h3>
-            <p>
-              A character-led official design available through the Bloody Rubynts® Brand Shop.
-            </p>
+            <span class="status">Brand Shop Selection</span>
+            <h3>Zip Hoodie — Design One</h3>
+            <p>Small front emblem combined with a larger back design.</p>
           </div>
         </article>
 
         <article class="collection-card">
           <div class="collection-images">
-            <img src="assets/brand/bloodskull-front.jpg" alt="Bloody Rubynts blood skull shirt front view">
-            <img src="assets/brand/bloodskull-front.jpg" alt="Bloody Rubynts blood skull shirt detail">
+            <img src="assets/merch/br-zip-hoodie-art2-front.png" alt="Bloody Rubynts zip hoodie design two front" loading="lazy">
+            <img src="assets/merch/br-zip-hoodie-art2-back.png" alt="Bloody Rubynts zip hoodie design two back" loading="lazy">
           </div>
-
           <div class="collection-content">
-            <span class="status">Available Now</span>
-            <h3>Blood Skull Collection</h3>
-            <p>
-              A bold official design combining crimson detail, skull imagery,
-              and Bloody Rubynts® streetwear style.
-            </p>
+            <span class="status">Brand Shop Selection</span>
+            <h3>Zip Hoodie — Design Two</h3>
+            <p>Another design in the black-and-ruby hoodie collection.</p>
           </div>
         </article>
+
+        <article class="collection-card">
+          <div class="collection-images">
+            <img src="assets/merch/br-pullover-logo-front.png" alt="Bloody Rubynts pullover hoodie front" loading="lazy">
+            <img src="assets/merch/br-pullover-logo-back.png" alt="Bloody Rubynts pullover hoodie back" loading="lazy">
+          </div>
+          <div class="collection-content">
+            <span class="status">Brand Shop Selection</span>
+            <h3>Pullover Hoodie</h3>
+            <p>BR chest emblem with a larger Bloody Rubynts® back graphic.</p>
+          </div>
+        </article>
+
+        <article class="collection-card">
+          <div class="collection-images">
+            <img src="assets/merch/br-tee-shes-mine-front.png" alt="Bloody Rubynts She's Mine graphic T-shirt" loading="lazy">
+            <img src="assets/merch/br-tee-hes-mine-front.png" alt="Bloody Rubynts He's Mine graphic T-shirt" loading="lazy">
+          </div>
+          <div class="collection-content">
+            <span class="status">Brand Shop Selection</span>
+            <h3>Graphic T-Shirts</h3>
+            <p>Two related gothic graphic designs featuring dark artwork and crimson lettering.</p>
+          </div>
+        </article>
+
+        <article class="collection-card">
+          <div class="collection-images">
+            <img src="assets/merch/br-corduroy-cap.png" alt="Black Bloody Rubynts corduroy cap" loading="lazy">
+            <img src="assets/merch/br-classic-dad-cap.png" alt="Bloody Rubynts classic dad cap" loading="lazy">
+          </div>
+          <div class="collection-content">
+            <span class="status">Brand Shop Selection</span>
+            <h3>Caps</h3>
+            <p>Embroidered BR emblem and Bloody Rubynts® lettering designs.</p>
+          </div>
+        </article>
+
+        <article class="collection-card">
+          <div class="collection-images">
+            <img src="assets/merch/br-sweatpants-front.png" alt="Bloody Rubynts black sweatpants" loading="lazy">
+          </div>
+          <div class="collection-content">
+            <span class="status">Brand Shop Selection</span>
+            <h3>Sweatpants</h3>
+            <p>Black everyday sweatpants with a subtle red BR detail.</p>
+          </div>
+        </article>
+
+        <article class="collection-card">
+          <div class="collection-images">
+            <img src="assets/merch/br-cotton-tote-lifestyle.png" alt="Bloody Rubynts tote bag lifestyle photo" loading="lazy">
+            <img src="assets/merch/br-cotton-tote-model.png" alt="Bloody Rubynts tote bag on a model" loading="lazy">
+          </div>
+          <div class="collection-content">
+            <span class="status">Brand Shop Selection</span>
+            <h3>Tote Bag — Lifestyle</h3>
+            <p>The Bloody Rubynts® tote bag shown in everyday settings.</p>
+          </div>
+        </article>
+
       </div>
     </section>
 
     <section>
       <h2>Future Collections</h2>
-
       <p class="section-intro">
         New merchandise categories will be introduced only when the products,
         suppliers, samples, pricing, and quality are ready.
@@ -788,8 +691,9 @@
           <span class="status">Coming Soon</span>
           <h3>Game Merchandise</h3>
           <p>
-            Future Match-3 and BR Lost Isle 2D clothing, character designs,
-            companion products, and collectible artwork.
+            Future Match-3 and BR Lost Isle 2D clothing,
+            character designs, companion products,
+            and collectible artwork.
           </p>
         </article>
 
@@ -798,8 +702,8 @@
           <span class="status">Coming Soon</span>
           <h3>Accessories</h3>
           <p>
-            Future bags, phone cases, posters, stickers, mouse pads,
-            seasonal items, and selected accessories.
+            Future bags, phone cases, posters, stickers,
+            mouse pads, seasonal items, and selected accessories.
           </p>
         </article>
 
@@ -817,29 +721,19 @@
 
     <section id="community">
       <h2>Follow the Bloody Rubynts® Community</h2>
-
       <p class="section-intro">
-        Follow official announcements, merchandise updates, music releases,
-        BR Lost Isle development news, and future Bloody Rubynts® projects.
+        Follow official announcements, merchandise updates,
+        music releases, BR Lost Isle development news,
+        and future Bloody Rubynts® projects.
       </p>
 
       <div class="available-list">
-        <a
-          href="https://t.me/OfficialBloodyRubynts"
-          target="_blank"
-          rel="noopener"
-          class="button"
-        >
+        <a href="https://t.me/OfficialBloodyRubynts" target="_blank" rel="noopener" class="button">
           <i class="fa-brands fa-telegram"></i>
           Official Telegram
         </a>
 
-        <a
-          href="https://discord.gg/DJmsTNAvc"
-          target="_blank"
-          rel="noopener"
-          class="button secondary"
-        >
+        <a href="https://discord.gg/DJmsTNAvc" target="_blank" rel="noopener" class="button secondary">
           <i class="fa-brands fa-discord"></i>
           Join Discord
         </a>
@@ -853,19 +747,19 @@
         <div class="quality-icon" aria-hidden="true">
           <i class="fa-solid fa-circle-check"></i>
         </div>
-
         <div>
           <h3>Tested Before Official Release</h3>
-
           <p>
-            New Bloody Rubynts® products are introduced gradually. Designs,
-            print quality, materials, product presentation, suppliers, and
-            customer experience are reviewed before and after release so the
-            official collection can continue to improve step by step.
+            New Bloody Rubynts® products are introduced gradually.
+            Designs, print quality, materials, product presentation,
+            suppliers, and customer experience are reviewed before
+            and after release so the official collection can continue
+            to improve step by step.
           </p>
         </div>
       </div>
     </section>
+
   </main>
 
   <footer>
@@ -875,4 +769,3 @@
   </footer>
 </body>
 </html>
-
