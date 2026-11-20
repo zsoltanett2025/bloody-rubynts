@@ -1,13 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KEME1H89R4"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
-    gtag("js", new Date());
-    gtag("config", "G-KEME1H89R4");
-  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bloody Rubynts® Updates</title>
@@ -39,6 +32,40 @@
     footer{position:relative;z-index:4;padding:26px 18px;text-align:center;color:#d1d1d1;background:rgba(43,0,0,.96);border-top:1px solid #650000;font-size:14px}.footer-quote{margin-top:10px;color:#ff8f8f;font-weight:700}
     @media(max-width:900px){.category-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media(max-width:760px){header{justify-content:center;text-align:center}.site-title,nav{width:100%}nav{margin-left:0;justify-content:center}main{width:min(100% - 22px,1140px);padding-top:18px}section{padding:18px}.category-grid{grid-template-columns:1fr}}
+    /* Analytics cookie consent banner */
+.cookie-banner {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 1500;
+  width: min(520px, calc(100% - 36px));
+  padding: 18px;
+  color: #eee;
+  background: #111;
+  border: 1px solid #8c2731;
+  border-radius: 14px;
+  box-shadow: 0 15px 45px rgba(0,0,0,.65);
+}
+.cookie-banner[hidden] { display: none; }
+.cookie-banner h2 { font-size: 19px; }
+.cookie-banner p { color: #d1d1d1; line-height: 1.55; }
+.cookie-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.cookie-actions button {
+  cursor: pointer;
+  padding: 10px 15px;
+  color: #fff;
+  background: #60000b;
+  border: 1px solid #ff5c68;
+  border-radius: 8px;
+  font-weight: 800;
+}
+.cookie-actions .reject { background: #222; border-color: #777; }
+@media (max-width: 760px) {
+  .cookie-actions { flex-direction: column; }
+  .cookie-actions button { width: 100%; }
+}
+  .footer-links{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:12px;margin-top:12px}
+  .footer-links button{cursor:pointer;padding:8px 12px;color:#fff;background:#222;border:1px solid #777;border-radius:8px;font-weight:700}
   </style>
 </head>
 <body>
@@ -348,6 +375,138 @@
     </section>
   </main>
 
-  <footer><div>&copy; 2026 Bloody Rubynts®. All rights reserved.</div><div>Registered trademark in the United Kingdom.</div><div class="footer-quote">One Ruby. Countless Stories. Endless Adventures.</div></footer>
+  <aside class="cookie-banner" id="cookie-banner" aria-labelledby="cookie-title" aria-live="polite" hidden>
+    <h2 id="cookie-title">Analytics cookies</h2>
+    <p>We use optional Google Analytics to understand website use.
+       Analytics stays off unless you accept it.
+       You can reject it and change your choice later.</p>
+    <div class="cookie-actions">
+      <button type="button" id="accept-analytics">Accept analytics</button>
+      <button type="button" id="reject-analytics" class="reject">Reject analytics</button>
+    </div>
+  </aside>
+
+  <footer>
+    <div>&copy; 2026 Bloody Rubynts®. All rights reserved.</div>
+    <div>Registered trademark in the United Kingdom.</div>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="cookies.html">Cookie Policy</a>
+      <button type="button" id="cookie-settings">Cookie settings</button>
+    </div>
+    <div class="footer-quote">One Ruby. Countless Stories. Endless Adventures.</div>
+  </footer>
+<script>
+(function () {
+  "use strict";
+
+  const measurementId = "G-KEME1H89R4";
+  const consentKey = "br-analytics-consent";
+  const banner = document.getElementById("cookie-banner");
+  const accept = document.getElementById("accept-analytics");
+  const reject = document.getElementById("reject-analytics");
+  const settings = document.getElementById("cookie-settings");
+  let loaded = false;
+
+  window["ga-disable-" + measurementId] = true;
+
+  function loadAnalytics() {
+    // Restore consent even when the Analytics script was loaded earlier.
+    window["ga-disable-" + measurementId] = false;
+    if (loaded) {
+      if (typeof window.gtag === "function") {
+        window.gtag("consent", "update", {
+          analytics_storage: "granted"
+        });
+      }
+      return;
+    }
+    loaded = true;
+
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () {
+      window.dataLayer.push(arguments);
+    };
+
+    window.gtag("js", new Date());
+    window.gtag("consent", "default", {
+      analytics_storage: "granted"
+    });
+    window.gtag("config", measurementId, {
+      anonymize_ip: true
+    });
+
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = "https://www.googletagmanager.com/gtag/js?id=" +
+      encodeURIComponent(measurementId);
+    document.head.appendChild(script);
+  }
+
+  function disableAnalytics() {
+    window["ga-disable-" + measurementId] = true;
+
+    if (typeof window.gtag === "function") {
+      window.gtag("consent", "update", {
+        analytics_storage: "denied"
+      });
+    }
+
+    document.cookie.split(";").forEach(function (cookie) {
+      const name = cookie.split("=")[0].trim();
+
+      if (name === "_ga" || name.startsWith("_ga_")) {
+        document.cookie = name +
+          "=; Max-Age=0; path=/; SameSite=Lax";
+        document.cookie = name +
+          "=; Max-Age=0; path=/; domain=.bloodyrubynts.com; SameSite=Lax";
+      }
+    });
+  }
+
+  function saveChoice(choice) {
+    try {
+      localStorage.setItem(consentKey, choice);
+    } catch (error) {
+      // The decision still applies to this page.
+    }
+
+    banner.hidden = true;
+
+    if (choice === "accepted") {
+      loadAnalytics();
+    } else {
+      disableAnalytics();
+    }
+  }
+
+  let choice = null;
+
+  try {
+    choice = localStorage.getItem(consentKey);
+  } catch (error) {
+    // Without stored consent, do not load analytics.
+  }
+
+  if (choice === "accepted") {
+    loadAnalytics();
+  } else if (choice !== "rejected") {
+    banner.hidden = false;
+  }
+
+  accept.addEventListener("click", function () {
+    saveChoice("accepted");
+  });
+
+  reject.addEventListener("click", function () {
+    saveChoice("rejected");
+  });
+
+  settings.addEventListener("click", function () {
+    banner.hidden = false;
+    accept.focus();
+  });
+})();
+</script>
 </body>
 </html>
