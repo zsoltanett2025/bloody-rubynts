@@ -411,10 +411,18 @@
   window["ga-disable-" + measurementId] = true;
 
   function loadAnalytics() {
-    if (loaded) return;
+    // Restore consent even when the Analytics script was loaded earlier.
+    window["ga-disable-" + measurementId] = false;
+    if (loaded) {
+      if (typeof window.gtag === "function") {
+        window.gtag("consent", "update", {
+          analytics_storage: "granted"
+        });
+      }
+      return;
+    }
     loaded = true;
 
-    window["ga-disable-" + measurementId] = false;
     window.dataLayer = window.dataLayer || [];
     window.gtag = function () {
       window.dataLayer.push(arguments);
